@@ -131,7 +131,7 @@ gated cards in ascending round order.
 
 | # | Card | Ops | Event |
 |---|---|---|---|
-| 1 | **Halil Pasha's Doubt** | 5 | Choice: Ottoman Morale -1, or Ottoman discards 4 cards — bribing/encouraging the Grand Vizier's real historical opposition to the siege. |
+| 1 | **Halil Pasha's Doubt** | 5 | The Grand Vizier's real historical opposition to the siege becomes public: an immediate **Ottoman Morale -1**, and starting **next round**, the Pressure to Attack rule (§2.2) permanently requires **2 Assault attempts** per round instead of 1 to avoid the Morale penalty, for the rest of the game. One of the strongest Byzantine cards in the deck — a direct Morale hit *and* a permanent structural squeeze that forces the Ottoman to commit real troops to more Assaults than a single cheap probe would (feeding the Elite Casualty pool, §4.0.4, faster too). Best played early, since the extra pressure compounds over every remaining round. (Revised this session — was a Morale -1 / discard-4 choice; retuned to combine a direct Morale hit with the commitment-forcing structural change, rather than offering it as an either/or.) |
 | 2 | **John Grant's Countermine** [Requires: Ottoman Sap/Mine active] | 4 | Cancels all active Ottoman Sap/Mine efforts — the Scottish/German engineer's real countermining successes. |
 | 3 | **Hungarian Envoy** | 1 | +1 to this round's "Sue for Aid" Ops action's chance of triggering a Relief Fleet event later. |
 | 4 | **Emperor's Rally** [Requires: Constantine present] | 2 | Reinforce a sector this round for free (no Reserve Pool cost) — Constantine personally riding the walls to rally defenders. |
@@ -269,19 +269,32 @@ gated cards in ascending round order.
    pulled off the gain list this session (now a pure card-draw effect,
    Ottoman draws 2) since a public scapegoating doesn't actually read as
    restoring army will. Morale-loss cards, still deliberately short: The
-   Four Ships (-2, unique, round-limited), Halil Pasha's Doubt (-1
-   optional, single-copy designated card), plus The Eclipse Omen (which
-   *protects* Morale for its round rather than draining it). Apply this
-   same bar to any future card before adding a Morale effect — especially
-   a gain, now that the well is capped at two named cards — and
-   especially in the Neutral pile, where cards can recur after a
-   reshuffle and so are a worse offender than a one-shot designated-pile
-   card. **Open design thread (2026-07-10, this session):** the user is
-   considering supplementing these named-card swings with two structural
-   drains — a flat time-decay tick (proposed: Morale -1 every 2 rounds)
-   and a cumulative Elite Casualty threshold (Morale -1 once enough
-   Janissary/Solak steps have been lost) — see DESIGN.md §4.0.4 for the
-   discussion; not yet written into a firm rule.
+   Four Ships (-2, unique, round-limited), Halil Pasha's Doubt (-1,
+   immediate, plus a permanent structural squeeze — see below), plus The
+   Eclipse Omen (which *protects* Morale for its round rather than
+   draining it). **Halil Pasha's Doubt revised this session** to combine
+   an immediate Morale -1 with a structural change: it permanently raises
+   the Pressure to Attack rule's Assault requirement from 1 to 2 per
+   round (§2.2), forcing the Ottoman toward real Assault commitments
+   (and the Morale exposure that comes with them via the Elite Casualty
+   pool below) on top of the direct hit — deliberately one of the
+   strongest cards in the Byzantine pile. Apply this same bar to
+   any future card before adding a Morale effect — especially a gain,
+   now that the well is capped at two named cards — and especially in
+   the Neutral pile, where cards can recur after a reshuffle and so are a
+   worse offender than a one-shot designated-pile card. **Open design
+   thread, resolved this session:** Morale's primary drain is now the
+   **Elite Casualty pool** (DESIGN.md §4.0.4) — Janissary/Solak losses
+   only (matching the existing exemption list in §6.3), counted by
+   Attack value (Janissary +3, Solak +4) on full removal only, cumulative
+   across the whole game, Morale -1 every time the running total crosses
+   another multiple of **10**. The earlier flat time-decay idea (-1 every
+   2 rounds) was dropped in favor of this — the round-limit auto-win at
+   round 9/10 (§5) already supplies the "hurry up" clock, so a second,
+   unconditional Morale timer would have been redundant; the casualty
+   pool instead ties Morale specifically to how hard the Ottoman commits
+   real troops, which Halil Pasha's Doubt above now directly pressures
+   them to do.
 8. **[Forced] tag added 2026-07-10** — 11 cards now tagged, reserved for
    fixed historical beats rather than strategic options: Golden Horn
    Manoeuvre, Orban's Great Cannon, The War Council of May 26, The

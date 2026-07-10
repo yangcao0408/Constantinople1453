@@ -77,20 +77,32 @@ runs in two phases:
   Reinforce, Sortie, Sap/Mine, Sue for Aid, Diplomacy, Muster
   Reinforcements — every entry in the lists above).
 - **Pressure to Attack (added 2026-07-10):** starting **round 2**, if the
-  Ottoman player makes zero Assault attempts this round (Phase A
-  concentration-bonus assault or Phase B Ops), Morale **-1** — the
-  Sultan's court and army expect visible progress, and a round of pure
-  bombardment with no follow-through reads as hesitation. This exists to
-  rule out a degenerate "bombard forever, never risk an assault"
-  strategy. It works even this early, before the walls are properly
-  softened (§3.1, real damage doesn't usually start until round 3-4),
-  because the rebalanced CRT (§6.5) makes a cheap, disposable "probing"
-  assault — a single Bashi-bazouk thrown at bad odds — genuinely low-risk
-  for the attacker and low-cost for the defender. The rational response
-  to this rule most rounds should be exactly that: a token assault to
-  avoid the Morale penalty, not a real commitment, which is itself decent
-  siege flavor (constant skirmishing pressure alongside the main
-  bombardment).
+  Ottoman player makes fewer than the **required number of Assault
+  attempts** this round (Phase A concentration-bonus assault or Phase B
+  Ops) — **base requirement: 1** — Morale **-1** — the Sultan's court and
+  army expect visible progress, and a round of pure bombardment with no
+  follow-through reads as hesitation. This exists to rule out a degenerate
+  "bombard forever, never risk an assault" strategy. It works even this
+  early, before the walls are properly softened (§3.1, real damage
+  doesn't usually start until round 3-4), because the rebalanced CRT
+  (§6.5) makes a cheap, disposable "probing" assault — a single
+  Bashi-bazouk thrown at bad odds — genuinely low-risk for the attacker
+  and low-cost for the defender. The rational response to this rule most
+  rounds should be exactly that: a token assault to avoid the Morale
+  penalty, not a real commitment, which is itself decent siege flavor
+  (constant skirmishing pressure alongside the main bombardment).
+  - **Halil Pasha's Doubt** (EVENT_DECK.md, Byzantine pile, revised this
+    session) deals an immediate **Morale -1**, and permanently raises
+    this requirement by **+1**, starting the round after it's played, for
+    the rest of the game — turning the "one token assault is enough"
+    baseline into "two real Assault attempts required," which costs the
+    Ottoman more committed troops (and, via the Elite Casualty pool
+    §4.0.4, more exposure to Morale loss from it) than a single cheap
+    probe would. One of the strongest Byzantine cards in the deck for
+    exactly this reason — a direct hit plus a permanent structural
+    squeeze. Played early, the requirement change compounds over more
+    remaining rounds, which is the intended incentive to play it early
+    rather than bank it.
 
 ### 2.3 Generic Action Cards
 
@@ -345,7 +357,9 @@ One extra shot per round max.
 #### 4.0.4 Morale (revised this session — track size and gain/loss sources)
 
 - **Morale** (janissary/army will to fight + Sultan's political capital to
-  keep the siege going against court opposition).
+  keep the siege going against court opposition) — **track runs 0-7,
+  starting at 7 (full strength), hard-capped at 7 (overflow from gain
+  cards is wasted).**
 - **Morale gain is capped at exactly two named cards in the whole deck**
   (EVENT_DECK.md, revised this session): **The Hadith of Conquest (+1,
   round 1-2)** and **The War Council (+1, round 7+)** — max **+2** across
@@ -353,50 +367,60 @@ One extra shot per round max.
   Baltaoğlu's Punishment also granted +1; that's been cut — a public
   scapegoating doesn't actually put fight back in the army, so it's now a
   pure card-draw effect instead.)
-- **Morale loss**, current confirmed sources: named/event cards (The Four
-  Ships -2, Halil Pasha's Doubt -1 optional) and the Pressure-to-Attack
-  rule (§2.2, -1/round from round 2+ if the Ottoman makes zero Assault
-  attempts).
-- **Morale hitting zero → the Ottoman army withdraws → immediate
+- **Morale loss**, current confirmed sources:
+  - Named/event cards: **The Four Ships (-2, unique, round-limited)**,
+    **Halil Pasha's Doubt (-1, immediate, one-time)**.
+  - **The Pressure to Attack rule** (§2.2): -1/round from round 2+ if the
+    Ottoman makes fewer than the required number of Assault attempts
+    (base requirement 1, permanently raised to 2 for the rest of the game
+    by **Halil Pasha's Doubt**, on top of its immediate -1 above — see
+    §2.2). That card is deliberately one of the strongest in the
+    Byzantine pile for combining both: a direct Morale hit now, plus a
+    structural squeeze that forces more Assault commitments (and more
+    exposure to the Elite Casualty pool below) for the rest of the game.
+  - **The Elite Casualty pool (confirmed this session, replaces the old
+    per-Assault "small Morale hit" and the §6.3 Elite Casualty Morale
+    Surcharge language):** track a running total of Attack value from
+    **Janissary and Solak units fully destroyed** only (matching the
+    existing exemption list in §6.3 — Bashi-bazouk, Azap, and New Levy
+    Janissary never contribute, win or lose). Janissary destroyed = +3 to
+    the pool, Solak destroyed = +4. Cumulative for the whole game, never
+    resets. **Morale -1 every time the running total crosses another
+    multiple of 10** (i.e., total Morale lost from this source at any
+    point = floor(pool / 10)).
+- **Morale hitting 0 → the Ottoman army lifts the siege → immediate
   Byzantine win.** This is the sole hard-loss track for the Ottoman side.
   Note this isn't the *only* way Byzantine wins — reaching round 9/10
   with no sector lost is an automatic Byzantine win regardless of Morale
   (§5) — so Morale running out under sustained pressure late in the game
   is a legitimate, expected outcome, not a sign the track is broken.
 
-**Open design thread, this session (2026-07-10) — not yet decided:**
-two structural drains under discussion to supplement the named-card
-swings above, replacing the old vague "elapsed time" / "failed assaults"
-language from the pre-rewrite version of this section:
+**Design rationale, decided this session (2026-07-10):** the Elite
+Casualty pool is now Morale's primary drain, in place of the flat
+time-decay idea considered earlier (Morale -1 every 2 rounds,
+unconditional). Reasoning: the round-limit auto-win at round 9/10 above
+already supplies the "hurry up, clock's ticking" pressure on the Ottoman
+player, so a second, unconditional Morale timer stacked on top would
+have been redundant. The casualty pool does different, more specific
+work instead — it ties Morale directly to *how hard the Ottoman commits
+real troops*, which is exactly the lever Halil Pasha's Doubt now pushes
+on by forcing more Assault attempts per round. A passive Ottoman who
+mostly probes with exempt cheap troops barely touches this pool, but
+that Ottoman also isn't threatening any sector and will lose to the
+round limit anyway (§5) — so nothing is exploitable, it's just a
+narrower, more particular role for Morale than pure time-decay would
+have given it: not a doom clock in its own right, but a real, felt cost
+for leaning on Janissaries and Solaks to press the attack.
 
-1. **Time decay** — Morale -1 every 2 rounds (e.g. end of rounds 2, 4, 6,
-   8), unconditional. Thematically strong: it's the mechanical expression
-   of the real historical pressure to abandon the siege before autumn/
-   politics forced a withdrawal, and it means the Ottoman player faces
-   real urgency even in a round where nothing else went wrong — matching
-   the "shrinking clock" framing in §1's High-Concept. Over a 9-10 round
-   game this alone contributes roughly **-4 to -5**, which is most of a
-   7-8 level track by itself — that's intentional pressure, not a bug,
-   given the auto-win-at-round-9/10 rule above, but it means the two
-   Morale-gain cards (+2 total) need to matter as real, felt offsets, not
-   token bonuses.
-2. **Elite Casualty threshold** — Morale -1 once cumulative Janissary/
-   Solak steps lost (across the whole game, not per-Assault) crosses some
-   threshold (e.g. every 3 elite steps). This would replace the old
-   "Elite Casualty Morale Surcharge" language in §6.3, which doubled a
-   per-Assault "small Morale hit" that no longer exists now that Morale
-   is decoupled from the automatic per-roll Attacker-steps-lost trigger
-   (§6.5) — that trigger fired on literally every Assault under the
-   rescaled CRT, which was never the intent. A cumulative threshold
-   instead makes elite losses a real, trackable cost of committing
-   Janissaries/Solaks, consistent with the Mustering Cost/Force
-   Commitment Cap tension already built around those units (§6.3).
-
-Track size still pending a final number — 7-8 levels is the leading
-candidate (see conversation), sized against the two above drains plus
-the +2 max from named cards, rather than picked first and backed into.
-§6.3's Elite Casualty Morale Surcharge text still needs updating to match
-whichever way this resolves.
+**Track size confirmed this session: 0-7, starting at 7.** Against the
++2 max from named cards (Hadith of Conquest, The War Council) and the
+drains above (Four Ships -2, Halil Pasha's Doubt -1 plus its structural
+squeeze, the Elite Casualty pool's -1-per-10 ticks, and occasional
+Pressure to Attack penalties), a full 7-point swing is crossable but not
+trivial over 9-10 rounds — still first-draft pending playtesting, but no
+longer an open question. §6.3's Elite Casualty Morale Surcharge text
+still needs updating to match this (the pool above replaces that
+per-Assault doubling mechanic entirely).
 
 ### 4.1 Byzantine Track — Reserve Pool
 
@@ -679,15 +703,22 @@ below), not in the cap itself.
 play** — this is what actually keeps a 5-Janissary stack rare rather than
 routine, doing the job a flat point-cap would otherwise have done:
 
-- **Elite Casualty Morale Surcharge:** whenever this Assault's resolution
-  (§6.5) deals the Attacker **1 or more steps lost**, if one or more
-  **Janissary or Solak** units were among the committed attackers, the
-  Morale hit is doubled. Bashi-bazouks, Azaps, and New Levy Janissaries
-  are exempt (§6.1) — Janissaries and Solaks were expensive, prized, and
-  politically sensitive to lose in numbers, and taking real casualties
-  among veteran troops should hurt the Ottoman player far more than
-  losing irregulars or green recruits, mirroring the real political risk
-  Mehmed carried every time he fed his best troops into a failed assault.
+- **Elite Casualty pool (revised this session, replaces the old
+  per-Assault "doubled Morale hit" surcharge):** whenever a committed
+  **Janissary or Solak** unit is fully destroyed (second step lost, not
+  just flipped), add its Attack value to a running, whole-game **Elite
+  Casualty pool** — Janissary +3, Solak +4. Bashi-bazouks, Azaps, and New
+  Levy Janissaries are exempt (§6.1) and never contribute. **Ottoman
+  Morale -1 every time the pool crosses another multiple of 10** (full
+  mechanic and rationale in §4.0.4). This replaces the old "doubles the
+  Morale hit from this Assault" wording, which depended on an automatic
+  per-roll Attacker-steps-lost trigger that no longer exists — Janissaries
+  and Solaks were expensive, prized, and politically sensitive to lose in
+  numbers, and taking real casualties among veteran troops should hurt
+  the Ottoman player far more than losing irregulars or green recruits,
+  mirroring the real political risk Mehmed carried every time he fed his
+  best troops into a failed assault; the pool now makes that cost
+  cumulative and trackable rather than a per-roll multiplier.
 - **Mustering cost:** committing a 3rd or more **Janissary or Solak** unit
   (New Levy exempt) to the same Assault costs **1 discarded card per unit
   beyond the second** (so a 5-veteran all-in assault costs 3 extra
