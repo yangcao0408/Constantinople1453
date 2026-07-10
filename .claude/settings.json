@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Read(C:/Users/CAO YANG/Desktop/Constantinople 1453/**)",
+      "Edit(C:/Users/CAO YANG/Desktop/Constantinople 1453/**)",
+      "Write(C:/Users/CAO YANG/Desktop/Constantinople 1453/**)",
+      "Read(C:/Users/CAOYAN~1/AppData/Local/Temp/claude/C--Users-CAO-YANG-Desktop-Constantinople-1453/**)",
+      "Edit(C:/Users/CAOYAN~1/AppData/Local/Temp/claude/C--Users-CAO-YANG-Desktop-Constantinople-1453/**)",
+      "Write(C:/Users/CAOYAN~1/AppData/Local/Temp/claude/C--Users-CAO-YANG-Desktop-Constantinople-1453/**)"
+    ]
+  }
+}
