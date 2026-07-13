@@ -1191,18 +1191,16 @@ Janissary) happens noticeably more often, keeping elite exposure real
 without re-tuning the whole table. The 3:1/4:1+ columns are untouched —
 they're already the reliable finishing-blow columns and don't need help.
 
-| Roll | 1:2 or worse | 3:4 | 1:1 | 4:3 | 3:2 | 2:1 | 3:1 | 4:1+ |
-|---|---|---|---|---|---|---|---|---|
-| 1 | Atk-3/Def-0 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 |
-| 2 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 |
-| 3 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-2 |
-| 4 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 |
-| 5 | Atk-2/Def-0 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 |
-| 6 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 7 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 8 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 |
-| 9 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 | Atk-1/Def-4 |
-| 10 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 | Atk-1/Def-4 | Atk-1/Def-4 |
+> **Ratio-indexed CRT removed (2026-07-13).** The odds-ratio table that
+> used to sit here has been retired in favour of the **difference / margin
+> CRT (§6.5.2)**, which is now the single adopted Assault table. The margin
+> index breaks up the wide 3:2 ratio column that was swallowing the real
+> +2-to-+8 play band, so concentrating attack is visibly rewarded where the
+> game is actually played (full reasoning in §6.5.2). The prose below is
+> retained as the shared combat-design rationale — Sector Falls, Wall
+> Defense as a pure modifier, the capacity targets, and the tuning history
+> — all of which still feeds the surviving table. A printable player aid for
+> the two adopted tables lives at [artifacts/combat_crt.html](artifacts/combat_crt.html).
 
 Whenever Attacker steps lost ≥ 1 (every roll): Ottoman Draw Track steps
 down (§4.0, wasted materiel = fewer cards next round), small Morale hit
@@ -1223,18 +1221,11 @@ the previous pass (Attacker values untouched — this is specifically
 about Byzantine losses, not the Ottoman's own risk from §6.5's worked
 example above).
 
-Average steps lost per roll, this table:
-
-| Column | Avg Atk | Avg Def |
-|---|---|---|
-| 1:2 or worse | 1.8 | 0.5 |
-| 3:4 | 1.4 | 1.0 |
-| 1:1 | 1.2 | 1.3 |
-| 4:3 | 1.1 | 1.7 |
-| 3:2 | 1.1 | 1.9 |
-| 2:1 | 1.1 | 2.3 |
-| 3:1 | 1.0 | 2.7 |
-| 4:1+ | 1.0 | 3.0 |
+Average steps lost per roll (of the retired ratio table, kept for the
+tuning-history record): bad ratio punished the attacker hardest (avg
+Atk ~1.8 / Def ~0.5 at 1:2-or-worse), good ratio the defender hardest
+(avg Atk ~1.0 / Def ~3.0 at 4:1+). The adopted margin table (§6.5.2)
+carries the same shape onto a difference index.
 
 Same shape as before — bad ratio still punishes the attacker hardest,
 good ratio still punishes the defender hardest, and it should still take
@@ -1327,10 +1318,10 @@ historical shape of both Giustiniani's wounding and Constantine's death:
 both happened as their respective defensive lines were already
 collapsing, not out of nowhere.
 
-### 6.5.2 Alternative CRT — Difference / Margin variant (revised for the +2-to-+8 play band, 2026-07-12)
+### 6.5.2 Assault CRT — Difference / Margin table (adopted 2026-07-13; revised for the +2-to-+8 play band, 2026-07-12)
 
-**This does not replace §6.5.** It is a parallel table to playtest against
-the ratio table, and the design intent is explicitly a **war of
+**This is now the adopted Assault CRT** (the ratio table at §6.5 was
+retired 2026-07-13). The design intent is explicitly a **war of
 attrition** — there is no decisive one-roll breakthrough here; committing
 more simply grinds the garrison down faster and more reliably. A
 **difference** column index — `Attacker Strength − Defender Strength`, same

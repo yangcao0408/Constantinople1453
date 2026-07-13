@@ -121,6 +121,24 @@
   .wd-hp{ font-variant-caps:normal; font-style:italic; font-size:26px; color:var(--ink-soft); }
   .wd-val{ font-family:Georgia,'Copperplate',serif; font-weight:700; font-size:46px;
     color:var(--porphyry); font-variant-numeric:tabular-nums; }
+
+  /* ---- Powers Stirring track (Sue for Aid, DESIGN.md §4.0.5) ---- */
+  /* cells use the same 194px footprint as the Reserve Pool slots above so
+     both tracks read at one physical scale on the printed board. */
+  .stir-track{ display:flex; flex-direction:row; gap:10px;
+    background:rgba(74,32,20,.06); border:1px dashed var(--rule);
+    border-radius:10px; padding:14px; width:fit-content; }
+  .stir-cell{ width:194px; height:194px; position:relative; flex-shrink:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+    background:#fff; border:2.5px solid var(--porphyry); border-radius:12px; padding:16px 8px; }
+  .stir-cell.start{ border-style:dashed; }
+  .stir-cell .step-no{ font-family:Georgia,'Copperplate',serif; font-weight:700;
+    font-variant-numeric:tabular-nums; font-size:54px; color:var(--porphyry); line-height:1; }
+  .stir-cell .step-lbl{ font-family:Georgia,'Copperplate',serif; font-variant-caps:small-caps;
+    font-size:19px; letter-spacing:.03em; color:var(--ink-soft); text-align:center; line-height:1.25; }
+  .stir-cell.trigger{ background:radial-gradient(circle at 40% 30%, var(--gold-bright), var(--gold) 78%);
+    border-color:var(--porphyry-deep); border-style:solid; }
+  .stir-cell.trigger .step-no, .stir-cell.trigger .step-lbl{ color:var(--porphyry-deep); }
 </style>
 <div class="wrap">
   <header>
@@ -129,7 +147,8 @@
     <p>Reserve Pool with 25 printed spaces for militia-equivalent tokens (DESIGN.md
     &sect;4.1 sizes the pool 20-30; a dashed, colour-reversed slot reads empty at a
     glance and fills in once a physical token is set on it), and the four Ops
-    actions available at 2 Ops each (DESIGN.md &sect;2.2). Wall sectors have moved
+    actions available at 2 Ops each (DESIGN.md &sect;2.2), and the Powers Stirring
+    track that Sue for Aid feeds (DESIGN.md &sect;4.0.5). Wall sectors have moved
     to the shared General Board.</p>
   </header>
 
@@ -197,8 +216,29 @@
         <div class="ops-name">Sue for Aid</div>
         <div class="ops-cost">2</div>
       </div>
-      <div class="ops-desc">Attempt to trigger a Relief Fleet event later this game.</div>
+      <div class="ops-desc">Roll 1d10: 6+ advances the Powers Stirring track (9&ndash;10 advances two). Fill it and the outside powers stir &mdash; see the track at right.</div>
     </div>
+      </div>
+    </div>
+
+    <div class="board-section">
+      <div class="board-heading">Powers Stirring</div>
+      <div class="board-sub">The Sue for Aid track (DESIGN.md &sect;4.0.5). Each success moves the marker
+      one step; fill it and the outside powers stir &mdash; <b>permanent Ottoman Draw Track
+      &minus;1</b> and <b>Pressure to Attack +1</b>, then reset to 0. Ottoman blockade cards
+      knock the marker back a step.</div>
+      <div class="stir-track">
+        <div class="stir-cell start">
+          <div class="step-no">0</div>
+          <div class="step-lbl">Start</div>
+        </div>
+        <div class="stir-cell"><div class="step-no">1</div><div class="step-lbl">&nbsp;</div></div>
+        <div class="stir-cell"><div class="step-no">2</div><div class="step-lbl">&nbsp;</div></div>
+        <div class="stir-cell"><div class="step-no">3</div><div class="step-lbl">&nbsp;</div></div>
+        <div class="stir-cell trigger">
+          <div class="step-no">4</div>
+          <div class="step-lbl">The Powers Stir!<br>Draw Track &minus;1 &middot; Pressure +1</div>
+        </div>
       </div>
     </div>
 
