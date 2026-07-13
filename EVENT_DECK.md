@@ -97,30 +97,32 @@ gated cards in ascending round order.
 |---|---|---|---|
 | 1 | **Zaganos' Sappers** | 2 | Zaganos Pasha's miners drive a gallery beneath the ramparts, prising at the foundations. Automatically succeeds against one chosen sector's garrison (small Garrison step loss), if Zaganos Pasha is present. |
 | 2 | **Demand Tribute** | 3 | Byzantine Reserve Pool -1 token, or Ottoman draws 2 extra cards (defender's choice) — economic pressure on the besieged city. |
-| 3 | **Karaca Pasha's Push** [Requires: Karaca Pasha present] | 2 | Karaca Pasha, commander of the Rumelian corps, throws his weight against the northern land walls. +1 Attack to the first Assaults this round on Blachernae and Charisius. |
-| 4 | **Ishak Pasha's Push** [Requires: Ishak Pasha present] | 2 | Ishak Pasha drives his Anatolian troops hard against the southern stretch of the walls. +1 Attack to the first Assaults this round on Gate of the Spring or Golden Gate. |
-| 5 | **Promise of Plunder** | 4 | +1 Attack to all Assaults this round, but if the Attacker takes any steps lost this exchange (DESIGN.md §6.5), apply the Elite Casualty Morale Surcharge (§6.3) even if no Janissary/Solak was committed — rallying troops with the promise of the city's wealth raises the stakes of failure along with the odds of success. |
-| 6 | **Baltaoğlu's Punishment** [Requires: The Four Ships already played, unique] | 2 | Mehmed publicly disgraces and replaces his admiral after the humiliation of April 20. Ottoman draws 2 extra cards — the reorganized command restores logistics efficiency. **No longer a Morale card (revised this session)** — a public scapegoating doesn't actually put fight back in the army, so it shouldn't read as raising Morale; Ottoman Morale gain is now reserved for a single card, The Hadith of Conquest (see the Morale-scarcity policy, Open Questions). |
-| 7 | **The Union's Discontent** | 2 | Ottoman agents quietly encourage the real religious/political backlash against the Church Union with Rome, deepening the city's internal rift. Byzantine Reserve Pool -1. (Moved here from the Byzantine pile — a card whose Event only ever hurts Byzantines belongs where a player would actually choose to play it.) |
-| 8 | **The Serbian Vassals** | 2 | A striking historical irony: Christian troops from the vassal Serbian Despotate served in Mehmed's besieging army under their feudal obligations, even as Constantinople — a fellow Orthodox city — was stormed. Free muster of 2 Azap and 2 Bashi-bazouk units this round (no card cost). |
-| 9 | **Orban's Great Cannon** [Special Card obtained by Ottoman player before game start, must be played in Round 1, unique, Forced] | 3 | Permanently adds +1 to the Bombard slot count (DESIGN.md §2.1) for the rest of the game — the great bombard's arrival and emplacement, until the great cannon is destroyed by overuse. Forced — the cannon simply arrives; no player chose to delay it. |
-| 10 | **The Hadith of Conquest** [Round 1-2 only, unique] | 5 | The ulema invoke the real hadith attributed to Muhammad — "Constantinople will be conquered by a good commander with a good army" — to root the campaign in religious destiny at its outset. Ottoman Morale +1 (lowered from +2 in an earlier revision — see the Morale-scarcity policy, Open Questions). Now the *only* Ottoman Morale-gain card in the entire deck (The War Council's +1 was removed this session when it was repurposed to a permanent Force Commitment Cap boost, §6.3), deliberately — it's the strongest religious-legitimacy card available, gated to the campaign's opening and usable once. (Replaces Zeal of the Ghazis, which was too generic for the designated pile — moved to Neutral.) |
-| 11 | **The Siege Trench** [Round 2+] | 1 | The Ottomans dug an entrenchment and threw up a palisade facing the walls to shield their lines and guns from Byzantine sorties. Until your next Assault resolves, Byzantine Sortie actions have their effect halved (round down). |
-| 12 | **Golden Horn Manoeuvre (旱地行舟)** [Round 4+, Forced] | 5 | Unlocks the Golden Horn sector (DESIGN.md §3.2). Doesn't resolve combat itself. Forced — this is the pivotal story beat, not a strategic option; it happens the moment it's drawn. |
-| 13 | **Strike the Commander** [Round 4+, Requires: Giustiniani present at target sector] | 4 | Focus this Assault on Giustiniani specifically: roll 1d10, on a 7+ he is removed from play for the rest of the game. Mirrors his historical wounding at Mesoteichion, which triggered a real defensive collapse — see First Strike, DESIGN.md §6.2, for what the Byzantines lose. |
-| 14 | **The Emperor Falls** [Round 4+, Requires: Constantine present at target sector] | 5 | Focus this Assault on Constantine XI specifically: roll 1d10, on an 8+ he is removed from play for the rest of the game. If he falls, Byzantine Wall Defense is permanently -1 at every sector for the rest of the game — resolves the open "what does losing Constantine actually cost" question from DESIGN.md §7, matching the real, near-total collapse of organized resistance after his death. Higher Ops value than Strike the Commander, reflecting how much harder and more consequential this is. |
-| 15 | **Under Siege of Sound** [Round 4+] | 1 | Continuous drums and trumpets through the night, a documented tactic to deny the defenders rest. Byzantine Repair this round restores 1 less Integrity than normal. |
-| 16 | **Third Tunnel** [Round 5+] | 2 | A larger, more desperate mining effort than Zaganos' Sappers — costs 2 discarded cards instead of a discount, but inflicts a full Garrison step loss at one chosen sector on success (roll 1d10, 6+). |
-| 17 | **Fresh Reserves from Anatolia** [Round 5+, unique] | 4 | Provincial reinforcements and volunteer ghazis arrive mid-siege. Immediately deploys 4 Azap and 4 Bashi-bazouk tokens on the board for free. |
-| 18 | **Rumeli Fort, the Throat-Cutter** [Before Round 5, unique] | 3 | The great fortress Mehmed built on the Bosphorus in 1452, before the siege proper, its guns sinking any ship that refused to stop — it strangled the city's northern supply line before a single wall was touched. For the rest of the game, every Byzantine Sue for Aid advance roll is at **-1** (§4.0.5) — the strangled supply line makes relief that much harder to summon. Flavor-rich and genuinely iconic. |
-| 19 | **The Kerkoporta Left Open** [Round 6+, Requires: target sector Breached] | 2 | +1 column shift on the next Assault this round against a Breached sector — exploiting an unlocked postern gate. Historically debated whether this was carelessness or betrayal; play it either way. |
-| 20 | **The Eclipse Omen** [Round 6+, unique, Forced] | 4 | The real lunar eclipse of May 22 — a prophecy held the city could never fall under a waning moon, and the omen badly shook the defenders. Byzantine Reserve Pool -1, and -1 Wall Defense at one sector (Ottoman player's choice) for this round only. Attacker steps lost this round do not reduce Ottoman Morale (the omen offsets the sting of a failed assault). Forced — an eclipse isn't optional. |
-| 21 | **Weight of Numbers** [Round 6+] | 2 | The Ottomans' sheer numerical advantage finally tells as the siege grinds on and the host regroups for another push: **3 free Replenishment actions** — restore up to 3 flipped Janissary or Solak units to full strength at no card cost (§4.0.1). |
-| 22 | **Double Pay Proclaimed** [Round 6+, unique] | 3 | With the siege dragging and the army restless, Mehmed proclaims doubled pay and first rights to the plunder to reignite zeal. Ottoman Draw Track +1 (§4.0) — a real injection of renewed capability, distinct from the Attack-boost of Promise of Plunder. |
-| 23 | **The War Council** [Round 7+, unique, Forced] | 5 | Mehmed's real historical council: Halil Pasha argues one last time for lifting the siege, and is overruled. Permanently raises the attacker Force Commitment Cap (DESIGN.md §6.3) by +1 — 6 units per Assault instead of 5 — for the rest of the game, as the Sultan commits to throwing his full weight into the final push without restraint. The clearest "point of no return" card in the deck — Forced, since this council happened regardless of either player's preference. |
-| 24 | **Final Preparations** [Round 7+, unique] | 3 | The methodical staging in the days before May 29. This round's Bombard phase gets +1 extra sector slot (temporary, this round only). |
-| 25 | **Zaganos' Final Push** [Round 7+, Requires: Zaganos Pasha present] | 2 | A late escalation on the Golden Horn. Removes the Naval Defense malus (§3.2) entirely for one Assault there this round. |
-| 26 | **The Fallen Icon** [Round 7+, Forced] | 3 | The real dropped icon of the Theotokos during a procession, followed by a sudden violent storm and unnatural fog — Ottoman agents make sure word of the omen spreads to unsettle the defenders further. Byzantine Reserve Pool -1. (Moved here from the Byzantine pile for the same reason as The Union's Discontent — round gate preserved from the original.) Forced — a dropped icon and a sudden storm aren't something either player chooses to trigger. |
+| 3 | **The Sultan's Resolve** | 2 | Ottoman Draw Track +1 (§4.0) — Mehmed's personal will translates into renewed funding and logistics after a costly week, a structural lift to the war effort's tempo rather than a one-off card windfall. (Changed from a Morale card — Morale should move only on genuinely weighty, mostly named/unique beats, not routine weekly upkeep. Reworked this session from "draw 2 extra cards" to a persistent Draw Track shift, the more fitting model for sustained funding/logistics.) |
+| 4 | **Karaca Pasha's Push** [Requires: Karaca Pasha present] | 2 | Karaca Pasha, commander of the Rumelian corps, throws his weight against the northern land walls. +1 Attack to the first Assaults this round on Blachernae and Charisius. |
+| 5 | **Ishak Pasha's Push** [Requires: Ishak Pasha present] | 2 | Ishak Pasha drives his Anatolian troops hard against the southern stretch of the walls. +1 Attack to the first Assaults this round on Gate of the Spring or Golden Gate. |
+| 6 | **Promise of Plunder** | 4 | +1 Attack to all Assaults this round, but if the Attacker takes any steps lost this exchange (DESIGN.md §6.5), apply the Elite Casualty Morale Surcharge (§6.3) even if no Janissary/Solak was committed — rallying troops with the promise of the city's wealth raises the stakes of failure along with the odds of success. |
+| 7 | **Baltaoğlu's Punishment** [Requires: The Four Ships already played, unique] | 2 | Mehmed publicly disgraces and replaces his admiral after the humiliation of April 20. Ottoman draws 2 extra cards — the reorganized command restores logistics efficiency. **No longer a Morale card (revised this session)** — a public scapegoating doesn't actually put fight back in the army, so it shouldn't read as raising Morale; Ottoman Morale gain is now reserved for a single card, The Hadith of Conquest (see the Morale-scarcity policy, Open Questions). |
+| 8 | **The Union's Discontent** | 2 | Ottoman agents quietly encourage the real religious/political backlash against the Church Union with Rome, deepening the city's internal rift. Byzantine Reserve Pool -1. (Moved here from the Byzantine pile — a card whose Event only ever hurts Byzantines belongs where a player would actually choose to play it.) |
+| 9 | **The Serbian Vassals** | 2 | A striking historical irony: Christian troops from the vassal Serbian Despotate served in Mehmed's besieging army under their feudal obligations, even as Constantinople — a fellow Orthodox city — was stormed. Free muster of 2 Azap and 2 Bashi-bazouk units this round (no card cost). |
+| 10 | **Orban's Great Cannon** [Special Card obtained by Ottoman player before game start, must be played in Round 1, unique, Forced] | 3 | Permanently adds +1 to the Bombard slot count (DESIGN.md §2.1) for the rest of the game — the great bombard's arrival and emplacement, until the great cannon is destroyed by overuse. Forced — the cannon simply arrives; no player chose to delay it. |
+| 11 | **The Hadith of Conquest** [Round 1-2 only, unique] | 5 | The ulema invoke the real hadith attributed to Muhammad — "Constantinople will be conquered by a good commander with a good army" — to root the campaign in religious destiny at its outset. Ottoman Morale +1 (lowered from +2 in an earlier revision — see the Morale-scarcity policy, Open Questions). Now the *only* Ottoman Morale-gain card in the entire deck (The War Council's +1 was removed this session when it was repurposed to a permanent Force Commitment Cap boost, §6.3), deliberately — it's the strongest religious-legitimacy card available, gated to the campaign's opening and usable once. (Replaces Zeal of the Ghazis, which was too generic for the designated pile — moved to Neutral.) |
+| 12 | **The Siege Trench** [Round 2+] | 1 | The Ottomans dug an entrenchment and threw up a palisade facing the walls to shield their lines and guns from Byzantine sorties. Until your next Assault resolves, Byzantine Sortie actions have their effect halved (round down). |
+| 13 | **Golden Horn Manoeuvre (旱地行舟)** [Round 4+, Forced] | 5 | Unlocks the Golden Horn sector (DESIGN.md §3.2). Doesn't resolve combat itself. Forced — this is the pivotal story beat, not a strategic option; it happens the moment it's drawn. |
+| 14 | **Strike the Commander** [Round 4+, Requires: Giustiniani present at target sector] | 4 | Focus this Assault on Giustiniani specifically: roll 1d10, on a 7+ he is removed from play for the rest of the game. Mirrors his historical wounding at Mesoteichion, which triggered a real defensive collapse — see First Strike, DESIGN.md §6.2, for what the Byzantines lose. |
+| 15 | **The Emperor Falls** [Round 4+, Requires: Constantine present at target sector] | 5 | Focus this Assault on Constantine XI specifically: roll 1d10, on an 8+ he is removed from play for the rest of the game. If he falls, Byzantine Wall Defense is permanently -1 at every sector for the rest of the game — resolves the open "what does losing Constantine actually cost" question from DESIGN.md §7, matching the real, near-total collapse of organized resistance after his death. Higher Ops value than Strike the Commander, reflecting how much harder and more consequential this is. |
+| 16 | **Under Siege of Sound** [Round 4+] | 1 | Continuous drums and trumpets through the night, a documented tactic to deny the defenders rest. Byzantine Repair this round restores 1 less Integrity than normal. |
+| 17 | **Third Tunnel** [Round 5+] | 2 | A larger, more desperate mining effort than Zaganos' Sappers — costs 2 discarded cards instead of a discount, but inflicts a full Garrison step loss at one chosen sector on success (roll 1d10, 6+). |
+| 18 | **Fresh Reserves from Anatolia** [Round 5+, unique] | 4 | Provincial reinforcements and volunteer ghazis arrive mid-siege. Immediately deploys 4 Azap and 4 Bashi-bazouk tokens on the board for free. |
+| 19 | **Rumeli Fort, the Throat-Cutter** [Before Round 5, unique] | 3 | The great fortress Mehmed built on the Bosphorus in 1452, before the siege proper, its guns sinking any ship that refused to stop — it strangled the city's northern supply line before a single wall was touched. For the rest of the game, every Byzantine Sue for Aid advance roll is at **-1** (§4.0.5) — the strangled supply line makes relief that much harder to summon. Flavor-rich and genuinely iconic. |
+| 20 | **The Kerkoporta Left Open** [Round 6+, Requires: target sector Breached] | 2 | +1 column shift on the next Assault this round against a Breached sector — exploiting an unlocked postern gate. Historically debated whether this was carelessness or betrayal; play it either way. |
+| 21 | **The Eclipse Omen** [Round 6+, unique, Forced] | 4 | The real lunar eclipse of May 22 — a prophecy held the city could never fall under a waning moon, and the omen badly shook the defenders. Byzantine Reserve Pool -1, and -1 Wall Defense at one sector (Ottoman player's choice) for this round only. Attacker steps lost this round do not reduce Ottoman Morale (the omen offsets the sting of a failed assault). Forced — an eclipse isn't optional. |
+| 22 | **Weight of Numbers** [Round 6+] | 2 | The Ottomans' sheer numerical advantage finally tells as the siege grinds on and the host regroups for another push: **3 free Replenishment actions** — restore up to 3 flipped Janissary or Solak units to full strength at no card cost (§4.0.1). |
+| 23 | **The Long Encampment** [Round 6+] | 1 | Supply lines strain as the weeks drag on: Ottoman discards 1 card this round, but +1 Attack on the next Assault — tightening the belt to push harder. |
+| 24 | **Double Pay Proclaimed** [Round 6+, unique] | 3 | With the siege dragging and the army restless, Mehmed proclaims doubled pay and first rights to the plunder to reignite zeal. Ottoman Draw Track +1 (§4.0) — a real injection of renewed capability, distinct from the Attack-boost of Promise of Plunder. |
+| 25 | **The War Council** [Round 7+, unique, Forced] | 5 | Mehmed's real historical council: Halil Pasha argues one last time for lifting the siege, and is overruled. Permanently raises the attacker Force Commitment Cap (DESIGN.md §6.3) by +1 — 6 units per Assault instead of 5 — for the rest of the game, as the Sultan commits to throwing his full weight into the final push without restraint. The clearest "point of no return" card in the deck — Forced, since this council happened regardless of either player's preference. |
+| 26 | **Final Preparations** [Round 7+, unique] | 3 | The methodical staging in the days before May 29. This round's Bombard phase gets +1 extra sector slot (temporary, this round only). |
+| 27 | **Zaganos' Final Push** [Round 7+, Requires: Zaganos Pasha present] | 2 | A late escalation on the Golden Horn. Removes the Naval Defense malus (§3.2) entirely for one Assault there this round. |
+| 28 | **The Fallen Icon** [Round 7+, Forced] | 3 | The real dropped icon of the Theotokos during a procession, followed by a sudden violent storm and unnatural fog — Ottoman agents make sure word of the omen spreads to unsettle the defenders further. Byzantine Reserve Pool -1. (Moved here from the Byzantine pile for the same reason as The Union's Discontent — round gate preserved from the original.) Forced — a dropped icon and a sudden storm aren't something either player chooses to trigger. |
 
 ## Byzantine Pile (no fixed target for now — trim to a clean draw number later)
 
@@ -212,23 +214,24 @@ gated cards in ascending round order.
 ## Open Questions
 
 1. **No fixed card-count target for now (per user direction, 2026-07-10).**
-   Current counts: **Ottoman 26, Byzantine 27, Neutral 27 (17 dual-use).**
-   (Ottoman trimmed from 28 to 26 on 2026-07-13, alongside the Sue for
-   Aid redesign: **The Sultan's Resolve** cut as a bland duplicate of
-   Double Pay Proclaimed's Draw Track +1, and **The Long Encampment** cut
-   as the weakest, self-penalizing member of the temporary-Attack-bonus
-   cluster; Ottoman pile renumbered consecutively 1-26. The Byzantine
-   pile's stated count had earlier drifted out of sync with its actual
-   row count — renumbered consecutively, and Demetrios Kantakouzenos'
-   Stand added as the southern-sector counterpart to Theophilos
-   Palaiologos' Vow, mirroring Karaca/Ishak Pasha's Push on the Ottoman
-   side; see the Byzantine table.) User intends to skim these *down* to a
-   clean per-round draw number, so the piles are still deliberately
-   over-provisioned — the read-through pass should prune for
-   redundancy/overlap (e.g. Karaca/Ishak Pasha's Push vs Weight of
-   Numbers still both touch "temporary Attack bonus"; several
-   late-round-gated cards cluster around rounds 5-8 — check the curve
-   isn't lumpy) rather than add more. New this pass: Ottoman flavor
+   Current counts: **Ottoman 28, Byzantine 27, Neutral 27 (17 dual-use).**
+   (A 2026-07-13 pass proposed trimming the Ottoman pile to 26 — cutting
+   **The Sultan's Resolve** as a Draw Track +1 duplicate of Double Pay
+   Proclaimed, and **The Long Encampment** as the weakest, self-penalizing
+   temporary-Attack-bonus card — but per user direction the two cards are
+   **kept for now**, so the pile stays at 28 and the trim is deferred to a
+   later dedicated pruning pass. The Byzantine pile's stated count had
+   earlier drifted out of sync with its actual row count — renumbered
+   consecutively, and Demetrios Kantakouzenos' Stand added as the
+   southern-sector counterpart to Theophilos Palaiologos' Vow, mirroring
+   Karaca/Ishak Pasha's Push on the Ottoman side; see the Byzantine
+   table.) User intends to skim these *down* to a clean per-round draw
+   number eventually, so the piles are still deliberately over-provisioned
+   — the read-through pass should prune for redundancy/overlap (e.g.
+   Karaca/Ishak Pasha's Push vs Weight of Numbers vs The Long Encampment
+   all touch "temporary Attack bonus"; several late-round-gated cards
+   cluster around rounds 5-8 — check the curve isn't lumpy) rather than
+   add more. New this pass: Ottoman flavor
    (Rumeli Hisarı, Serbian Vassals, Siege Trench, Double Pay); Byzantine
    flavor (Theophilos Palaiologos' Vow, Demetrios Kantakouzenos' Stand,
    Relics Borne Along the Walls, The Great Ditch); alt-history dual-use
@@ -276,12 +279,11 @@ gated cards in ascending round order.
    Dispatch/Ott) plus The Scout Ship's Return re-pointed to it this pass.
    Still worth scanning for any *other* card citing a mechanic that isn't
    yet nailed down in DESIGN.md.
-6. Several cards (Weight of Numbers, Fresh Reserves from Anatolia,
-   Promise of Plunder) push Ottoman Attack output up further on top of
+6. Several new cards (Weight of Numbers, Fresh Reserves from Anatolia,
+   The Long Encampment) push Ottoman Attack output up further on top of
    Mehmed's Combined Arms and Giustiniani's First Strike, both already
    flagged for CRT-interaction playtesting in
    DESIGN.md §7 — worth re-checking that stack once the full deck exists.
-   (The Long Encampment, previously listed here, was cut 2026-07-13.)
 7. **Morale-scarcity policy (added 2026-07-09, tightened this session):**
    Ottoman Morale should move only on weighty, mostly named/unique/gated
    beats, not routine weekly upkeep — Resources/Draw Track absorbs the

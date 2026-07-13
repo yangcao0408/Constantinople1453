@@ -30,16 +30,6 @@ runs in two phases:
   (i.e. which sectors currently have artillery sited against them — this is
   the spatial/logistics lever, not a free choice of any 3–4 sectors every
   round).
-- **Concentration bonus:** if the Ottoman player commits 2 cannon
-  units/cards against the *same* sector in the same round, that counts as
-  a second hit — enough to also trigger an immediate Assault on that
-  sector this round, without waiting for the Card Phase.
-- This is a real trade-off, not an exploit: doubling up on one sector to
-  chain Bombard→Assault uses 2 of the 3–4 total bombard slots, so it comes
-  directly out of pressure the Ottoman player could otherwise be applying
-  to other sectors. Concentration wins a sector faster; spreading keeps
-  every Byzantine sector under pressure. Exact slot counts (3 vs 4, cost
-  of doubling) to be tuned in playtesting.
 - **Each Bombard action removes 1 Wall HP** from its target sector
   (§3.1) — the baseline damage rate behind the "several rounds of
   grinding" tempo the whole game is built around.

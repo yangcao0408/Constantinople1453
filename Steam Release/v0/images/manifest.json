@@ -1,0 +1,319 @@
+{
+  "byzantine": {
+    "count": 27,
+    "cols": 7,
+    "rows": 4,
+    "face": "byzantine_face.png"
+  },
+  "ottoman": {
+    "count": 28,
+    "cols": 7,
+    "rows": 4,
+    "face": "ottoman_face.png"
+  },
+  "neutral": {
+    "count": 31,
+    "cols": 7,
+    "rows": 5,
+    "face": "neutral_face.png"
+  },
+  "boards": {
+    "byzantine": {
+      "file": "byzantine_board.png",
+      "w": 4000,
+      "h": 1751
+    },
+    "ottoman": {
+      "file": "ottoman_board.png",
+      "w": 4000,
+      "h": 1873
+    },
+    "crt": {
+      "file": "combat_crt.png",
+      "w": 1226,
+      "h": 2563
+    }
+  },
+  "backs": {
+    "byzantine": "byzantine_back.png",
+    "ottoman": "ottoman_back.png",
+    "neutral": "neutral_back.png"
+  },
+  "tokens": [
+    {
+      "file": "tokens/tok_00_bashi_bazouk_1_step.png",
+      "label": "Bashi-bazouk (1-step)",
+      "side": "ott",
+      "size": [
+        335,
+        331
+      ]
+    },
+    {
+      "file": "tokens/tok_01_azap_1_step.png",
+      "label": "Azap (1-step)",
+      "side": "ott",
+      "size": [
+        335,
+        331
+      ]
+    },
+    {
+      "file": "tokens/tok_02_new_levy_janissary_2_step.png",
+      "label": "New Levy Janissary (2-step)",
+      "side": "ott",
+      "size": [
+        335,
+        331
+      ]
+    },
+    {
+      "file": "tokens/tok_03_janissary_2_step.png",
+      "label": "Janissary (2-step)",
+      "side": "ott",
+      "size": [
+        335,
+        331
+      ]
+    },
+    {
+      "file": "tokens/tok_04_solak_2_step.png",
+      "label": "Solak (2-step)",
+      "side": "ott",
+      "size": [
+        335,
+        331
+      ]
+    },
+    {
+      "file": "tokens/tok_05_imperial_guard_1_step.png",
+      "label": "Imperial Guard (1-step)",
+      "side": "byz",
+      "size": [
+        335,
+        331
+      ]
+    },
+    {
+      "file": "tokens/tok_06_byzantine_militia_1_step.png",
+      "label": "Byzantine Militia (1-step)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_07_giustiniani_s_company_2_step.png",
+      "label": "Giustiniani's Company (2-step)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_08_orhan_s_loyalists_2_step.png",
+      "label": "Orhan's Loyalists (2-step)",
+      "side": "ott",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_09_clergy_levy_1_step.png",
+      "label": "Clergy Levy (1-step)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_10_genoese_garrison_1_step_proposed.png",
+      "label": "Genoese Garrison (1-step, proposed)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_11_venetian_marines_1_step.png",
+      "label": "Venetian Marines (1-step)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_12_isidore_s_contingent_1_step_proposed.png",
+      "label": "Isidore's Contingent (1-step, proposed)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_13_cretan_sailors_2_step.png",
+      "label": "Cretan Sailors (2-step)",
+      "side": "byz",
+      "size": [
+        335,
+        345
+      ]
+    },
+    {
+      "file": "tokens/tok_14_leader_6_2_ottoman.png",
+      "label": "Leader (\u00a76.2) \u2014 Ottoman",
+      "side": "ott",
+      "size": [
+        325,
+        343
+      ]
+    },
+    {
+      "file": "tokens/tok_15_leader_6_2_ottoman.png",
+      "label": "Leader (\u00a76.2) \u2014 Ottoman",
+      "side": "ott",
+      "size": [
+        325,
+        343
+      ]
+    },
+    {
+      "file": "tokens/tok_16_leader_6_2_ottoman.png",
+      "label": "Leader (\u00a76.2) \u2014 Ottoman",
+      "side": "ott",
+      "size": [
+        325,
+        343
+      ]
+    },
+    {
+      "file": "tokens/tok_17_leader_6_2_ottoman.png",
+      "label": "Leader (\u00a76.2) \u2014 Ottoman",
+      "side": "ott",
+      "size": [
+        325,
+        343
+      ]
+    },
+    {
+      "file": "tokens/tok_18_leader_6_2_ottoman.png",
+      "label": "Leader (\u00a76.2) \u2014 Ottoman",
+      "side": "ott",
+      "size": [
+        325,
+        343
+      ]
+    },
+    {
+      "file": "tokens/tok_19_leader_6_2_byzantine.png",
+      "label": "Leader (\u00a76.2) \u2014 Byzantine",
+      "side": "byz",
+      "size": [
+        325,
+        343
+      ]
+    },
+    {
+      "file": "tokens/tok_20_leader_6_2_byzantine.png",
+      "label": "Leader (\u00a76.2) \u2014 Byzantine",
+      "side": "byz",
+      "size": [
+        325,
+        325
+      ]
+    },
+    {
+      "file": "tokens/tok_21_leader_6_2_byzantine.png",
+      "label": "Leader (\u00a76.2) \u2014 Byzantine",
+      "side": "byz",
+      "size": [
+        325,
+        325
+      ]
+    },
+    {
+      "file": "tokens/tok_22_leader_6_2_byzantine.png",
+      "label": "Leader (\u00a76.2) \u2014 Byzantine",
+      "side": "byz",
+      "size": [
+        325,
+        325
+      ]
+    },
+    {
+      "file": "tokens/tok_23_leader_6_2_byzantine_genoese.png",
+      "label": "Leader (\u00a76.2) \u2014 Byzantine, Genoese",
+      "side": "byz",
+      "size": [
+        325,
+        325
+      ]
+    },
+    {
+      "file": "tokens/tok_24_leader_6_2_byzantine_venetian.png",
+      "label": "Leader (\u00a76.2) \u2014 Byzantine, Venetian",
+      "side": "byz",
+      "size": [
+        325,
+        325
+      ]
+    }
+  ],
+  "main_board": {
+    "file": "../../../Main_board/Main Map.png",
+    "w": 4180,
+    "h": 3180
+  },
+  "token_decks": {
+    "ott": {
+      "count": 11,
+      "cols": 5,
+      "rows": 3,
+      "face": "ott_counters_face.png",
+      "labels": [
+        "Bashi-bazouk (1-step)",
+        "Azap (1-step)",
+        "New Levy Janissary (2-step)",
+        "Janissary (2-step)",
+        "Solak (2-step)",
+        "Orhan's Loyalists (2-step)",
+        "Leader (\u00a76.2) \u2014 Ottoman",
+        "Leader (\u00a76.2) \u2014 Ottoman",
+        "Leader (\u00a76.2) \u2014 Ottoman",
+        "Leader (\u00a76.2) \u2014 Ottoman",
+        "Leader (\u00a76.2) \u2014 Ottoman"
+      ],
+      "back": "ott_counters_back.png"
+    },
+    "byz": {
+      "count": 14,
+      "cols": 5,
+      "rows": 3,
+      "face": "byz_counters_face.png",
+      "labels": [
+        "Imperial Guard (1-step)",
+        "Byzantine Militia (1-step)",
+        "Giustiniani's Company (2-step)",
+        "Clergy Levy (1-step)",
+        "Genoese Garrison (1-step, proposed)",
+        "Venetian Marines (1-step)",
+        "Isidore's Contingent (1-step, proposed)",
+        "Cretan Sailors (2-step)",
+        "Leader (\u00a76.2) \u2014 Byzantine",
+        "Leader (\u00a76.2) \u2014 Byzantine",
+        "Leader (\u00a76.2) \u2014 Byzantine",
+        "Leader (\u00a76.2) \u2014 Byzantine",
+        "Leader (\u00a76.2) \u2014 Byzantine, Genoese",
+        "Leader (\u00a76.2) \u2014 Byzantine, Venetian"
+      ],
+      "back": "byz_counters_back.png"
+    }
+  }
+}
