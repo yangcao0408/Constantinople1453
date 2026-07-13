@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+:root{
+  --table-light:#d9cfb4; --table-light-2:#c7bb9c;
+  --parchment:#e6d9ae; --ink:#2a2015; --ink-soft:#4a3d28;
+  --porphyry:#4a1f63; --porphyry-deep:#2c1339; --porphyry-light:#6a3390;
+  --gold:#a9843c; --gold-bright:#d8b465; --cream:#f1e6c8;
+  --rule:rgba(42,32,21,.35);
+  --intact:#3d6b45; --contested:#b8842f; --breached:#8a2c22;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#FAFAD2; }
+body{
+  font-family:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+  color:var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  width:100vw; height:100vh;
+}
+.sector{
+  width:180px; flex-shrink:0; background:rgba(74,32,20,.05); border:1px solid var(--rule);
+  border-radius:10px; padding:10px;
+}
+.sector.golden-horn{ background:rgba(58,101,145,.08); border-color:rgba(58,101,145,.4); }
+.sector-name{
+  font-family:Georgia,'Trajan Pro','Copperplate',serif; font-variant-caps:small-caps;
+  font-size:14px; color:var(--ink); line-height:1.2;
+}
+.sector-gate{ font-size:10.5px; font-style:italic; color:var(--ink-soft); margin:2px 0 8px; }
+.hp-track{ display:flex; flex-wrap:wrap; justify-content:center; gap:3px; margin-bottom:6px; }
+.hp-pip{
+  width:14px; height:14px; flex:none; border-radius:2px; background:rgba(0,0,0,.12);
+  box-shadow:0 0 0 1px rgba(0,0,0,.15) inset;
+}
+.hp-pip.intact{ background:var(--intact); }
+.hp-pip.contested{ background:var(--contested); }
+.hp-pip.breached{ background:var(--breached); }
+.hp-label{ font-size:9.5px; color:var(--ink-soft); display:flex; justify-content:space-between; margin-bottom:8px; }
+.modifier-box{ border-radius:6px; padding:7px 8px; text-align:center; line-height:1.3; }
+.modifier-box .mod-main{ display:block; font-variant-caps:small-caps; letter-spacing:.03em; font-weight:700; font-size:10.5px; }
+.modifier-box .mod-favors{ display:block; font-size:8.5px; font-weight:700; letter-spacing:.02em; margin-top:1px; }
+.modifier-box .mod-why{ display:block; font-style:italic; font-size:8.5px; opacity:.85; margin-top:3px; color:var(--ink-soft); }
+.modifier-box.def{ background:rgba(61,107,69,.16); border:1px solid rgba(61,107,69,.45); color:var(--intact); }
+.modifier-box.att{ background:rgba(138,44,34,.16); border:1px solid rgba(138,44,34,.45); color:var(--breached); }
+.modifier-box.none{ background:rgba(74,32,20,.06); border:1px solid var(--rule); color:var(--ink-soft); }
+.naval-line{ text-align:center; font-size:9.5px; color:var(--ink-soft); margin-bottom:8px;
+  background:rgba(58,101,145,.1); border-radius:4px; padding:5px 4px; line-height:1.3; }
+.naval-line b{ color:#3a6591; font-size:13px; }
+
+</style></head>
+<body>
+<div class="sector">
+      <div class="sector-name">Golden Gate</div>
+      <div class="sector-gate">Golden Gate</div>
+      <div class="hp-track"><div class="hp-pip intact"></div><div class="hp-pip intact"></div><div class="hp-pip intact"></div><div class="hp-pip intact"></div><div class="hp-pip contested"></div><div class="hp-pip contested"></div><div class="hp-pip breached"></div><div class="hp-pip breached"></div></div>
+      <div class="hp-label"><span>Wall HP</span><span>max 8</span></div>
+      <div class="modifier-box def"><span class="mod-main">Defender +2</span><span class="mod-favors">&#9664; favors defender</span><span class="mod-why">Monumental fortified triumphal gate</span></div>
+    </div>
+</body></html>

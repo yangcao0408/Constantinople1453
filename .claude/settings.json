@@ -20,7 +20,9 @@
       "Bash(python3 *)",
       "Bash(python *)",
       "Bash(ls *)",
-      "Bash(wc *)"
+      "Bash(wc *)",
+      "Bash(rm icon_masks.css)",
+      "Bash(rm -f icon_masks.css)"
     ]
   }
 }
