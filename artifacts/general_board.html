@@ -102,6 +102,30 @@
   .naval-line{ text-align:center; font-size:9.5px; color:var(--ink-soft); margin-bottom:8px;
     background:rgba(58,101,145,.1); border-radius:4px; padding:5px 4px; line-height:1.3; }
   .naval-line b{ color:#3a6591; font-size:13px; }
+
+  /* ---- Siege Clock (round track) ---- */
+  .track-row{ display:flex; flex-wrap:wrap; gap:8px; align-items:stretch; margin-top:4px; }
+  .track-cell{
+    flex:1 1 0; min-width:64px; border:1px solid var(--rule); border-radius:8px;
+    background:rgba(74,32,20,.05); padding:8px 6px 9px; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+  }
+  .track-cell.final{ background:rgba(138,44,34,.12); border-color:rgba(138,44,34,.45); }
+  .track-week{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif; font-variant-caps:small-caps;
+    letter-spacing:.03em; font-size:10px; color:var(--ink-soft);
+  }
+  .track-num{
+    font-family:Georgia,'Trajan Pro',serif; font-weight:700; font-size:20px;
+    color:var(--porphyry); line-height:1;
+  }
+  :root[data-theme="dark"] .track-num{ color:var(--gold-bright); }
+  .track-cell.final .track-num{ color:var(--breached); }
+  .track-slot{
+    width:20px; height:20px; border-radius:50%; margin-top:2px;
+    border:1.5px dashed var(--rule); background:rgba(0,0,0,.04);
+  }
+  .track-note{ font-size:10.5px; color:var(--ink-soft); margin-top:10px; line-height:1.45; font-style:italic; }
 </style>
 <div class="wrap">
   <header>
@@ -111,10 +135,27 @@
     sectors &mdash; a battlefield both sides act on.</p>
   </header>
 
-  <div class="board">
+  <div class="board" id="map-board">
     <div class="board-heading">Map of Constantinople</div>
     <div class="map-frame">
       <img src="../Main_board/Main%20Map.png" alt="Map of Constantinople">
     </div>
+  </div>
+
+  <div class="board" id="round-track">
+    <div class="board-heading">Siege Clock &mdash; the Round Track</div>
+    <div class="track-row">
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">1</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">2</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">3</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">4</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">5</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">6</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">7</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">8</span><span class="track-slot"></span></div>
+      <div class="track-cell final"><span class="track-week">Final</span><span class="track-num">9</span><span class="track-slot"></span></div>
+    </div>
+    <div class="track-note">If Week&nbsp;9 ends with every sector still held, the relief-fleet clock has run out on the
+      Ottoman &mdash; immediate Byzantine victory (&sect;5).</div>
   </div>
 </div>

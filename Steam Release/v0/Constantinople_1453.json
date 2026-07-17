@@ -134,7 +134,7 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "CustomImage": {
-        "ImageURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/main_map.png",
+        "ImageURL": "http://c1453.local/b03/main_map",
         "ImageSecondaryURL": "",
         "ImageScalar": 1.0,
         "WidthScale": 0.0,
@@ -222,8 +222,8 @@
       ],
       "CustomDeck": {
         "1": {
-          "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-          "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+          "FaceURL": "http://c1453.local/b03/byzantine_face",
+          "BackURL": "http://c1453.local/b03/byzantine_back",
           "NumWidth": 7,
           "NumHeight": 4,
           "BackIsHidden": true,
@@ -280,8 +280,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -338,8 +338,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -396,8 +396,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -454,8 +454,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -512,8 +512,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -570,8 +570,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -628,8 +628,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -686,8 +686,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -744,8 +744,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -802,8 +802,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -860,8 +860,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -918,8 +918,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -976,8 +976,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1034,8 +1034,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1092,8 +1092,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1150,8 +1150,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1208,8 +1208,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1266,8 +1266,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1324,8 +1324,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1382,8 +1382,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1440,8 +1440,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1498,8 +1498,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1556,8 +1556,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1614,8 +1614,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1672,8 +1672,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1730,8 +1730,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1788,8 +1788,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "1": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_back.png",
+              "FaceURL": "http://c1453.local/b03/byzantine_face",
+              "BackURL": "http://c1453.local/b03/byzantine_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -1880,8 +1880,8 @@
       ],
       "CustomDeck": {
         "3": {
-          "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-          "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+          "FaceURL": "http://c1453.local/b03/neutral_face",
+          "BackURL": "http://c1453.local/b03/neutral_back",
           "NumWidth": 7,
           "NumHeight": 5,
           "BackIsHidden": true,
@@ -1938,8 +1938,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -1996,8 +1996,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2054,8 +2054,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2112,8 +2112,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2170,8 +2170,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2228,8 +2228,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2286,8 +2286,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2344,8 +2344,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2402,8 +2402,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2460,8 +2460,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2518,8 +2518,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2576,8 +2576,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2634,8 +2634,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2692,8 +2692,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2750,8 +2750,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2808,8 +2808,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2866,8 +2866,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2924,8 +2924,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -2982,8 +2982,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3040,8 +3040,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3098,8 +3098,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3156,8 +3156,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3214,8 +3214,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3272,8 +3272,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3330,8 +3330,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3388,8 +3388,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3446,8 +3446,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3504,8 +3504,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3562,8 +3562,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3620,8 +3620,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3678,8 +3678,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "3": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/neutral_back.png",
+              "FaceURL": "http://c1453.local/b03/neutral_face",
+              "BackURL": "http://c1453.local/b03/neutral_back",
               "NumWidth": 7,
               "NumHeight": 5,
               "BackIsHidden": true,
@@ -3767,8 +3767,8 @@
       ],
       "CustomDeck": {
         "2": {
-          "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-          "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+          "FaceURL": "http://c1453.local/b03/ottoman_face",
+          "BackURL": "http://c1453.local/b03/ottoman_back",
           "NumWidth": 7,
           "NumHeight": 4,
           "BackIsHidden": true,
@@ -3825,8 +3825,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -3883,8 +3883,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -3941,8 +3941,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -3999,8 +3999,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4057,8 +4057,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4115,8 +4115,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4173,8 +4173,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4231,8 +4231,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4289,8 +4289,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4347,8 +4347,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4405,8 +4405,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4463,8 +4463,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4521,8 +4521,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4579,8 +4579,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4637,8 +4637,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4695,8 +4695,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4753,8 +4753,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4811,8 +4811,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4869,8 +4869,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4927,8 +4927,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -4985,8 +4985,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5043,8 +5043,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5101,8 +5101,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5159,8 +5159,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5217,8 +5217,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5275,8 +5275,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5333,8 +5333,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5391,8 +5391,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "2": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_back.png",
+              "FaceURL": "http://c1453.local/b03/ottoman_face",
+              "BackURL": "http://c1453.local/b03/ottoman_back",
               "NumWidth": 7,
               "NumHeight": 4,
               "BackIsHidden": true,
@@ -5448,7 +5448,7 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "CustomImage": {
-        "ImageURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byzantine_board.png",
+        "ImageURL": "http://c1453.local/b03/byzantine_board",
         "ImageSecondaryURL": "",
         "ImageScalar": 1.0,
         "WidthScale": 0.0,
@@ -5505,7 +5505,7 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "CustomImage": {
-        "ImageURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ottoman_board.png",
+        "ImageURL": "http://c1453.local/b03/ottoman_board",
         "ImageSecondaryURL": "",
         "ImageScalar": 1.0,
         "WidthScale": 0.0,
@@ -5562,7 +5562,7 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "CustomImage": {
-        "ImageURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/combat_crt.png",
+        "ImageURL": "http://c1453.local/b03/combat_crt",
         "ImageSecondaryURL": "",
         "ImageScalar": 1.0,
         "WidthScale": 0.0,
@@ -5634,8 +5634,8 @@
       ],
       "CustomDeck": {
         "4": {
-          "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-          "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+          "FaceURL": "http://c1453.local/b03/ott_counters_face",
+          "BackURL": "http://c1453.local/b03/ott_counters_back",
           "NumWidth": 5,
           "NumHeight": 3,
           "BackIsHidden": true,
@@ -5692,8 +5692,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -5750,8 +5750,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -5808,8 +5808,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -5866,8 +5866,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -5924,8 +5924,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -5982,8 +5982,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6040,8 +6040,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6098,8 +6098,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6156,8 +6156,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6214,8 +6214,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6272,8 +6272,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "4": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/ott_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/ott_counters_face",
+              "BackURL": "http://c1453.local/b03/ott_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6347,8 +6347,8 @@
       ],
       "CustomDeck": {
         "5": {
-          "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-          "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+          "FaceURL": "http://c1453.local/b03/byz_counters_face",
+          "BackURL": "http://c1453.local/b03/byz_counters_back",
           "NumWidth": 5,
           "NumHeight": 3,
           "BackIsHidden": true,
@@ -6405,8 +6405,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6463,8 +6463,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6521,8 +6521,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6579,8 +6579,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6637,8 +6637,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6695,8 +6695,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6753,8 +6753,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6811,8 +6811,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6869,8 +6869,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6927,8 +6927,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -6985,8 +6985,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -7043,8 +7043,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -7101,8 +7101,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -7159,8 +7159,8 @@
           "SidewaysCard": false,
           "CustomDeck": {
             "5": {
-              "FaceURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_face.png",
-              "BackURL": "file:///C:/Users/CAO%20YANG/Desktop/Constantinople%201453/Steam%20Release/v0/images/byz_counters_back.png",
+              "FaceURL": "http://c1453.local/b03/byz_counters_face",
+              "BackURL": "http://c1453.local/b03/byz_counters_back",
               "NumWidth": 5,
               "NumHeight": 3,
               "BackIsHidden": true,
@@ -7215,6 +7215,100 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": ""
+    },
+    {
+      "GUID": "686d4e",
+      "Name": "HandTrigger",
+      "Transform": {
+        "posX": 0,
+        "posY": 2.76,
+        "posZ": -34.75,
+        "rotX": 0,
+        "rotY": 0,
+        "rotZ": 0,
+        "scaleX": 26.0,
+        "scaleY": 5.17,
+        "scaleZ": 5.4
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "ColorDiffuse": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "FogColor": "White"
+    },
+    {
+      "GUID": "856ad4",
+      "Name": "HandTrigger",
+      "Transform": {
+        "posX": 0,
+        "posY": 2.76,
+        "posZ": 34.75,
+        "rotX": 0,
+        "rotY": 180,
+        "rotZ": 0,
+        "scaleX": 26.0,
+        "scaleY": 5.17,
+        "scaleZ": 5.4
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "ColorDiffuse": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "FogColor": "Red"
     }
   ]
 }

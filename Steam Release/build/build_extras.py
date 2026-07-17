@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = r"C:\Users\CAO YANG\Desktop\Constantinople 1453"
 ART = os.path.join(ROOT, "artifacts")
-OUT = os.path.join(ROOT, "Steam Release", "v0", "images")
+OUT = os.path.join(ROOT, "Steam Release", "v1", "images")
 TOKOUT = os.path.join(OUT, "tokens")
 CHROME = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 SCALE = 1.5
@@ -65,7 +65,7 @@ def chrome_shot(html_path, png_path, w, h):
 HEAD = (u'<!doctype html><html data-theme="light"><head><meta charset="utf-8">'
         u'<style>html,body{margin:0!important;padding:0!important;'
         u'background:transparent!important;}'
-        u'header p,.notes{display:none!important;}%s</style></head>'
+        u'header,.notes,.flow,.foot{display:none!important;}%s</style></head>'
         u'<body>%s%s</body></html>')
 
 MEASURE_JS = (u'<script>window.addEventListener("load",function(){var b='
@@ -126,18 +126,20 @@ def make_back(name, bg, emblem):
     d.rectangle([26, 26, W - 26, H - 26], outline=GOLD, width=4)
     d.rectangle([40, 40, W - 40, H - 40], outline=GOLD_BRIGHT, width=1)
     cx, cy = W // 2, H // 2 - 20
-    if emblem == "cross":                      # Byzantine
-        t = 40
-        d.rectangle([cx - t, cy - 150, cx + t, cy + 150], fill=GOLD_BRIGHT)
-        d.rectangle([cx - 110, cy - t, cx + 110, cy + t], fill=GOLD_BRIGHT)
-        for dx in (-110, 110):
-            d.rectangle([cx + dx - 8, cy - 90, cx + dx + 8, cy + 90], fill=GOLD_BRIGHT)
-    elif emblem == "crescent":                 # Ottoman
-        r = 150
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=GOLD_BRIGHT)
-        off = 55
-        d.ellipse([cx - r + off, cy - r, cx + r + off, cy + r], fill=bg + (255,))
-        star(d, cx + r + 40, cy, 60, GOLD_BRIGHT)
+    if emblem == "cross":                      # Byzantine — Orthodox cross
+        t = 16
+        d.rectangle([cx - t, cy - 170, cx + t, cy + 185], fill=GOLD_BRIGHT)      # upright
+        d.rectangle([cx - 46, cy - 132, cx + 46, cy - 106], fill=GOLD_BRIGHT)    # titulus (top bar)
+        d.rectangle([cx - 112, cy - 58, cx + 112, cy - 24], fill=GOLD_BRIGHT)    # main crossbar
+        d.polygon([(cx - 58, cy + 96), (cx - 58, cy + 120),                       # slanted footrest
+                   (cx + 58, cy + 66), (cx + 58, cy + 42)], fill=GOLD_BRIGHT)
+    elif emblem == "crescent":                 # Ottoman — centred star-and-crescent
+        r = 140
+        ccx = cx + 12                                                             # recentre the fuller crescent
+        d.ellipse([ccx - r, cy - r, ccx + r, cy + r], fill=GOLD_BRIGHT)
+        off = 80                                                                  # bigger offset → crescent wraps ~210° (was ~180°)
+        d.ellipse([ccx - r + off, cy - r, ccx + r + off, cy + r], fill=bg + (255,))
+        star(d, ccx + 58, cy, 48, GOLD_BRIGHT)                                   # star nestled in the opening
     else:                                      # Neutral diamond
         r = 150
         d.polygon([(cx, cy - r), (cx + r, cy), (cx, cy + r), (cx - r, cy)],
@@ -159,50 +161,102 @@ def make_back(name, bg, emblem):
 def render_tokens():
     html = open(os.path.join(ART, "unit_token_template.html"), encoding="utf-8").read()
     style = extract_style(html)
+    # Each token-group is a full-strength counter, optionally followed by a
+    # `.reduced` counter (its flip side). Capture both so multi-step units get
+    # a real reduced-strength back instead of the generic deck emblem.
     groups = []
     for m in re.finditer(r'<div class="token-group"', html):
         grp = balanced_div(html, m.start())
         lm = re.search(r'tg-label">([^<]*)<', grp)
         label = re.sub(r"&amp;", "&", lm.group(1)).strip() if lm else "unit"
-        cm = re.search(r'<div class="(?:counter|leader) ', grp)
-        if not cm:
+        counters = [balanced_div(grp, cm.start())
+                    for cm in re.finditer(r'<div class="(?:counter|leader) ', grp)]
+        if not counters:
             continue
-        counter = balanced_div(grp, cm.start())
-        head = counter.split(">", 1)[0]
-        side = "byz" if "byz" in head else "ott"
-        groups.append((label, counter, side))
+        front = counters[0]
+        back = next((c for c in counters[1:] if "reduced" in c.split(">", 1)[0]), None)
+        side = "byz" if "byz" in front.split(">", 1)[0] else "ott"
+        groups.append((label, front, back, side))
+
     cols = 6
     cell = 230
     rows = (len(groups) + cols - 1) // cols
-    cells = "\n".join('<div class="cell">%s</div>' % c for _, c, _ in groups)
-    page = (u'<!doctype html><html data-theme="light"><head><meta charset="utf-8">%s'
-            u'<style>html,body{margin:0;padding:0;background:transparent;}'
-            u'.tgrid{display:grid;grid-template-columns:repeat(%d,%dpx);grid-auto-rows:%dpx;}'
-            u'.cell{display:flex;align-items:center;justify-content:center;}'
-            u'</style></head><body><div class="tgrid">%s</div></body></html>'
-            % (style, cols, cell, cell, cells))
-    hp = os.path.join(OUT, "tokens_src.html")
-    open(hp, "w", encoding="utf-8").write(page)
-    raw = os.path.join(OUT, "tokens_atlas.png")
-    chrome_shot(hp, raw, cols * cell, rows * cell)
-    im = Image.open(raw).convert("RGBA")
     s = SCALE
+
+    def render_grid(htmls, tag):
+        """Render a grid of counter HTML (None = blank cell); return one cropped
+        RGBA sub-image per cell (None where the cell was blank)."""
+        cells = "\n".join('<div class="cell">%s</div>' % (h or "") for h in htmls)
+        page = (u'<!doctype html><html data-theme="light"><head><meta charset="utf-8">%s'
+                u'<style>html,body{margin:0;padding:0;background:transparent;}'
+                u'.tgrid{display:grid;grid-template-columns:repeat(%d,%dpx);grid-auto-rows:%dpx;}'
+                u'.cell{display:flex;align-items:center;justify-content:center;}'
+                u'</style></head><body><div class="tgrid">%s</div></body></html>'
+                % (style, cols, cell, cell, cells))
+        hp = os.path.join(OUT, "tokens_%s.html" % tag)
+        open(hp, "w", encoding="utf-8").write(page)
+        raw = os.path.join(OUT, "tokens_%s_raw.png" % tag)
+        chrome_shot(hp, raw, cols * cell, rows * cell)
+        im = Image.open(raw).convert("RGBA")
+        subs = []
+        for i in range(len(htmls)):
+            r, c = divmod(i, cols)
+            box = (int(c * cell * s), int(r * cell * s),
+                   int((c + 1) * cell * s), int((r + 1) * cell * s))
+            sub = im.crop(box)
+            bb = sub.split()[-1].getbbox()
+            subs.append(sub.crop(bb) if bb else None)
+        os.remove(raw)
+        return subs
+
+    fronts = render_grid([g[1] for g in groups], "src")
+    backs = render_grid([g[2] for g in groups], "back")
+
     toks = []
-    for i, (label, _, side) in enumerate(groups):
-        r, c = divmod(i, cols)
-        box = (int(c * cell * s), int(r * cell * s), int((c + 1) * cell * s), int((r + 1) * cell * s))
-        sub = im.crop(box)
-        bb = sub.split()[-1].getbbox()
-        if not bb:
+    for i, (label, _, back_html, side) in enumerate(groups):
+        if fronts[i] is None:
             continue
-        sub = sub.crop(bb)
         slug = re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")
         fn = "tok_%02d_%s.png" % (i, slug)
-        sub.save(os.path.join(TOKOUT, fn))
-        toks.append({"file": "tokens/" + fn, "label": label, "side": side, "size": sub.size})
-    os.remove(raw)
-    print("tokens:", len(toks))
+        fronts[i].save(os.path.join(TOKOUT, fn))
+        entry = {"file": "tokens/" + fn, "label": label, "side": side,
+                 "size": fronts[i].size, "flip": False}
+        # A real flip side requires BOTH that the group actually had a `.reduced`
+        # counter AND that it rendered as a full-size counter — the size guard
+        # rejects thin crop artifacts from blank back-cells (~4px slivers).
+        if back_html is not None and backs[i] is not None and min(backs[i].size) >= 150:
+            entry["flip"] = True
+            bfn = "tok_%02d_%s_back.png" % (i, slug)
+            backs[i].save(os.path.join(TOKOUT, bfn))
+            entry["back_file"] = "tokens/" + bfn
+            entry["back_size"] = backs[i].size
+        toks.append(entry)
+    print("tokens:", len(toks), "flippable:", sum(1 for t in toks if t["flip"]))
     return toks
+
+def render_round_track():
+    """Render just the Siege Clock round track from general_board.html (map hidden)."""
+    html = open(os.path.join(ART, "general_board.html"), encoding="utf-8").read()
+    over = (u'.wrap{max-width:1100px!important;}'
+            u'.wrap>header{display:none!important;}'
+            u'#map-board{display:none!important;}')
+    page = HEAD % (over, html, "")
+    hp = os.path.join(OUT, "round_track_src.html")
+    open(hp, "w", encoding="utf-8").write(page)
+    raw = os.path.join(OUT, "round_track_raw.png")
+    chrome_shot(hp, raw, 1200, 900)
+    im = Image.open(raw).convert("RGBA")
+    mask = im.split()[-1].point(lambda a: 255 if a > 30 else 0)
+    bbox = mask.getbbox()
+    pad = 14
+    bbox = (max(0, bbox[0] - pad), max(0, bbox[1] - pad),
+            min(im.size[0], bbox[2] + pad), min(im.size[1], bbox[3] + pad))
+    im = cap(im.crop(bbox))
+    out = os.path.join(OUT, "round_track.png")
+    im.save(out)
+    os.remove(raw)
+    print("round track", im.size, "-> round_track.png")
+    return {"file": "round_track.png", "w": im.size[0], "h": im.size[1]}
 
 def main():
     man = json.load(open(os.path.join(OUT, "manifest.json")))
@@ -217,6 +271,7 @@ def main():
         "neutral": make_back("neutral", NEUTRAL_BG, "diamond"),
     }
     man["tokens"] = render_tokens()
+    man["round_track"] = render_round_track()
     # main board is already a PNG
     board_png = os.path.join(ROOT, "Main_board", "Main Map.png")
     bim = Image.open(board_png)

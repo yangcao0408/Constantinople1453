@@ -40,7 +40,7 @@
     border-radius:14px; box-shadow:0 18px 34px -18px rgba(0,0,0,.55);
     padding:24px; margin-top:24px;
     display:flex; flex-direction:row; align-items:stretch; gap:18px;
-    overflow-x:auto;
+    width:max-content;
   }
 
   .board-section{
@@ -156,7 +156,8 @@
     <div class="board-section">
       <div class="board-heading">Reserve Pool</div>
       <div class="board-sub">1 slot = 1 militia-equivalent unit, spent by Reinforce. At zero,
-      no more Reinforcing &mdash; existing garrisons fight on.</div>
+      no more Reinforcing &mdash; existing garrisons fight on. Once the pool falls to the
+      &lsquo;Free repair &minus;1&rsquo; box, Repair capacity drops from 3 to 2 actions per round (&sect;4.0.8).</div>
       <div class="reserve-pool">
         <div class="reserve-slot"><div class="icon"></div><div class="slot-val">1/1</div></div>
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">1/1</div></div>
@@ -172,7 +173,7 @@
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">1/1</div></div>
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">1/1</div></div>
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">1/1</div></div>
-<div class="reserve-slot"><div class="icon"></div><div class="slot-val">1/1</div></div>
+<div class="reserve-slot muster-note"><div class="note-text">Free repair &minus;1</div></div>
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">0/1</div></div>
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">0/1</div></div>
 <div class="reserve-slot"><div class="icon"></div><div class="slot-val">0/1</div></div>
@@ -235,8 +236,9 @@
         <div class="stir-cell"><div class="step-no">1</div><div class="step-lbl">&nbsp;</div></div>
         <div class="stir-cell"><div class="step-no">2</div><div class="step-lbl">&nbsp;</div></div>
         <div class="stir-cell"><div class="step-no">3</div><div class="step-lbl">&nbsp;</div></div>
+        <div class="stir-cell"><div class="step-no">4</div><div class="step-lbl">&nbsp;</div></div>
         <div class="stir-cell trigger">
-          <div class="step-no">4</div>
+          <div class="step-no">5</div>
           <div class="step-lbl">The Powers Stir!<br>Draw Track &minus;1 &middot; Pressure +1</div>
         </div>
       </div>

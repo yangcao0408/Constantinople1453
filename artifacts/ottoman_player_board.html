@@ -40,7 +40,7 @@
     border-radius:14px; box-shadow:0 18px 34px -18px rgba(0,0,0,.55);
     padding:24px; margin-top:24px;
     display:flex; flex-direction:row; align-items:stretch; gap:14px;
-    overflow-x:auto;
+    width:max-content;
   }
   .board-section{
     flex-shrink:0; display:flex; flex-direction:column;
@@ -98,7 +98,7 @@
   .pool-cell.tick{ outline:2px solid var(--gold-bright); outline-offset:-2px; }
   .pool-legend{ font-size:26px; }
   .destroy-zone{
-    width:auto; margin-top:10px; min-height:150px;
+    width:auto; margin-top:10px; min-height:420px;
     border:2px dashed var(--rule); border-radius:10px;
     display:flex; align-items:center; justify-content:center; text-align:center;
     padding:12px; background:rgba(74,32,20,.03);
@@ -107,11 +107,12 @@
 
   /* ---- Force Commitment Cap ---- */
   .cap-box{
-    width:130px; text-align:center; background:rgba(74,32,20,.05); border:1px solid var(--rule);
+    width:280px; height:280px; text-align:center; background:rgba(74,32,20,.05); border:1px solid var(--rule);
     border-radius:10px; padding:14px 10px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
   }
   .cap-number{
-    font-family:Georgia,'Copperplate',serif; font-weight:700; font-size:34px; color:var(--ottoman);
+    font-family:Georgia,'Copperplate',serif; font-weight:700; font-size:120px; color:var(--ottoman);
     line-height:1;
   }
   .cap-label{ font-size:34px; color:var(--ink-soft); margin-top:4px; }
@@ -163,19 +164,18 @@
   <header>
     <div class="eyebrow">Constantinople 1453 &mdash; Player Aid</div>
     <h1>Ottoman Player Board</h1>
-    <p>Morale, Draw Track, Elite Casualty pool, Force Commitment, Mustering Cost, and the
+    <p>Morale, Draw Track, Elite Casualty pool, Force Commitment, Deployment, and the
     four Ops actions (DESIGN.md &sect;4.0&ndash;4.0.4, &sect;6.3, &sect;2.2).</p>
   </header>
 
   <div class="board">
     <div class="board-section">
       <div class="board-heading">Morale</div>
-      <div class="board-sub">Only hard-loss track. 0 = Byzantine win; capped at 7.
-      +1 only from The Hadith of Conquest (R1&ndash;2).</div>
       <div class="track-col">
         <div class="num-cols">
-          <div class="num-track"><div class="num-cell c-black">0</div><div class="num-cell c-red">1</div><div class="num-cell c-red">2</div><div class="num-cell c-yellow">3</div><div class="num-cell c-yellow">4</div></div>
-          <div class="num-track"><div class="num-cell c-green">5</div><div class="num-cell c-green">6</div><div class="num-cell c-green marker">7</div><div class="num-cell c-green">8</div><div class="num-cell c-green">9</div></div>
+          <div class="num-track"><div class="num-cell c-black">0</div><div class="num-cell c-red">1</div><div class="num-cell c-red">2</div></div>
+          <div class="num-track"><div class="num-cell c-yellow">3</div><div class="num-cell c-yellow">4</div><div class="num-cell c-green">5</div></div>
+          <div class="num-track"><div class="num-cell c-green">6</div><div class="num-cell c-green marker">7</div><div class="num-cell c-green">8</div></div>
         </div>
         <div class="track-note">Marker at start: <b>7</b></div>
         <div class="band-legend">
@@ -191,8 +191,6 @@
 
     <div class="board-section">
       <div class="board-heading">Draw Track</div>
-      <div class="board-sub">Per-round Neutral draw, +3/round from the Ottoman pile
-      (~10&ndash;11 total). Bottoming out just starves options.</div>
       <div class="track-col">
         <div class="num-cols">
           <div class="num-track"><div class="num-cell c-red">3</div><div class="num-cell c-red">4</div><div class="num-cell c-yellow">5</div><div class="num-cell c-yellow">6</div></div>
@@ -221,15 +219,9 @@
         <div class="cap-number">5</div>
         <div class="cap-label">units / Assault<br>(any mix)</div>
       </div>
-      <div class="misc-note">
-        Base <b>5</b> (<b>4</b> at Golden Horn). <b>War Council</b> (R7+): cap &rarr; <b>6</b>
-        (5 at Golden Horn).<br><br>
-        <b>Combined Arms</b> (Mehmed): +2 Attack at a cannon sector, 1 card.<br><br>
-        <b>Second Barrage</b>: 1&times;/round, 2 cards &rarr; extra Bombard (no Concentration Bonus).
-      </div>
-      <div class="board-heading" style="margin-top:28px;">Mustering Cost</div>
-      <div class="board-sub">Paid in discarded cards. No fresh Janissary &mdash; New Levy only.</div>
-      <table class="muster-table"><tr><td>Bashi-bazouk</td><td>3 / 1 card</td></tr><tr><td>Azap</td><td>1 / 1 card</td></tr><tr><td>New Levy Janissary</td><td>1 / 1 card</td></tr><tr><td>New Levy → Janissary</td><td>1 / 1 card</td></tr><tr><td>Replenish (flipped)</td><td>1 / 1 card</td></tr><tr><td>Solak</td><td>pre-deployed</td></tr></table>
+      <div class="board-heading" style="margin-top:28px;">Deployment</div>
+      <div class="board-sub">Per Deploy (Supplies action): field <b>&ge;2 units</b>, or units of <b>combined Attack &le;5</b> &mdash; whichever fields more. A Deploy may instead <b>upgrade</b> New Levies or <b>recover</b> destroyed elites (below).</div>
+      <table class="muster-table"><tr><td>Bashi-bazouk / Azap / New Levy</td><td>open supply</td></tr><tr><td>Janissary / Solak</td><td>finite pool</td></tr><tr><td>New Levy → Janissary</td><td>upgrade via Deploy (counts as 3 Attack; &le;2 per card)</td></tr><tr><td>Elite recovery</td><td>via Deploy &mdash; &le;2 per card</td></tr></table>
     </div>
 
     <div class="board-section">
@@ -248,21 +240,21 @@
         <div class="ops-name">Sap/Mine</div>
         <div class="ops-cost">2</div>
       </div>
-      <div class="ops-desc">Undermine a sector. &minus;1 Ops with Zaganos Pasha.</div>
+      <div class="ops-desc">Undermine a sector.</div>
     </div>
     <div class="ops-card">
       <div class="ops-card-top">
-        <div class="ops-name">Muster Reinforcements</div>
+        <div class="ops-name">Deploy</div>
         <div class="ops-cost">2</div>
       </div>
-      <div class="ops-desc">Field units, or Replenish a flipped unit.</div>
+      <div class="ops-desc">From the pool: &ge;2 units, or combined Attack &le;5.</div>
     </div>
     <div class="ops-card">
       <div class="ops-card-top">
-        <div class="ops-name">Diplomacy</div>
+        <div class="ops-name">Blockade</div>
         <div class="ops-cost">2</div>
       </div>
-      <div class="ops-desc">Keep Genoese/Venetians neutral.</div>
+      <div class="ops-desc">Knock Powers Stirring back 1 step.</div>
     </div>
       </div>
     </div>

@@ -1,0 +1,162 @@
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><style>html,body{margin:0!important;padding:0!important;background:transparent!important;}header,.notes,.flow,.foot{display:none!important;}.wrap{max-width:1100px!important;}.wrap>header{display:none!important;}#map-board{display:none!important;}</style></head><body><title>General Board — Map of Constantinople</title>
+<style>
+  :root{
+    --table-light:#d9cfb4; --table-light-2:#c7bb9c;
+    --parchment:#e6d9ae; --ink:#2a2015; --ink-soft:#4a3d28;
+    --porphyry:#4a1f63; --porphyry-deep:#2c1339; --porphyry-light:#6a3390;
+    --gold:#a9843c; --gold-bright:#d8b465; --cream:#f1e6c8;
+    --rule:rgba(42,32,21,.35);
+    --intact:#3d6b45; --contested:#b8842f; --breached:#8a2c22;
+  }
+  :root[data-theme="dark"]{ --table-light:#1a140d; --table-light-2:#241b12; }
+  @media (prefers-color-scheme: dark){ :root{ --table-light:#1a140d; --table-light-2:#241b12; } }
+  :root[data-theme="light"]{ --table-light:#d9cfb4; --table-light-2:#c7bb9c; }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100vh;
+    font-family:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+    color:var(--ink);
+    background:radial-gradient(ellipse at 50% -10%, var(--table-light-2), var(--table-light) 60%);
+    padding:36px 24px 70px;
+  }
+  .wrap{ max-width:1200px; margin:0 auto; }
+  .eyebrow{
+    font-family:Georgia,'Big Caslon','Copperplate',serif;
+    font-variant-caps:small-caps; letter-spacing:.18em; font-size:13px; color:var(--porphyry);
+  }
+  :root[data-theme="dark"] .eyebrow{ color:var(--gold-bright); }
+  h1{
+    font-family:Georgia,'Trajan Pro','Big Caslon','Copperplate',serif;
+    font-weight:700; font-variant-caps:small-caps; letter-spacing:.03em;
+    font-size:clamp(26px,3.6vw,38px); margin:.15em 0 .3em; color:var(--ink);
+  }
+  :root[data-theme="dark"] h1{ color:#e9dfc4; }
+  header p{ max-width:82ch; font-size:14.5px; line-height:1.6; color:var(--ink-soft); }
+  :root[data-theme="dark"] header p{ color:#c9bb98; }
+
+  .board{
+    background:var(--parchment); border:2px solid var(--porphyry);
+    border-radius:14px; box-shadow:0 18px 34px -18px rgba(0,0,0,.55);
+    padding:24px; margin-top:24px;
+  }
+
+  .board-heading{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif;
+    font-variant-caps:small-caps; letter-spacing:.04em; font-size:16px;
+    color:var(--porphyry); margin:0 0 4px; border-bottom:1px solid var(--rule); padding-bottom:6px;
+  }
+  .board-sub{ font-size:11px; color:var(--ink-soft); margin-bottom:14px; max-width:70ch; line-height:1.45; }
+
+  /* ---- Map ---- */
+  .map-frame{
+    position:relative; width:100%; aspect-ratio:16/10;
+    background:
+      repeating-linear-gradient(45deg, rgba(74,32,20,.05) 0 10px, transparent 10px 20px),
+      linear-gradient(160deg, rgba(58,101,145,.10), rgba(74,32,20,.05));
+    border:1.5px dashed var(--rule); border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:28px; overflow:hidden;
+  }
+  .map-frame img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .map-placeholder{
+    text-align:center; color:var(--ink-soft); font-size:13px; line-height:1.6;
+    font-family:Georgia,'Copperplate',serif; font-variant-caps:small-caps; letter-spacing:.03em;
+  }
+  .map-placeholder .big{ font-size:16px; color:var(--porphyry); display:block; margin-bottom:6px; }
+
+  /* ---- Sectors (moved from Byzantine Player Board) ---- */
+  .sectors{ display:flex; flex-wrap:wrap; gap:12px; }
+  .sector{
+    width:180px; flex-shrink:0; background:rgba(74,32,20,.05); border:1px solid var(--rule);
+    border-radius:10px; padding:10px;
+  }
+  .sector.golden-horn{ background:rgba(58,101,145,.08); border-color:rgba(58,101,145,.4); }
+  .sector-name{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif; font-variant-caps:small-caps;
+    font-size:14px; color:var(--ink); line-height:1.2;
+  }
+  .sector-gate{ font-size:10.5px; font-style:italic; color:var(--ink-soft); margin:2px 0 8px; }
+  .hp-track{ display:flex; flex-wrap:wrap; justify-content:center; gap:3px; margin-bottom:6px; }
+  .hp-pip{
+    width:14px; height:14px; flex:none; border-radius:2px; background:rgba(0,0,0,.12);
+    box-shadow:0 0 0 1px rgba(0,0,0,.15) inset;
+  }
+  .hp-pip.intact{ background:var(--intact); }
+  .hp-pip.contested{ background:var(--contested); }
+  .hp-pip.breached{ background:var(--breached); }
+  .hp-label{ font-size:9.5px; color:var(--ink-soft); display:flex; justify-content:space-between; margin-bottom:8px; }
+  .defense-bands{ display:flex; flex-direction:column; gap:2px; margin-bottom:10px; font-size:9px; }
+  .defense-bands .band{ display:flex; justify-content:space-between; padding:1.5px 4px; border-radius:3px; }
+  .defense-bands .band.intact{ background:rgba(61,107,69,.18); color:var(--intact); }
+  .defense-bands .band.contested{ background:rgba(184,132,47,.18); color:var(--contested); }
+  .defense-bands .band.breached{ background:rgba(138,44,34,.18); color:var(--breached); }
+  .modifier-box{ border-radius:6px; padding:7px 8px; text-align:center; line-height:1.3; }
+  .modifier-box .mod-main{ display:block; font-variant-caps:small-caps; letter-spacing:.03em; font-weight:700; font-size:10.5px; }
+  .modifier-box .mod-favors{ display:block; font-size:8.5px; font-weight:700; letter-spacing:.02em; margin-top:1px; }
+  .modifier-box .mod-why{ display:block; font-style:italic; font-size:8.5px; opacity:.85; margin-top:3px; color:var(--ink-soft); }
+  .modifier-box.def{ background:rgba(61,107,69,.16); border:1px solid rgba(61,107,69,.45); color:var(--intact); }
+  .modifier-box.att{ background:rgba(138,44,34,.16); border:1px solid rgba(138,44,34,.45); color:var(--breached); }
+  .modifier-box.none{ background:rgba(74,32,20,.06); border:1px solid var(--rule); color:var(--ink-soft); }
+  .modifier-box.naval{ background:rgba(58,101,145,.14); border:1px solid rgba(58,101,145,.45); color:#3a6591; }
+  .naval-line{ text-align:center; font-size:9.5px; color:var(--ink-soft); margin-bottom:8px;
+    background:rgba(58,101,145,.1); border-radius:4px; padding:5px 4px; line-height:1.3; }
+  .naval-line b{ color:#3a6591; font-size:13px; }
+
+  /* ---- Siege Clock (round track) ---- */
+  .track-row{ display:flex; flex-wrap:wrap; gap:8px; align-items:stretch; margin-top:4px; }
+  .track-cell{
+    flex:1 1 0; min-width:64px; border:1px solid var(--rule); border-radius:8px;
+    background:rgba(74,32,20,.05); padding:8px 6px 9px; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+  }
+  .track-cell.final{ background:rgba(138,44,34,.12); border-color:rgba(138,44,34,.45); }
+  .track-week{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif; font-variant-caps:small-caps;
+    letter-spacing:.03em; font-size:10px; color:var(--ink-soft);
+  }
+  .track-num{
+    font-family:Georgia,'Trajan Pro',serif; font-weight:700; font-size:20px;
+    color:var(--porphyry); line-height:1;
+  }
+  :root[data-theme="dark"] .track-num{ color:var(--gold-bright); }
+  .track-cell.final .track-num{ color:var(--breached); }
+  .track-slot{
+    width:20px; height:20px; border-radius:50%; margin-top:2px;
+    border:1.5px dashed var(--rule); background:rgba(0,0,0,.04);
+  }
+  .track-note{ font-size:10.5px; color:var(--ink-soft); margin-top:10px; line-height:1.45; font-style:italic; }
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Constantinople 1453 — Player Aid</div>
+    <h1>General Board</h1>
+    <p>The shared map of Constantinople &mdash; the five land gates and three Golden Horn naval-wall
+    sectors &mdash; a battlefield both sides act on.</p>
+  </header>
+
+  <div class="board" id="map-board">
+    <div class="board-heading">Map of Constantinople</div>
+    <div class="map-frame">
+      <img src="../Main_board/Main%20Map.png" alt="Map of Constantinople">
+    </div>
+  </div>
+
+  <div class="board" id="round-track">
+    <div class="board-heading">Siege Clock &mdash; the Round Track</div>
+    <div class="track-row">
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">1</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">2</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">3</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">4</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">5</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">6</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">7</span><span class="track-slot"></span></div>
+      <div class="track-cell"><span class="track-week">Week</span><span class="track-num">8</span><span class="track-slot"></span></div>
+      <div class="track-cell final"><span class="track-week">Final</span><span class="track-num">9</span><span class="track-slot"></span></div>
+    </div>
+    <div class="track-note">If Week&nbsp;9 ends with every sector still held, the relief-fleet clock has run out on the
+      Ottoman &mdash; immediate Byzantine victory (&sect;5).</div>
+  </div>
+</div>
+</body></html>

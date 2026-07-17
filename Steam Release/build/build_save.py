@@ -12,8 +12,8 @@ from PIL import Image
 MAXDIM = 4000          # TTS/Unity texture limit is 4096; stay safely under
 
 ROOT = r"C:\Users\CAO YANG\Desktop\Constantinople 1453"
-V0 = os.path.join(ROOT, "Steam Release", "v0")
-IMG = os.path.join(V0, "images")
+VDIR = os.path.join(ROOT, "Steam Release", "v1")
+IMG = os.path.join(VDIR, "images")
 ART = os.path.join(ROOT, "artifacts")
 SAVES = r"C:\Users\CAO YANG\Documents\My Games\Tabletop Simulator\Saves"
 
@@ -25,10 +25,28 @@ def guid():
         if g not in _guids:
             _guids.add(g); return g
 
+# This TTS build fetches every image URL via curl, which mangles file:///
+# paths into https://localhost connections (Player.log: "Curl error 7 ...
+# localhost port 443") — local file URLs can never load. Workaround: give the
+# save fake http:// URLs and PRE-SEED TTS's image cache (Mods/Images). TTS
+# checks the cache before fetching, so the images load without any network.
+# Cache filename rule (verified against existing mods): the URL stripped of
+# all non-alphanumeric characters, plus the real image extension.
+VERSION = 4
+STAGE = os.path.join(IMG, "b%02d" % VERSION)   # bundle for later real hosting
+TTS_CACHE = r"C:\Users\CAO YANG\Documents\My Games\Tabletop Simulator\Mods\Images"
+
 def url(path):
-    """Absolute file:/// URL with spaces percent-encoded."""
-    p = os.path.abspath(path).replace("\\", "/")
-    return "file:///" + quote(p, safe="/:")   # keep C:/ intact, only encode spaces
+    """Stage the image, seed it into the TTS cache, return its fake URL."""
+    os.makedirs(STAGE, exist_ok=True)
+    dst = os.path.join(STAGE, os.path.basename(path))
+    if os.path.abspath(path) != os.path.abspath(dst):
+        shutil.copy(path, dst)
+    stem = os.path.splitext(os.path.basename(path))[0]
+    fake = "http://c1453.local/b%02d/%s" % (VERSION, stem)
+    cache_name = re.sub(r"[^A-Za-z0-9]", "", fake) + ".png"
+    shutil.copy(path, os.path.join(TTS_CACHE, cache_name))
+    return fake
 
 CARD_FILES = {"byzantine": "byzantine_cards.html",
               "ottoman": "ottoman_cards.html",
@@ -61,10 +79,13 @@ def base(name, nick, pos, scale, rot=(0, 180, 0), locked=False):
         "LuaScript": "", "LuaScriptState": "", "XmlUI": "",
     }
 
-def tile(nick, img_path, w, h, pos, base_scale, locked=False):
-    """Flat Custom_Tile; scaleZ set from image aspect so nothing distorts."""
+def tile(nick, img_path, pos, base_scale, locked=False):
+    """Flat Custom_Tile with UNIFORM X/Z scale. TTS auto-sizes a Custom_Tile's
+    mesh to the image's aspect ratio on its own; the old scaleZ*=h/w correction
+    applied the aspect a second time, flattening every tile by an extra h/w
+    (the long-standing 'boards look stretched' bug, present since v0)."""
     o = base("Custom_Tile", nick, pos,
-             (base_scale, 1.0, base_scale * (h / float(w))), locked=locked)
+             (base_scale, 1.0, base_scale), locked=locked)
     o["CustomImage"] = {
         "ImageURL": url(img_path), "ImageSecondaryURL": "",
         "ImageScalar": 1.0, "WidthScale": 0.0,
@@ -107,8 +128,12 @@ def make_token_deck(side, info, pos, scale):
     n, cols, rows = info["count"], info["cols"], info["rows"]
     face = url(os.path.join(IMG, info["face"]))
     back = url(os.path.join(IMG, info["back"]))
+    # UniqueBack: the back is an atlas aligned cell-for-cell with the face, so
+    # each counter flips to its OWN back (reduced-strength side for multi-step
+    # units, faction emblem for the rest) instead of one shared deck back.
     cd = {key: {"FaceURL": face, "BackURL": back, "NumWidth": cols,
-                "NumHeight": rows, "BackIsHidden": True, "UniqueBack": False,
+                "NumHeight": rows, "BackIsHidden": True,
+                "UniqueBack": bool(info.get("unique_back")),
                 "Type": 0}}
     labels = info["labels"]
     ids, contained = [], []
@@ -130,6 +155,52 @@ def make_token_deck(side, info, pos, scale):
     d["ContainedObjects"] = contained
     return d
 
+FRIEND_README = u"""Constantinople 1453 — image pack for joining the playtest (v1)
+================================================================
+
+These {n} PNG files are pre-cached artwork for the Tabletop Simulator save.
+Without them the table loads blank (the save points at placeholder URLs that
+only resolve from this cache).
+
+NOTE: this is the v1 pack (filenames contain "b{ver:02d}"). It replaces any
+older pack — you can delete those; they don't conflict.
+
+INSTALL (2 minutes):
+1. Close Tabletop Simulator if it's running.
+2. Copy all {n} .png files (NOT this txt) into this folder on your machine:
+
+   Documents\\My Games\\Tabletop Simulator\\Mods\\Images
+
+   (Full path is usually:
+    C:\\Users\\<you>\\Documents\\My Games\\Tabletop Simulator\\Mods\\Images)
+
+3. IMPORTANT: do not rename the files — the weird names are how TTS finds them.
+4. Start TTS. Menu -> Configuration -> make sure "Mod Caching" is ON.
+5. Join the host's game. All boards, cards and counters should now render.
+
+If anything is still blank after joining, leave and rejoin once.
+"""
+
+def build_friend_pack():
+    """Regenerate the shareable friend pack: every image the save references,
+    copied under its TTS cache-mangled name (same rule as url()), plus a readme.
+    Derives from the b04 staging bundle populated during this build, so it can
+    never fall out of sync with the save again."""
+    fp = os.path.join(VDIR, "friend_pack")
+    os.makedirs(fp, exist_ok=True)
+    for old in os.listdir(fp):                       # clear stale files first
+        if old.lower().endswith(".png"):
+            os.remove(os.path.join(fp, old))
+    pngs = sorted(f for f in os.listdir(STAGE) if f.endswith(".png"))
+    for f in pngs:
+        stem = os.path.splitext(f)[0]
+        fake = "http://c1453.local/b%02d/%s" % (VERSION, stem)
+        cache_name = re.sub(r"[^A-Za-z0-9]", "", fake) + ".png"
+        shutil.copy(os.path.join(STAGE, f), os.path.join(fp, cache_name))
+    open(os.path.join(fp, "READ_ME_FIRST.txt"), "w", encoding="utf-8").write(
+        FRIEND_README.format(n=len(pngs), ver=VERSION))
+    print("friend_pack:", len(pngs), "images ->", fp)
+
 def main():
     man = json.load(open(os.path.join(IMG, "manifest.json")))
     # keep the map with the rest of the bundle, capped to the TTS texture limit
@@ -143,7 +214,6 @@ def main():
 
     # --- map (locked, centred) ---
     objs.append(tile("Constantinople 1453 — Map", os.path.join(IMG, "main_map.png"),
-                     man["main_board"]["w"], man["main_board"]["h"],
                      (0, 1, 0), 15.65, locked=True))
 
     # --- decks (front edge) ---
@@ -152,13 +222,25 @@ def main():
     objs.append(make_deck("ottoman", man["ottoman"], (8, 1.5, -14)))
 
     # --- player boards + CRT ---
+    # Board scales are user-tuned on the table against the unit tokens:
+    # Ottoman confirmed right at 5.9; Byzantine tuned upward stepwise
+    # (5.9 -> 6.24 at "1.35" -> 6.61 at "1.43"). Tune these by eye on-table,
+    # not by pixel math - the boards' cell artwork differs per board.
     b = man["boards"]
     objs.append(tile("Byzantine Player Board", os.path.join(IMG, b["byzantine"]["file"]),
-                     b["byzantine"]["w"], b["byzantine"]["h"], (-26, 1, 0), 9.0))
+                     (-26, 1, 0), 6.61))
     objs.append(tile("Ottoman Player Board", os.path.join(IMG, b["ottoman"]["file"]),
-                     b["ottoman"]["w"], b["ottoman"]["h"], (26, 1, 0), 9.0))
+                     (26, 1, 0), 5.9))
     objs.append(tile("Assault Resolution — CRT", os.path.join(IMG, b["crt"]["file"]),
-                     b["crt"]["w"], b["crt"]["h"], (20, 1, 16), 5.5))
+                     (22, 1, 16), 9.5))
+
+    # --- Siege Clock round track (turn counter) + its marker ---
+    rt = man.get("round_track")
+    if rt:
+        objs.append(tile("Siege Clock — Round Track", os.path.join(IMG, rt["file"]),
+                         (0, 1, 21), 5.0, locked=True))
+        marker = base("Checker_red", "Round Marker", (-4.1, 2, 21), (0.9, 0.9, 0.9))
+        objs.append(marker)
 
     # --- unit/leader counters: one consolidated deck per side ---
     td = man["token_decks"]
@@ -168,11 +250,38 @@ def main():
     # --- a d10 for the CRT ---
     objs.append(base("Die_10", "d10", (14, 1.5, 16), (1, 1, 1)))
 
+    # --- two player hand zones: Byzantine = White (south), Ottoman = Red (north) ---
+    for color, pos, roty in (("White", (0, 2.76, -34.75), 0),
+                             ("Red", (0, 2.76, 34.75), 180)):
+        hz = base("HandTrigger", "", pos, (26.0, 5.17, 5.4),
+                  rot=(0, roty, 0), locked=True)
+        hz["ColorDiffuse"] = {"r": 0.192, "g": 0.701, "b": 0.168, "a": 0.0}
+        hz["Grid"] = False
+        hz["FogColor"] = color
+        objs.append(hz)
+
+    # --- global layout scale ---
+    # Built-in tables are fixed meshes (Custom_Square is the largest), so to
+    # gain table room we shrink the whole layout uniformly instead. Every
+    # position and scale shares one factor, so relative sizing (token = board
+    # cell) is untouched. Raise/lower this one knob to taste.
+    LAYOUT_SCALE = 0.75
+    def shrink(o):
+        t = o["Transform"]
+        t["posX"] *= LAYOUT_SCALE; t["posZ"] *= LAYOUT_SCALE
+        t["scaleX"] *= LAYOUT_SCALE; t["scaleY"] *= LAYOUT_SCALE; t["scaleZ"] *= LAYOUT_SCALE
+        for c in o.get("ContainedObjects", []):
+            shrink(c)
+    for o in objs:
+        shrink(o)
+
     save = {
         "SaveName": "Constantinople 1453", "EpochTime": 0, "Date": "",
         "VersionNumber": "v14.2.1", "GameMode": "Constantinople 1453",
         "GameType": "", "GameComplexity": "", "Tags": [], "Gravity": 0.5,
-        "PlayArea": 0.5, "Table": "Table_RPG", "TableURL": "",
+        # Table_Custom_Square is the largest built-in table (Table_RPG was too
+        # small for the full layout; the flex-table merge was reverted).
+        "PlayArea": 0.5, "Table": "Table_Custom_Square", "TableURL": "",
         "Sky": "Sky_Museum", "SkyURL": "", "Note": "",
         "TabStates": {}, "MusicPlayer": {},
         "Grid": {"Type": 0, "Lines": False, "Color": {"r": 0.5, "g": 0.5, "b": 0.5},
@@ -194,7 +303,7 @@ def main():
         "ObjectStates": objs,
     }
 
-    out_local = os.path.join(V0, "Constantinople_1453.json")
+    out_local = os.path.join(VDIR, "Constantinople_1453.json")
     json.dump(save, open(out_local, "w", encoding="utf-8"), indent=2)
     print("wrote", out_local, "(%d objects)" % len(objs))
     # also drop into the TTS Saves folder if present
@@ -202,6 +311,8 @@ def main():
         dst = os.path.join(SAVES, "Constantinople_1453.json")
         shutil.copy(out_local, dst)
         print("installed to TTS Saves:", dst)
+    # regenerate the shareable friend pack from the same bundle this save uses
+    build_friend_pack()
 
 if __name__ == "__main__":
     main()

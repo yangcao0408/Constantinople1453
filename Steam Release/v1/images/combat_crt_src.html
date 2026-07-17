@@ -1,0 +1,315 @@
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><style>html,body{margin:0!important;padding:0!important;background:transparent!important;}header,.notes,.flow,.foot{display:none!important;}.wrap{max-width:none!important;}.board{overflow:visible!important;}</style></head><body><title>Assault Resolution — Combat Tables</title>
+<style>
+  :root{
+    --table-light:#d9cfb4; --table-light-2:#c7bb9c;
+    --parchment:#e6d9ae; --ink:#2a2015; --ink-soft:#4a3d28;
+    --porphyry:#4a1f63; --porphyry-deep:#2c1339; --porphyry-light:#6a3390;
+    --gold:#a9843c; --gold-bright:#d8b465; --cream:#f1e6c8;
+    --rule:rgba(42,32,21,.35);
+    --intact:#3d6b45; --contested:#b8842f; --breached:#8a2c22;
+    --atk:#8a2c22; --def:#3d6b45;
+  }
+  :root[data-theme="dark"]{ --table-light:#1a140d; --table-light-2:#241b12; }
+  @media (prefers-color-scheme: dark){ :root{ --table-light:#1a140d; --table-light-2:#241b12; } }
+  :root[data-theme="light"]{ --table-light:#d9cfb4; --table-light-2:#c7bb9c; }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100vh;
+    font-family:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+    color:var(--ink);
+    background:radial-gradient(ellipse at 50% -10%, var(--table-light-2), var(--table-light) 60%);
+    padding:36px 24px 70px;
+  }
+  .wrap{ max-width:1120px; margin:0 auto; }
+  .eyebrow{
+    font-family:Georgia,'Big Caslon','Copperplate',serif;
+    font-variant-caps:small-caps; letter-spacing:.18em; font-size:13px; color:var(--porphyry);
+  }
+  :root[data-theme="dark"] .eyebrow{ color:var(--gold-bright); }
+  h1{
+    font-family:Georgia,'Trajan Pro','Big Caslon','Copperplate',serif;
+    font-weight:700; font-variant-caps:small-caps; letter-spacing:.03em;
+    font-size:clamp(26px,3.6vw,38px); margin:.15em 0 .3em; color:var(--ink);
+  }
+  :root[data-theme="dark"] h1{ color:#e9dfc4; }
+  header p{ max-width:84ch; font-size:14.5px; line-height:1.6; color:var(--ink-soft); }
+  :root[data-theme="dark"] header p{ color:#c9bb98; }
+
+  .board{
+    background:var(--parchment); border:2px solid var(--porphyry);
+    border-radius:14px; box-shadow:0 18px 34px -18px rgba(0,0,0,.55);
+    padding:22px 24px 26px; margin-top:24px;
+  }
+  .phase-tag{
+    display:inline-block; font-family:Georgia,'Copperplate',serif; font-variant-caps:small-caps;
+    letter-spacing:.14em; font-size:11px; font-weight:700; color:var(--cream);
+    background:var(--porphyry); border-radius:20px; padding:3px 12px; margin-bottom:8px;
+  }
+  .board-heading{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif;
+    font-variant-caps:small-caps; letter-spacing:.04em; font-size:20px;
+    color:var(--porphyry); margin:0 0 4px;
+  }
+  :root[data-theme="dark"] .board-heading{ color:var(--gold-bright); }
+  .board-sub{ font-size:12.5px; color:var(--ink-soft); margin:0 0 16px; max-width:88ch; line-height:1.5; }
+  :root[data-theme="dark"] .board-sub{ color:#c9bb98; }
+  .board-sub b{ color:var(--ink); }
+  :root[data-theme="dark"] .board-sub b{ color:#e9dfc4; }
+
+  .crt-wrap{ overflow-x:auto; margin:4px 0 6px; }
+  table{ border-collapse:collapse; width:100%; font-size:13px; }
+  caption{ caption-side:top; font-size:11px; color:var(--ink-soft); text-align:left; padding-bottom:6px; font-style:italic; }
+  th,td{ padding:7px 6px; text-align:center; border:1px solid var(--rule); white-space:nowrap; }
+  thead th{
+    font-family:Georgia,'Copperplate',serif; font-variant-caps:small-caps; letter-spacing:.03em;
+    font-size:12px; background:var(--porphyry); color:var(--cream); border-color:var(--porphyry-deep);
+  }
+  thead th.roll-h{ background:var(--porphyry-deep); }
+  tbody th{
+    font-weight:700; background:rgba(74,32,20,.10); color:var(--ink); width:52px;
+  }
+  :root[data-theme="dark"] tbody th{ color:#e9dfc4; }
+  tbody tr:nth-child(even) td{ background:rgba(74,32,20,.045); }
+  .cell .a{ color:var(--atk); font-weight:700; }
+  .cell .d{ color:var(--def); font-weight:700; }
+  .cell .sep{ color:var(--ink-soft); opacity:.6; }
+  td.zero .d{ color:var(--ink-soft); opacity:.55; font-weight:400; }
+  /* margin band tint — good for attacker rises left→right */
+  col.band-neg{ background:rgba(138,44,34,.05); }
+  col.band-hot{ background:rgba(61,107,69,.06); }
+  /* compact main CRT — shrink to content, tighter cells */
+  table.crt{ width:auto; font-size:12px; }
+  table.crt th, table.crt td{ padding:5px 6px; }
+  table.crt tbody th{ width:auto; }
+  table.crt thead th{ font-size:11px; }
+
+  .legend{ display:flex; flex-wrap:wrap; gap:16px 26px; font-size:12px; color:var(--ink-soft); margin-top:12px; }
+  .legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .swatch{ width:14px; height:14px; border-radius:3px; flex:none; }
+  .swatch.atk{ background:var(--atk); }
+  .swatch.def{ background:var(--def); }
+
+  .avg-note{ margin-top:14px; font-size:12px; color:var(--ink-soft); line-height:1.5; }
+  .avg-note b{ color:var(--ink); }
+  :root[data-theme="dark"] .avg-note b{ color:#e9dfc4; }
+
+  /* Pre-attack: compact side-by-side layout */
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+  @media (max-width:720px){ .split{ grid-template-columns:1fr; } }
+  .mini caption{ font-style:normal; font-weight:700; color:var(--porphyry); }
+  :root[data-theme="dark"] .mini caption{ color:var(--gold-bright); }
+  .steps{ margin:0; padding-left:0; list-style:none; counter-reset:step; }
+  .steps li{ position:relative; padding:0 0 12px 34px; font-size:13px; line-height:1.5; }
+  .steps li::before{
+    counter-increment:step; content:counter(step);
+    position:absolute; left:0; top:-1px; width:23px; height:23px; border-radius:50%;
+    background:var(--porphyry); color:var(--cream); font-family:Georgia,serif; font-weight:700;
+    font-size:12px; display:flex; align-items:center; justify-content:center;
+  }
+  .steps li b{ color:var(--porphyry); }
+  :root[data-theme="dark"] .steps li b{ color:var(--gold-bright); }
+  .wall-mods{ display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+  .wall-mods .wm{ flex:1 1 120px; border-radius:8px; padding:8px 10px; font-size:11.5px; line-height:1.35; text-align:center; }
+  .wm .wm-state{ display:block; font-family:Georgia,'Copperplate',serif; font-variant-caps:small-caps; font-weight:700; letter-spacing:.03em; font-size:12.5px; }
+  .wm .wm-val{ display:block; font-size:16px; font-weight:700; margin:2px 0; }
+  .wm.intact{ background:rgba(61,107,69,.16); border:1px solid rgba(61,107,69,.45); color:var(--intact); }
+  .wm.battered{ background:rgba(184,132,47,.16); border:1px solid rgba(184,132,47,.45); color:var(--contested); }
+  .wm.breached{ background:rgba(138,44,34,.16); border:1px solid rgba(138,44,34,.45); color:var(--breached); }
+
+  .flow{ display:flex; align-items:stretch; gap:14px; margin:20px 0 4px; flex-wrap:wrap; }
+  .flow .step-card{ flex:1 1 300px; background:rgba(74,32,20,.05); border:1px solid var(--rule); border-radius:10px; padding:14px 16px; }
+  .flow .step-card h3{ margin:0 0 6px; font-family:Georgia,'Copperplate',serif; font-variant-caps:small-caps; letter-spacing:.03em; font-size:14px; color:var(--porphyry); }
+  :root[data-theme="dark"] .flow .step-card h3{ color:var(--gold-bright); }
+  .flow .step-card p{ margin:0; font-size:12.5px; line-height:1.5; color:var(--ink-soft); }
+  .flow .arrow{ align-self:center; font-size:22px; color:var(--gold); flex:none; }
+  @media (max-width:720px){ .flow .arrow{ transform:rotate(90deg); } }
+  .foot{ font-size:11px; color:var(--ink-soft); margin-top:26px; text-align:center; font-style:italic; opacity:.85; }
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Constantinople 1453 — Player Aid</div>
+    <h1>Assault Resolution</h1>
+    <p>Every Assault resolves in two steps. First the <b>Pre-Attack</b> volley &mdash; the defenders shoot
+    the attackers crossing the ditch, hurting only the Ottoman. Then the <b>Assault</b> proper &mdash; the
+    mutual clash on the strength-margin table, where both sides bleed.</p>
+  </header>
+
+  <div class="flow">
+    <div class="step-card">
+      <h3>1 · Pre-Attack — Defenders' Fire</h3>
+      <p>Byzantine rolls d8 per committed garrison unit. Hits remove attacker steps <em>before</em> the clash,
+      dropping the survivors onto a lower margin band.</p>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="step-card">
+      <h3>2 · Assault — Margin CRT</h3>
+      <p>Compute Margin = surviving Attacker Strength &minus; Defender Strength. Roll 1d10, read A&#8209;x / D&#8209;y.
+      Both sides lose steps.</p>
+    </div>
+  </div>
+
+  <!-- ===================== PRE-ATTACK PHASE ===================== -->
+  <section class="board" style="max-width:560px;">
+    <div class="phase-tag">Phase 1</div>
+    <div class="board-heading">Pre-Attack — Approach &amp; Defenders' Fire</div>
+    <p class="board-sub">
+      As the attackers cross the ditch, the defenders shoot them up &mdash; this stage <b>only ever hurts the
+      attacker</b>. The Byzantine rolls <b>one d8 per committed garrison unit</b> (max 4); each <b>7&ndash;8</b>
+      removes <b>one attacker step</b> (kill priority §6.3.1), <b>before</b> the margin is computed.
+    </p>
+
+    <div class="board-sub" style="margin-bottom:6px;"><b>Wall firing positions</b> &mdash; dice added or removed for the volley:</div>
+    <div class="wall-mods">
+      <div class="wm intact"><span class="wm-state">Intact</span><span class="wm-val">+1 die</span>parapet fully manned</div>
+      <div class="wm battered"><span class="wm-state">Battered</span><span class="wm-val">&plusmn;0</span>no change</div>
+      <div class="wm breached"><span class="wm-state">Breached</span><span class="wm-val">&minus;1 die</span>min 0 &mdash; barely fires</div>
+    </div>
+    <p class="avg-note">
+      Firing positions degrade as the wall is battered &mdash; an intact wall shreds the approach, a breached
+      one barely fires. Because the Ottoman only assaults Battered/Breached sectors, the fire they actually
+      face is lighter, keeping elite loss rare.
+    </p>
+    <p class="avg-note">
+      Wall &amp; Naval Defense are <b>not</b> dice &mdash; they stay flat modifiers to the Phase 2 margin.
+    </p>
+  </section>
+
+  <!-- ===================== ASSAULT PHASE ===================== -->
+  <section class="board" style="max-width:588px;">
+    <div class="phase-tag">Phase 2</div>
+    <div class="board-heading">Assault — Combat Results Table (Strength Margin)</div>
+    <p class="board-sub">
+      The main clash. Column = <b>Margin = surviving Attacker Strength &minus; Defender Strength</b>
+      (Wall/Naval Defense apply as flat &minus;6 / &minus;3 / &minus;1). Roll <b>1d10</b> and read
+      <span class="cell"><span class="a">A&#8209;x</span> <span class="sep">/</span> <span class="d">D&#8209;y</span></span>:
+      Attacker loses <b>x</b> steps, Defender loses <b>y</b>.
+    </p>
+
+    <div class="crt-wrap">
+      <table class="crt">
+        <colgroup>
+          <col><col class="band-neg"><col class="band-neg"><col><col><col class="band-hot"><col class="band-hot"><col class="band-hot"><col class="band-hot">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="roll-h">Roll<br>1d10</th>
+            <th>&lt; -3</th><th>-3 to 0</th><th>+1 to +2</th><th>+3</th><th>+4</th>
+            <th>+5</th><th>+6</th><th>+7+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>1</th>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>2</th>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>3</th>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>4</th>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>5</th>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>6</th>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>7</th>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+          </tr>
+          <tr><th>8</th>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
+          </tr>
+          <tr><th>9</th>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
+          </tr>
+          <tr><th>10</th>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legend">
+      <span><span class="swatch atk"></span><b>A&#8209;x</b> (Attacker) &mdash; Attacker committed steps lost &rarr; Draw Track step-down + Elite Casualty pool</span>
+      <span><span class="swatch def"></span><b>D&#8209;y</b> (Defender) &mdash; Defender Garrison steps lost &rarr; Sector-Falls &amp; Commander-Casualty checks</span>
+    </div>
+
+  </section>
+
+  <div class="foot">Constantinople 1453 &mdash; Assault Resolution player aid. Values first-draft, pending playtest (§6.5.2 / §6.5.3).</div>
+</div>
+</body></html>

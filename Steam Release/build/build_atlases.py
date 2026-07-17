@@ -11,7 +11,7 @@ import json, os, re, subprocess, sys, tempfile
 
 ROOT = r"C:\Users\CAO YANG\Desktop\Constantinople 1453"
 ART = os.path.join(ROOT, "artifacts")
-OUT = os.path.join(ROOT, "Steam Release", "v0", "images")
+OUT = os.path.join(ROOT, "Steam Release", "v1", "images")
 CHROME = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 COLS = 7            # atlas columns (TTS max 10)
 SCALE = 1.5         # device pixel ratio for the render

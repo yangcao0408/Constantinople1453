@@ -6,13 +6,13 @@ the Byzantine defender.
 
 ## 1. High-Concept
 
-- **Length:** 9–10 rounds, each round = one week of the historical 53-day siege.
+- **Length:** 9 rounds, each round = one week of the historical 53-day siege.
 - **Ottoman goal:** Breach the walls and take the city before Morale runs
   out (§4.0.4, the sole hard-loss track) — while their card economy
   (§4.0) steadily throttles what they can afford to do each round.
 - **Byzantine goal:** Prevent any wall sector from being breached until the
   Ottoman player is forced to withdraw (a track hits zero) or the round track
-  is exhausted (game ends turn 9/10 — Byzantine automatic win, since the
+  is exhausted (game ends turn 9 — Byzantine automatic win, since the
   historical relief-fleet clock is what the Ottomans are racing).
 - **Core tension:** Ottomans have overwhelming force but a shrinking clock
   (political capital + army will to fight); Byzantines have almost no
@@ -22,7 +22,14 @@ the Byzantine defender.
 
 Each round (= one week, one "day" of action in game terms — the two are the
 same beat, "day" is just the flavor name for the round's action sequence)
-runs in two phases:
+runs in two phases.
+
+**Start of each round 2–9 — flip a Siege Event (added 2026-07-15).** Before
+Phase A, flip the next card of the shuffled **Siege Events** deck
+(EVENT_DECK.md) — a Forced ambient event (weather, disease, supply, zeal…)
+that resolves immediately and colours the round for one or both sides. One
+per round, 8 events across rounds 2–9; rounds 1 and 10 have none. These are
+separate from the drawable card piles and cost no Ops.
 
 ### 2.1 Phase A — Bombardment
 
@@ -33,14 +40,60 @@ runs in two phases:
 - **Each Bombard action removes 1 Wall HP** from its target sector
   (§3.1) — the baseline damage rate behind the "several rounds of
   grinding" tempo the whole game is built around.
-- **Second Barrage** (added 2026-07-10): once per round, **discard 2
-  cards** for one additional Bombard action beyond the normal 3-4 slots.
-  Same 1 HP damage as a normal shot, but it never counts toward the
-  Concentration Bonus above — full details and reasoning in §4.0.3.
+- **Second Barrage** (added 2026-07-10, **redefined 2026-07-14 / 2026-07-16**):
+  the general term for an **Attack-type card funding an extra Bombard
+  action against a wall sector** in the Card Phase — a fresh supporting
+  barrage to grind masonry (§2.3, Attack type). It is **purely
+  structural**: wall strength only, **no combat effect**. Resolved on a
+  **1d10 — 1–3 nothing, 4–10 = 1 Wall HP, capped at 1 HP** (no 9–10
+  breaching bonus, no burst — those are unique to Orban's gun, §2.1). Not
+  to be confused with **Combined Arms**, Mehmed's +2-Attack *combat* buff
+  (§4.0.2). Full details in §4.0.3.
+- **The Great Cannon — Cannon Determination (added 2026-07-13, replaces
+  Orban's old "+1 Bombard slot" effect):** once Orban's Great Cannon is in
+  play (EVENT_DECK.md, Ottoman card 10, played Round 1), it fires each
+  round at one chosen sector as **one extra Bombard shot** — but that shot
+  is *variable and fragile* rather than a flat 1 HP. Roll **1d10** on the
+  **Cannon Determination** table:
+  - **1–3:** **no damage** — misfire, a fresh crack in the barrel, or the
+    great bombard's notoriously slow reload eats the round.
+  - **4–8:** **1 Wall HP** — a normal hit.
+  - **9–10:** **2 Wall HP** — a great breaching shot. This +1 over a
+    normal cannon *is* the "damage to wall +1" the piece is now worth.
+  - **On a 1–4 the great cannon *also* bursts** — it cracks and falls
+    silent, ceasing to fire. A single d10 does double duty: **1–3 → no
+    damage *and* it bursts; 4 → its one hit lands *and* it bursts on the
+    same shot; 5–8 → 1 HP, gun keeps firing; 9–10 → 2 HP, gun keeps
+    firing.** So the gun stays in service only on 5+ (60%/shot) and cracks
+    on average after ~2–3 shots — matching the historically temperamental
+    great bombard.
+  - **A burst is permanent (revised 2026-07-15):** when Orban's Great
+    Cannon bursts on its own Determination roll (the 1–4 above), it is
+    **removed from the game for good — the card goes with it** and is never
+    redrawn. There is no re-cast for a self-burst: the barrel that failed
+    under its own firing is gone. (Historically Orban's bombard did crack
+    repeatedly, but for the game a self-burst is the clean end of the piece
+    — the fragility *is* the counterweight to its firepower.)
+  - **Re-casting a cannon destroyed by a Sortie (revised 2026-07-15):** the
+    5-Ops re-cast applies **only** to a great cannon that a Byzantine
+    **Sortie** silences (§4.0.6), *not* to a self-burst. In that case the
+    gun is knocked out by enemy action rather than shattered from within,
+    so the Ottoman may repair/re-cast it by spending **5 Ops** (discarding
+    5 Ops' worth of cards, §4.0), returning it to service from the
+    following round. Five cards is a large slice of a round's economy, so a
+    successful raid genuinely drains the Ottoman even though the gun comes
+    back — the tempo cost is the real pressure.
+  - The great-cannon shot **does not count toward the Concentration
+    Bonus**. (*Design flag:* I've kept it as an *extra* shot on top of the
+    normal 3–4 slots, preserving Orban's "more firepower" identity; if it
+    over-performs, demote it to consuming one of the normal slots instead.
+    Also flag if you wanted damage and burst on two *separate* d10 rolls
+    rather than the single-roll reading above — your "1–3 / 4–8 / 9–10"
+    and "1–4" figures overlap, so I read them as one die.)
 
 ### 2.2 Phase B — Card Phase
 
-- A single shared **Event Deck** (target ~35–45 cards for a 9–10 round
+- A single shared **Event Deck** (target ~35–45 cards for a 9-round
   game). Each round, players are dealt a hand of **10-11 cards (Ottoman)
   / 9 cards (Byzantine)** — revised this session, up from the earlier
   8-9 placeholder; full breakdown and rationale in §4.0.
@@ -61,38 +114,62 @@ runs in two phases:
   small relative to the new hand sizes (10-11 / 9) so it enables genuine
   planning without letting either side stockpile a war chest that trivializes
   a later round; applies symmetrically to both sides.
-- **Reshuffle Rule (new this session — resolves the open "how does
-  reshuffling actually work" question):** applies to all three piles
-  (Ottoman, Byzantine, Neutral), standard CDG convention:
-  - **A named/Event card whose Event text is triggered is removed from
-    the game permanently** — it never returns to its pile, reshuffled or
-    otherwise. This matches how the deck already treats most pivotal
-    cards ("unique," "Forced") and generalizes it: a historical beat that
-    actually happened shouldn't be drawable and re-triggered a second
-    time, whether or not it happened to be tagged unique.
-  - **Everything else discarded — a card spent for its Ops value, a
-    named card never played as its Event, or a generic Attack/Supplies/
-    Move/Guile card (§2.3) spent on any Ops action — goes to that pile's
-    discard stack, which reshuffles back into the draw pile once it's
-    exhausted.** Generic cards in particular have no Event text to use
-    up, so they always cycle this way — a fixed pool of ~30 that
-    recirculates all game, exactly as intended (EVENT_DECK.md's Generic
-    Action Cards section).
-  - Net effect: each pile's *named* card count only ever shrinks over the
-    game (as Events get triggered and permanently removed), while the
-    *generic* cards remain a stable, renewable resource throughout — so
-    a late-game hand skews harder toward whatever named cards are left
-    unplayed plus a steady generic-card floor, rather than a pile that
-    either runs dry or keeps re-offering already-resolved history.
+- **Reshuffle Rule (refined 2026-07-13 — now keyed to card *ownership*,
+  not just Event-vs-Ops):** applies to all three piles (Ottoman,
+  Byzantine, Neutral), standard CDG convention:
+  - **A card played for its Event text, if it is from the playing side's
+    own designated pile, is removed from the game permanently** — your
+    side's historical beats fire once and are then gone (the Ottoman's
+    Orban's Great Cannon, the Byzantine's Blockade Runners, etc.). It
+    never returns to its pile, reshuffled or otherwise.
+  - **Everything else washes back** — into its pile's discard stack, which
+    reshuffles into the draw pile once that pile is exhausted. This
+    explicitly covers three cases: **(a)** *any* card spent for its **Ops
+    value** rather than its Event — the beat never happened, so the card
+    can recur (this includes a card from your own pile spent for Ops);
+    **(b)** a **Neutral-pile card, played by either side, even for its
+    Event** — Neutral cards model *recurring* conditions (weather, camp
+    disease, rumor, ration crises), so a Neutral Event is deliberately
+    never a once-and-gone historical beat and cycles back to be drawable
+    again; and **(c)** all generic Attack/Supplies/Move/Guile cards
+    (§2.3), which have no Event text at all — a fixed pool of ~30 that
+    recirculates all game (EVENT_DECK.md's Generic Action Cards section).
+  - **Exception — `unique`-tagged cards:** a card explicitly tagged
+    *unique* is removed permanently the moment its **Event** resolves,
+    regardless of which pile it came from — a one-time, dated historical
+    event (an eclipse, the April 20 relief run) cannot recur even from the
+    recirculating Neutral pool. `unique` overrides the Neutral wash-back in
+    (b); it does **not** make an *Ops*-play of a unique card remove it (the
+    event still never happened, so it recirculates like any Ops-play).
+  - Net effect: **only your own pile's Events, plus any `unique` card's
+    Event, ever leave the game permanently.** Ops-plays, non-unique
+    Neutral Events, and all generic cards recirculate. Each designated
+    pile's *named* count still shrinks over the game as its owner triggers
+    and burns its beats, while the Neutral pool stays a stable, renewable
+    resource — so a late-game hand skews toward whatever named cards a
+    side hasn't yet spent, on top of a steady Neutral floor.
 - Ops actions (spendable by either side, gated by role):
   - **Ottoman:** Assault a wall sector (also usable here outside the
-    concentration-bonus trigger in Phase A), Sap/mine, Muster
-    reinforcements, Diplomacy (pressure Genoese/Venetians to stay
-    neutral). Bombard itself is a Phase A action, not a Card Phase Ops
-    action.
+    concentration-bonus trigger in Phase A), Move (re-site the guns to new
+    sectors, §2.1, **or** shift up to 3 units anywhere on the map), Deploy
+    (bring uncommitted units onto the map from the Ottoman pool, §4.0.1 —
+    replaces the old Muster/recruitment action), Sap/mine, and Blockade (knock the Byzantine Powers
+    Stirring marker back 1 step — "diplomatic support −1", §4.0.5; the old
+    standalone "Diplomacy" action, now the Guile-type lever, §2.3).
+    Bombard is a Phase A slot action *and* — resolved 2026-07-14, revised
+    2026-07-15 — can also be funded by an Attack-type card in the Card
+    Phase, which grants **another full Bombard action** targeting wall
+    strength only. It is **not** flat damage: resolve it on a **1d10 —
+    1–3 no damage, 4–10 = 1 Wall HP, capped at 1 HP**. Like the great
+    cannon (§2.1) but with **neither the 9–10 breaching bonus (never 2 Wall
+    HP) nor the burst check** — both are unique to Orban's gun — so an
+    Attack-card Bombard (**Second Barrage**, §4.0.3) can only ever wear a
+    wall down 1 HP at a time. §2.3/§3.1.
   - **Byzantine:** Repair a wall sector, Reinforce a sector (spend Reserve
-    Pool tokens, §4.1), Sortie (raid to disrupt/destroy Ottoman cannon —
-    steps the Ottoman Draw Track down, §4.0), Sue for Aid (advance the
+    Pool tokens, §4.1), Move soldiers (shift up to 3 garrison units
+    between sectors), Sortie (raid to burn/wreck the Ottoman siege works —
+    resolved on a success roll + d8 return fire, §4.0.6), Sue for
+    Aid (advance the
     Powers Stirring track — the West's stirring forces the Ottoman to
     hedge; filling it permanently steps the Draw Track down and forces
     the Sultan toward a rushed assault, §4.0.5), Fire-ship raid (Coco's Raid —
@@ -102,8 +179,16 @@ runs in two phases:
     card economy when they succeed, not just move Byzantine-side tracks).
 - End-of-round bookkeeping: track adjustments, reserve/resource upkeep.
 - **Each Ops action costs 2 Ops points** to perform (Assault, Repair,
-  Reinforce, Sortie, Sap/Mine, Sue for Aid, Diplomacy, Muster
-  Reinforcements — every entry in the lists above).
+  Reinforce, Sortie, Sap/Mine, Sue for Aid, Blockade, Deploy — every entry
+  in the lists above) for its base (**1×**) effect. **Exception —
+  Concentration (§2.3):** stacking multiple generic cards of the same type
+  on one action multiplies its effect per the card count; see §2.3 for how
+  ×N scales each action and the cost-model flag there.
+- **Post-Assault Recovery (§6.3.2):** units and leaders that fight in an
+  Assault are *Recovering* the next round — they may not Move or join
+  another Assault (a defender still defends its own sector if re-assaulted).
+  Sustaining pressure round after round means rotating in **fresh** troops
+  (Deploy, §4.0.1), not re-throwing the same stack.
 - **Pressure to Attack (added 2026-07-10):** starting **round 2**, if the
   Ottoman player makes fewer than the **required number of Assault
   attempts** this round (Phase A concentration-bonus assault or Phase B
@@ -149,14 +234,44 @@ cards), each **typed to match specific Ops actions**:
 
 | Type | Ottoman match | Byzantine match |
 |---|---|---|
-| **Attack** | Assault | Sortie, Fire-ship raid |
-| **Supplies** | Diplomacy | Repair |
-| **Move** | Muster Reinforcements | Reinforce |
-| **Guile** | Sap/Mine | Sue for Aid |
+| **Attack** | Assault, **or** a Card-Phase Bombard (another full Bombard action, wall strength only, resolved on the damage roll — §2.1/§3.1) | Sortie, Fire-ship raid |
+| **Move** | Re-site the guns (change which sectors are cannon-sited, §2.1) **or** shift up to 3 units anywhere on the map | Move up to 3 garrison units between sectors |
+| **Supplies** | Deploy from the Ottoman pool (≥2 units **or** units summing to ≤5 combined Attack — §4.0.1) | Reinforce a sector **or** Repair a wall |
+| **Guile** | Sap/Mine **or** Blockade (knock the Byzantine Powers Stirring marker back 1 step — "diplomatic support −1", §4.0.5) | Sue for Aid |
 
-Fire-ship raid moved under Attack rather than staying unmatched — it's a
-genuinely aggressive strike action, the same category as a Sortie, not a
-diplomatic or logistics action.
+Remapped 2026-07-14 so each type is a *category of action both sides share*,
+replacing the old semantically-mismatched pairings (Supplies used to be
+Ottoman Diplomacy vs Byzantine Repair — two unrelated things). Now: **Attack**
+= apply violence, **Move** = reposition forces already on the board,
+**Supplies** = field new force or shore up a sector, **Guile** = the
+asymmetric special lever. Fire-ship raid stays under Attack (an aggressive
+strike, same category as a Sortie). Three notes on the design:
+
+- **Byzantine Supplies carries both Reinforce *and* Repair** — the defender's
+  two sustain levers now compete for one card type, so a Supplies-starved
+  round pinches both at once (the 2-for-1 off-type conversion is the relief
+  valve). A deliberate concentration of defender pressure vs the old split;
+  watch its variance in playtest.
+- **Byzantine Move** set to "up to 3 units" to mirror the Ottoman figure —
+  the defender's interior lines make repositioning at least as free as the
+  attacker's.
+- **Bombard under Attack — the Second Barrage — resolved 2026-07-14,
+  revised 2026-07-16: yes, and it targets wall strength only.** An
+  Attack-type card funds **another full Bombard action** in the Card Phase;
+  this Attack-card bombard is exactly what **"Second Barrage"** names in
+  play (§4.0.3). Resolve it on a **1d10: 1–3 nothing, 4–10 = 1 Wall HP,
+  capped at 1 HP** — like the great cannon (§2.1) but with **no 9–10
+  breaching bonus (never 2 HP) and no burst check**, both unique to Orban's
+  gun. It does nothing else. **Each wall sector may take at most one Second
+  Barrage per round** (§4.0.3). Distinct from **Combined Arms** (Mehmed's +2
+  Attack combat buff, §4.0.2): **Second Barrage = structural wall damage,
+  Combined Arms = combat.**
+- **Ottoman Guile — resolved 2026-07-14:** its two uses are **Sap/Mine**
+  and **Blockade**, where Blockade = "diplomatic support −1 for the
+  Byzantines" = knock the Powers Stirring marker back 1 step (§4.0.5), the
+  repeatable Guile-funded version of the suppressor cards (Rumeli Fort,
+  Hunyadi's Truce, Intercepted Dispatch). The old standalone Diplomacy
+  action is now exactly this.
 
 - **On-purpose use**: a card contributes its full 1 Ops toward its
   matching action. Two matching cards = exactly the 2 Ops an action
@@ -174,10 +289,47 @@ diplomatic or logistics action.
   original design. The generic-card typing system is additional texture
   layered under the named deck, not a replacement for it.
 
+- **Concentration — stacking same-type cards (added 2026-07-15):** two or
+  more generic cards **of the same type**, played together in one turn on a
+  **single action of that matching type**, resolve that action at a
+  **multiplied effect equal to the number of cards committed — 2 cards →
+  2×, 3 cards → 3×**, and so on. A glut of one type is no longer something
+  you can only spend on repeating the base action once per pair; you may
+  fold it into one oversized action instead. The committed cards *are* the
+  cost. The multiplier scales the action's **quantitative magnitude**:
+
+  | Type → action | What ×N multiplies |
+  |---|---|
+  | **Attack → Card-Phase Bombard** | **N** separate damage rolls (§2.1), each capped at 1 HP and each at a **different sector** (max one Second Barrage per sector/round, §4.0.3) |
+  | **Move** | shift up to **3 × N** units (or re-site the guns to N sectors) |
+  | **Supplies → Deploy** | **N×** the allowance: **≥2N units, or units summing to ≤5N combined Attack** (§4.0.1) |
+  | **Supplies → Repair** | roll Repair **N times** (§4.0.8), sum the HP (still capped at the current band ceiling, §3.1) |
+  | **Supplies → Reinforce** | field **N** units (spending N Reserve tokens, §4.1) |
+  | **Guile → Blockade** | knock the Powers Stirring marker back **N steps** (§4.0.5) |
+
+  **Actions with no natural magnitude don't take a ×N** — a single
+  **Assault** or **Sortie** clash, **Sue for Aid** / **Fire-ship** (each a
+  single d10 resolution), and **Sap/Mine** (hard-capped at one *new*
+  gallery per round, §4.0.7). Committing extra same-type cards to these
+  instead buys **N separate actions** (e.g. two Attack pairs → two distinct
+  Assaults; two Guile-funded Sue for Aid rolls), still subject to every
+  per-round cap. Concentration never bypasses a cap — it can't open two new
+  galleries or exceed the §6.3 Force Commitment cap in one Assault.
+
+  *(Design flag: as written, N matching cards → N× makes a concentrated
+  action more card-efficient than the flat "2 Ops = one base action" cost
+  (§2.2) — effectively 1 matching card = one ×1 unit of effect. That's the
+  natural reading of "2 cards → 2×," and it reads intuitively (2 Move cards
+  = 6 units, 2 Attack cards = 2 Bombard rolls). If you instead want the
+  flat 2-Ops base preserved, the alternative is **2N cards → N×** (a base
+  ×1 action still costs its 2 cards). Flag which you intend; I've
+  implemented the literal per-card version.)*
+
 This creates the intended tension directly: draw the right generic card
-for what you want to do, and it's efficient; draw the wrong mix, and you
-either wait, spend a named card's Ops value instead, or burn cards 2-for-1
-to force it through.
+for what you want to do, and it's efficient — and drawing several of one
+type now lets you concentrate them for a proportionally bigger swing;
+draw the wrong mix, and you either wait, spend a named card's Ops value
+instead, or burn cards 2-for-1 to force it through.
 
 ### 2.4 Ops Value Scale (revised)
 
@@ -200,6 +352,18 @@ marginally better:
 EVENT_DECK.md) — the full deck needs a rebalancing pass against this new
 1–5 scale rather than the original 1–3 guidance.
 
+**Odd Ops values — discard-to-round-up (added 2026-07-15).** Because every
+Ops action costs **2 Ops** (§2.2), a named card spent for its **Ops value**
+with an **odd** total (3 or 5) strands 1 Ops after funding whole actions.
+To avoid wasting it, the player may **discard one additional generic action
+card (1 Ops) to top the odd card up by +1**, rounding it to an even total
+that funds one more complete 2-Ops action. So a **3-Ops card + 1 discard →
+4 Ops = two actions**; a **5-Ops card + 1 discard → 6 Ops = three actions**.
+Only the leftover odd 1 Ops may be topped up this way — it is a rounding
+lever, not a general card-to-Ops converter (that is the flat 2-for-1
+off-type rule, §2.3). The discarded card may be any generic card (type
+doesn't matter, since it's only supplying the missing 1 Ops).
+
 ## 3. The Wall — Segmented Map
 
 ### 3.1 Land Wall Sectors (5, north to south)
@@ -213,8 +377,29 @@ EVENT_DECK.md) — the full deck needs a rebalancing pass against this new
 | 5 | **Golden Gate** | Golden Gate | 8 | Southernmost, saw the least assault pressure historically |
 
 Each land sector tracks:
-- **Wall Integrity (HP)**, reduced by Bombard, restored by Repair — can't
-  repair past a "rubble" cap once heavily battered.
+- **Wall Integrity (HP)**, reduced by Bombard, restored by Repair (now a
+  die roll — §4.0.8) — but
+  **Repair can only raise a sector's HP up to the top of its *current*
+  status band** (the green Intact / yellow Battered / red Breached bands
+  in the table below), never across a band boundary into a healthier one
+  (refined 2026-07-13 — this is the concrete form of the old "rubble
+  cap"). Once Bombard knocks a sector down into Battered or Breached, that
+  lower band becomes a **permanent ceiling**: Repair keeps the wall topped
+  up *within* its band but can never lift it back into a greener band.
+  **Consequence to note:** a Breached (red) sector sitting at the top of
+  its band gets *nothing* from a normal Repair — masonry work cannot
+  un-breach a wall. The only way to add defense at such a band-topped sector
+  is a **Stockade**: either the card *The Stockade at the Breach* (**+2 Wall
+  Defense**, Breach-only, EVENT_DECK.md), or — added 2026-07-16 — a
+  band-topped **Repair to erect a lighter +1 Stockade directly** (§4.0.8).
+  The two are the same kind of modifier and **do not stack** — use the
+  higher. This makes Bombard progress into a lower band genuinely sticky
+  while giving the defender a standing-defense use for an otherwise wasted
+  Repair. (*Design flag:* this is the literal
+  reading of "repair only up to the top of the status band." The one
+  escape hatch is *The Walls Endure*, which lets a single Repair bypass
+  the band ceiling once. Flag if you instead wanted Repair able to slowly
+  climb bands over repeated actions.)
 - **Garrison strength present** (Byzantine's scarce resource, moved via
   Reinforce, drawn from the Reserve Pool — §4.1).
 
@@ -237,12 +422,48 @@ as, or more than, an entire committed unit stack (§6) — direct assault on
 an intact wall should be close to irrational, which is accurate: no
 attacker ever took these walls by frontal assault before 1453.
 
+**Band cushion — a band-crossing Bombard is softened by 1 HP (added
+2026-07-17).** When a *single* Bombard hit would carry a wall sector
+*across* a band threshold — Intact→Battered (down to ≤ ½ max) or
+Battered→Breached (down to ≤ ⅓ max) — **reduce that hit by 1 HP.** The
+rubble and improvised stockading thrown up at the transition (the same
+fiction as the ≤⅓ "token defense" row above) soaks the blow: a 2-HP
+great-cannon shot that would knock a sector a full band down instead
+deals **1**, and if that single point no longer crosses the line the
+sector **holds in its current band**. *Worked example:* a Battered wall
+sitting two points above the Breached threshold, hit for 2, loses only 1
+and stays Battered. This applies to **every** wall sector regardless of
+any standing Stockade structure (§4.0.8) or which leaders are present.
+*Open knob:* as written it fires on every band-crossing hit, so a wall
+can stall one point above a threshold under repeated 1-HP bombards (only
+a 2-HP great-cannon shot then pushes it across) — cap it at **once per
+sector per round** if that proves too sticky.
+
 **Wall Defense is a combat modifier, not a second health pool** (made
 explicit 2026-07-11, §6.5) — it never runs out on its own the way
 Garrison Strength does. Its only job is shaping the Assault ratio, which
 in turn shapes how much Garrison damage a hit deals. A sector falls only
 when its Garrison Strength hits 0, regardless of remaining Wall HP — an
 intact but empty wall offers no one to actually stop the Ottomans.
+
+**Sap resistance — per-sector mining penalty (added 2026-07-15).** Beyond
+Wall Defense, each land sector has a fixed **sap penalty** subtracted from a
+gallery's Mining Strength when its dig roll is computed (§4.0.7): the
+harder-to-undermine the ground, the more it eats into the sappers' odds.
+
+| Sector | Sap penalty | Effective Mining Strength `M_eff` |
+|---|---|---|
+| **Blachernae** | **0** | `M` — the single wall on soft, flanked terrain gives miners a free hand (the historically weakest construction) |
+| **Mesoteichion / St. Romanus** | **−1** | `M − 1` — the low-ground breach point, next-easiest to dig under |
+| **Charisius, Gate of the Spring, Golden Gate** | **−2** | `M − 2` — the full Theodosian triple wall on high ground resists mining hardest |
+
+`M_eff` is floored at 0 and feeds directly into the §4.0.7 roll. Worked
+examples at a full 3-unit gallery (`M = 3`): Blachernae `M_eff = 3` (blows
+on 8+), St. Romanus `M_eff = 2` (blows on 9–10, digger dies on 1–3), and
+the three triple-wall sectors `M_eff = 1` (**blows on a 10 only**). This is
+separate from **John Grant's Countermine** (EVENT_DECK Byz #2), which
+doesn't apply a penalty at all — it *permanently seals* two chosen sectors
+so no gallery may ever be opened there again.
 
 ### 3.2 Sea Wall — Golden Horn (the only mechanical sea sector)
 
@@ -268,6 +489,11 @@ the land sectors:
   the inherent difficulty of a shipborne escalade regardless of
   garrison, roughly equivalent to a permanently-Battered land wall. This
   never improves or degrades; it's a constant, not a track.
+- **No Approach / Defenders' Fire phase (decided 2026-07-14).** Unlike a
+  land assault, a Golden Horn Assault skips the §6.5.3 approach stage
+  entirely — no d8 return-fire roll. The flat Naval Defense 3 above is the
+  sea's substitute for it. (A future Byzantine card, *Ready the Sea
+  Walls*, will grant a reduced ⌈n∕2⌉-d8 approach roll here — see §6.5.3.)
 - **Garrison strength still matters directly**, same as any land sector —
   it's the main lever the Byzantine player has to push the odds further
   against the Ottomans. Byzantines have no reserves, so any garrison
@@ -344,15 +570,31 @@ player draws each round** and can then spend.
   - **Immediate one-shot draw/discard** — this is what almost all
     individual Event Deck cards actually use now: "Ottoman draws N extra
     cards" or "Ottoman discards N cards," resolved once, not a change to
-    next round's baseline. Powder Shipment Arrives, Plague in the Camp,
-    Tribute Demand, mustering costs, Second Barrage, Combined Arms — all
+    next round's baseline. Baltaoğlu's Punishment, Demand Tribute,
+    deployment costs, Second Barrage, Combined Arms — all
     of these are immediate hand-size effects, not Draw Track edits. This
     is the far more common case; treat Draw Track shifts as the
     exception reserved for effects that are explicitly about a
     sustained, multi-round change in capability.
+  - **Effect timing — everything is immediate (codified 2026-07-15):**
+    unless a card explicitly says "next round" or "for the rest of the
+    game," **every effect resolves the moment it's played**, in
+    particular: **card draws and discards happen immediately, and cards
+    drawn mid-round may be played that same round** (there is no
+    "drawn cards sit out until next round" rule — explicitly ruled out);
+    **Reserve Pool gains/losses apply immediately.** **Two structural
+    levers are the deliberate exception and take effect only from the
+    *next* round (revised 2026-07-15 — this reverses the earlier "cap is
+    immediate" note):** the **Ottoman forced-assault requirement**
+    (Pressure to Attack, §2.2 — e.g. Halil Pasha's Doubt's +1) and the
+    **max-unit-commitment / Force Commitment Cap** (§6.3 — e.g. The War
+    Council's +1). A card that changes either does *not* touch the current
+    round's Assaults; the new value applies from the following round.
+    Other deferred effects are those whose text says so (commander recalls
+    lasting "2 rounds," etc.).
 - Either way, a card-starved Ottoman hand (whether from a lowered Draw
   Track or a run of discard-heavy cards) has both fewer actions *and*
-  fewer cards to burn on Second Barrages or elite musters — the intended
+  fewer cards to burn on Second Barrages or elite deployments — the intended
   strangulation, expressed entirely through the card engine.
 - **No independent hard-loss condition.** Unlike the old Resources track,
   the Draw Track bottoming out at 2 doesn't end the game — it just
@@ -370,7 +612,7 @@ shared pile), say so — the rest of the model holds either way.
 
 The Byzantine **Sue for Aid** Ops action — the city's appeals to Venice,
 Genoa, the Pope, Hungary, and the Karamanids — feeds a single persistent
-**Powers Stirring track** (0 → 4 steps) rather than granting an immediate
+**Powers Stirring track** (0 → 5 steps) rather than granting an immediate
 resource. This is the defender's mirror of the Ottoman-side persistent
 Draw Track shifts described in §4.0: it is the **only** tool by which the
 Byzantine player can force a *permanent* change in the Ottoman baseline,
@@ -382,7 +624,7 @@ and it is deliberately slow and contestable.
   - **5 or less** — no progress this attempt.
   - Modifiers from event cards (below) add or subtract from the roll, or
     move the marker directly.
-- **Filling the track (marker reaches 4) — "The Powers Stir":** a
+- **Filling the track (marker reaches 5) — "The Powers Stir":** a
   one-time swing that resolves immediately, then the marker **resets to 0**
   and can be built again:
   - **Permanent Draw Track −1** for the rest of the game (a pasha and his
@@ -411,64 +653,353 @@ and it is deliberately slow and contestable.
     Intercepted Dispatch / Ottoman branch (each knocks the marker **back
     1 step** — the two stacking is now fine: it costs the Byzantine tempo
     rather than bricking the action outright).
+  - *Repeatable Ottoman action — Blockade (added 2026-07-14):* the
+    Ottoman's Guile-type Ops action (§2.3), "diplomatic support −1,"
+    **knocks the marker back 1 step** — the generic, re-drawable version of
+    the suppressor cards above. This is what gives the Ottoman a standing
+    way to contest the track every round they draw Guile, rather than only
+    when a named suppressor comes up; it's the direct counterplay to the
+    Byzantine's own Sue for Aid advances, so the marker becomes a genuine
+    tug-of-war rather than a one-sided climb.
   - *Finality:* The Scout Ship's Return (Byzantine, Round 7+, Forced)
     **freezes the marker permanently** where it stands — no further
     advances, hope of relief is dead — alongside its Reserve Pool +1.
 
-#### 4.0.1 Mustering Cost (per unit fielded, §6.1)
+#### 4.0.6 Sortie Resolution — success roll + return fire (revised 2026-07-14, phase framing 2026-07-15)
 
-Paid in **discarded cards** now, not Resource points, but the same tiered
-escalation — cheap irregulars barely dent your hand, elite troops are a
-real spend of your options:
+The Byzantine **Sortie** Ops action — a sally out of the gates to burn or
+wreck the Ottoman artillery (the besiegers' guns, including the great cannon) —
+resolves in **two phases, exactly like an Assault (§6.5.3):** a **Volley
+phase** (the return fire the raiders take crossing the open ground) and a
+**Combat phase** (the raid's actual effect on the works). The
+damage-allocation rule differs by phase, and this is the single place the
+distinction bites (§6.3.1): **the mandatory-kill rule — "if a kill is
+possible, one unit must be destroyed" — applies *only* in the Volley phase;
+in the Combat phase the side taking damage distributes it however it
+likes.** A stronger raiding party succeeds more often *and* takes more fire
+on the way back — the historical gamble, legible in the dice.
 
-| Unit | Cost | Change |
-|---|---|---|
-| Bashi-bazouk | 3 units per 1 card | was Free — closes the "literally unlimited free units" case |
-| Azap | 1 unit per 1 card | was 4 units per 1 card |
-| New Levy Janissary | 1 unit per 1 card | was 2 units per 1 card |
-| New Levy Janissary → Janissary (upgrade) | 1 card per unit upgraded | the *only* way to field a Janissary now |
-| Janissary (fresh muster) | **removed** | no longer musterable directly — must be upgraded from New Levy |
-| Solak | **removed** | no longer musterable at all — see note below |
-| **Replenish** (Janissary or Solak, new) | 1 card per unit restored | restores a *flipped* (damaged, not destroyed) Janissary or Solak back to full step count |
+- **The action:** Sortie costs **2 Ops** (§2.2). Commit any number of
+  garrison units (and, optionally, one or more leaders) from the sallying
+  sector to form the raiding force. **The only sortie target is *artillery*
+  (revised 2026-07-15)** — the besiegers' guns, *including Orban's great
+  cannon* if it is in play (the great cannon is artillery). Siege
+  engines / saps are **no longer** a sortie target; countermining galleries
+  is now solely John Grant's job (§4.0.7).
+- **Success roll (Combat phase) — 1d10, succeed on `(11 − x)` or higher**,
+  where **`x` = the raid's total attacking power** = the sum of committed
+  units' **Attack** values (Clergy Levy's 0 adds nothing — no sortie
+  capability, §6.1) **+1 per committed leader** and **+ card modifiers**.
+  **A committed Byzantine general contributes only a flat +1 to `x`,
+  regardless of his own combat stat (confirmed 2026-07-15)** — a captain
+  leads and coordinates the raid but his personal leadership bonus does
+  *not* apply as sortie attack power the way it would on a defended wall;
+  the raiders' own Attack values do the work. A stronger raid needs a lower
+  roll: `x = 3` → **8+**; `x = 5` → **6+**; `x = 8` → **3+**; `x ≥ 10` →
+  auto-success; `x = 1` → only a natural 10.
+  - On **success**, the works are wrecked — **Ottoman discards 1 card** (a
+    one-shot Draw Track hit, §4.0); or, if the declared target was **the
+    great cannon**, it is **silenced** — knocked out of action (it stops
+    firing) rather than shattered. This is the one cannon-loss the Ottoman
+    *can* re-cast, for 5 Ops (§2.1) — a sortie kill is enemy action, not
+    the permanent self-burst. This is the Byzantine route to shutting down
+    Orban's gun.
+  - **Critical success (added 2026-07-15) — this is Combat-phase damage:**
+    if the successful **success roll was a natural 9 or 10**, the raid also
+    draws blood among the covering troops — inflict **1 step loss (on a 9)
+    or 2 step losses (on a 10)** on Ottoman units at the target sector.
+    Because this is the **Combat phase**, the **Ottoman (the side taking the
+    damage) distributes these step losses freely** — no mandatory-kill
+    restriction (that applies only to the Volley phase below). (*Design
+    flag:* this is my reading of "on a 9/10, deal 1/2 damage to the
+    defender" — the natural die showing 9→1, 10→2 step losses on the target
+    force, on top of the normal success effect. Flag if you meant a
+    different magnitude or a different target.)
+  - On a **miss**, the raid achieves nothing — but the return fire below
+    still applies, so a failed sortie can cost troops for nothing.
+  - *Card modifiers to `x`:* **The Podestà's Dilemma** and **Sortie by
+    Torchlight** each add **+2** to attacking power (their old target
+    qualifiers dropped 2026-07-15 now that artillery is the only target —
+    Torchlight is consequently under review as a likely duplicate of the
+    Podestà); **The Siege Trench** halves `x` (round down) for the success
+    roll. These cards' "+N Sortie attacking power" wording maps directly
+    onto `x`.
+- **Return-fire roll (Volley phase) — `y` d8, where `y` = the number of
+  defence (garrison) units present in the sallying sector, capped at `max
+  4d8`** (revised 2026-07-15 — was one die per committed unit, uncapped; now
+  keyed to the sector's garrison presence and hard-capped to match the §6.3
+  defender cap of 1–4). This is exactly the Approach/Volley mechanic
+  (§6.5.3): **each die showing 7–8 inflicts one step loss** on the raiding
+  force (a 1-step unit destroyed, a multi-step unit flipped). Because this
+  is the **Volley phase, the Ottoman allocates these losses**, under the
+  **mandatory-kill rule (§6.3.1): if a hit can complete a kill, it must**
+  (revised 2026-07-15 — was Byzantine's choice). So the Ottoman focus-fires
+  the raid's most valuable committed unit and is forced to finish it when
+  able — the mirror of the Byzantine focus-firing Ottoman elites during an
+  Assault's Volley. Leaders add no dice and are never hit — only garrison
+  units are exposed. Expected losses = `y ÷ 4` (so at most 1 step on average
+  at the 4d8 cap).
+- The two rolls are **independent**: a raid can wreck the works and still
+  bleed on the way back, or achieve nothing yet bring everyone home.
+- **The trade-off:** committing more raises `x` (better odds), while the
+  return fire is now bounded by the sector's garrison (max 4d8) — so a
+  bigger sortie lands more reliably without runaway bleed, but a
+  heavily-garrisoned sector always sallies into more fire.
 
-**Replenish, added this session:** without this, a Janissary or Solak
-that's taken one hit (flipped to its reduced face, per §6.1's multi-step
-rule) just sits there permanently weakened for the rest of the game —
-there was no way back to full strength short of losing the unit outright
-and re-earning a replacement through the upgrade pipeline from scratch.
-Replenish fixes that: pay 1 discarded card (via Muster Reinforcements,
-§2.2) to restore a flipped Janissary or Solak to full step count,
-representing reinforcement drafts backfilling a bloodied but intact
-formation rather than raising a fresh one. Deliberately cheaper than the
-New Levy → Janissary upgrade path would cost from scratch (1 card here
-vs. 1 card to muster New Levy + 1 more to upgrade) — repairing a unit
-you already have should be more efficient than replacing it.
+*Placeholder numbers* (the 2-Ops cost, the `11 − x` threshold, the 7–8 hit
+band, the 4d8 return-fire cap, the 9/10 critical-success magnitude) pending
+playtesting. Shape chosen 2026-07-14 to reuse the Approach stage's d8
+return-fire mechanic so the two combat systems rhyme; the return fire is
+now capped at 4d8 (2026-07-15) to match the §6.3 defender cap. *Open knob:*
+whether the raiding *force* (not just return fire) is also size-capped —
+left uncapped for now; flag if it wants one.
 
-**Retuned this session, second pass** (previous ratios were an
-unre-tuned placeholder carried over 1:1 from the old Resource-point
-numbers, never actually checked against typical hand size). Every tier
-is tighter than the original draft — Bashi-bazouk stops being a literal
-zero-cost unlimited resource, Azap drops from 4-per-card to 1-per-card
-(a 4x tightening), New Levy Janissary is now 1-per-card (was 2) — and,
-this pass, **Janissary can no longer be mustered fresh at all**. The
-training pipeline is now mandatory, not just cheaper: muster New Levy
-(1 card/unit) first, then spend 1 more card to upgrade a fielded New
-Levy into a full Janissary. No more paying a premium to skip the queue —
-there is no queue-skip anymore, which makes the New Levy stage a real
-bottleneck the Ottoman player has to plan around rather than an optional
-discount path.
+**Balance note on Ottoman-allocated return fire (the "is this balanced?"
+question, 2026-07-15).** Handing the Ottoman the raider-loss allocation
+*with* a forced kill is the exact situation §6.3.1 deliberately avoided on
+*defence* — it warned that letting the Ottoman pick would let them delete an
+irreplaceable Byzantine elite (Genoese Company, Cretan Sailors — pools of
+2 and 1) "almost on demand." On a Sortie that danger is real: commit a
+Genoese unit to a raid, roll a single 7–8 on return fire, and the Ottoman
+*must* kill it. My read: this is **balanced only as a deterrent** — it
+correctly makes sending your scarce captains and elite companies on raids a
+bad idea, pushing the Byzantine to sortie with expendable militia/Azap-tier
+units (which, combined with the general contributing only +1, keeps raid
+`x` modest). That's thematically right (raids are a gamble with expendable
+troops), **but** if you find it makes Sorties a dead action — militia-only
+raids rarely clear the `11 − x` bar — the fix is one of: (a) restrict the
+mandatory kill to the **first hit only**, as in §6.3.1's first-point rule,
+rather than every 7–8; (b) let the **Byzantine** protect one designated
+unit per raid; or (c) exempt named elite units from the forced kill. Flag
+which, if any, after playtest. As written, the rule is implemented exactly
+as directed: Ottoman allocates, mandatory kill, Volley phase only.
 
-**Solak has no mustering path at all (removed this pass)** — resolves
-the price-compression flag from last pass by removing the comparison
-entirely rather than re-pricing it. Given the flavor already on record
-(§6.1: "the Sultan's own personal bodyguard," a hard-capped pool of 2),
-it makes more sense for Solak not to be a wartime recruit in the first
-place: **both Solak tokens should be available to the Ottoman player
-from game start** (or via a specific named Event card, if you'd rather
-gate them behind something drawn mid-game) rather than something raised
-mid-siege through the same card economy as everyone else. This still
-needs a decision — pre-deployed at start, or event-gated — but either
-way it's no longer part of this table. Flagging this choice in §7.
+#### 4.0.7 Sap/Mine Resolution — commit-and-fire mining (added 2026-07-13, reworked 2026-07-15)
+
+The Ottoman **Sap/Mine** Ops action (the Guile action, funded by Guile
+generic cards, §2.3) drives a gallery beneath a wall sector to collapse it
+from below — the one way to breach masonry *fast*, bypassing the slow
+round-by-round Bombard-vs-Repair race. How well it works is driven by how
+many troops the Ottoman is willing to bury in the dig.
+
+- **Open a gallery (2 Ops):** choose one land sector and **commit 1–3
+  Ottoman units** to it, placed at the sector as *sapping*. **Mining
+  Strength `M` = the *number* of units committed (max 3)** — reworked
+  2026-07-15, was the units' combined Attack; unit *quality* no longer
+  matters underground, only bodies in the dig, so cheap Bashi-bazouks are
+  now the natural sappers. Committed units are **tied up**: while sapping
+  they cannot Assault, support Bombard, or move (they are underground).
+  **Only one *new* gallery may be opened per round.** Galleries at more
+  than one sector may stand simultaneously (opened across successive
+  rounds); a later Sap action may still **add units to an existing
+  gallery** (raising its M, never above 3).
+- **Effective Mining Strength `M_eff` = M − the target sector's sap penalty**
+  (§3.1: Blachernae 0, St. Romanus −1, all others −2), floored at 0. Every
+  threshold below is keyed to `M_eff`, so *where* you dig matters as much as
+  *how many* you commit.
+- **The dig roll — 1d10, rolled for each standing gallery once per round**
+  (a new gallery rolls immediately on opening; an already-standing gallery
+  keeps digging and rolls again each round without further Ops cost — so
+  with several galleries standing, more than one sap roll can happen in a
+  single round even though only one *new* sap may be attempted):
+  - **≥ (11 − M_eff) → the charge blows.** The target sector loses **3 Wall
+    HP at once**, and this loss **may cross a band boundary** (Intact →
+    Battered → Breached, §3.1) — a mine breaches in a single blow, unlike
+    gradual Bombard. The gallery is spent; its units survive and are freed.
+    The roll is deliberately *reversed* from the old ≤ M form so high rolls
+    are always good for the roller, consistent with every other d10.
+  - **≤ (5 − M_eff) → a digger dies.** The tunnel partially collapses:
+    **one committed unit is destroyed** (Ottoman's choice which). The
+    gallery itself **persists** and keeps digging (its M drops by the lost
+    unit). So a bigger, better-placed dig is *both* likelier to blow *and*
+    less likely to bleed — expertise and mass push the death band down as
+    they push the success band down. (*Design flag:* I've read "a unit
+    dies" as the gallery surviving at reduced M rather than caving in
+    entirely — flag if you wanted the whole gallery lost.)
+  - **Everything in between → nothing yet.** The dig hits rock or water —
+    no damage. The gallery and its M **persist** into the next round (keep
+    digging, roll again) — the window the Byzantine counterplay exploits.
+  - **Worked bands (M = 3 committed):** at **Blachernae** (`M_eff = 3`) →
+    blows on **8+**, digger dies on **1–2**; at **St. Romanus**
+    (`M_eff = 2`) → blows on **9–10**, dies on **1–3**; at the three
+    triple-wall sectors (`M_eff = 1`) → blows on a **10 only**, dies on
+    **1–4**. With **Zaganos Pasha** present the gallery digs at **M + 1**
+    *before* the sap penalty (so a 3-unit gallery under Zaganos at St.
+    Romanus is `M_eff = 3` → blows on 8+).
+- **Exposed underground (the Byzantine counterplay):** a standing gallery
+  is vulnerable. **John Grant's Countermine** (EVENT_DECK Byz #2, reworked
+  2026-07-15) may be played *immediately, at any moment* — even during the
+  Ottoman's turn — to **permanently seal two land sectors against sapping**:
+  any active galleries at the two chosen sectors are destroyed (their
+  committed units killed underground), and **the Ottoman may never open a
+  gallery at either sector again for the rest of the game.** (The old
+  "Sortie targeting siege engines" counter was removed 2026-07-15 — Sorties
+  now target artillery only, §4.0.6 — so **John Grant's Countermine is the
+  sole way to destroy a standing gallery**, on top of the dig's own
+  digger-death rolls.) This is the price of a multi-round dig: every round a
+  gallery stands unfired is a round the countermine can catch it.
+- **Zaganos' Sappers** (EVENT_DECK Ott #1, reworked 2026-07-15): while
+  Zaganos Pasha is present at the gallery's sector, that gallery adds **+1
+  to M *before* the sector's sap penalty** (so `M_eff = M + 1 − penalty`).
+  A full 3-unit gallery under Zaganos blows on **7+** at Blachernae, **8+**
+  at St. Romanus, **9–10** at a triple-wall sector — one band better than
+  the same dig without him, and its higher `M_eff` also shrinks the death
+  band. Expertise buys both reach and safety.
+
+*Placeholder numbers* (the (11 − M_eff) thresholds, 3 Wall HP per blow, the
+(5 − M_eff) death band, the per-sector penalties) pending playtesting,
+consistent with the rest of §4. **Design shape (2026-07-15):** M = unit
+*count* capped at 3 keeps the knob coarse and legible and stops
+attack-value stacking; the per-sector penalty (§3.1) makes success span a
+clean 10%→40% range (a 10-only dig at the triple walls up to 40% under
+Zaganos at Blachernae) so *where* you tunnel is a real choice; success and
+survival move together (higher `M_eff` raises the blow chance and lowers
+the death chance at once); the per-round free re-roll makes a standing
+gallery a ticking clock the Byzantine must answer rather than a one-shot
+gamble; and the (5 − M_eff) death band bleeds a long or badly-placed dig so
+parking galleries forever isn't free. **Flag:** (a) *interpretation* — the free
+per-round re-roll for standing galleries is my reading of "existing saps
+may still roll"; if you instead want each re-roll to cost a fresh Sap
+action, say so and the counterplay window widens a lot. (b) Third Tunnel
+(old Ott #17) has been **removed from the deck** and its slot refilled by
+**Mahmud Pasha's Push** (2026-07-15); Zaganos' Sappers is re-pointed as
+above, closing the old "mine cards hit Garrison" inconsistency.
+
+#### 4.0.8 Repair Resolution — die roll (added 2026-07-15)
+
+The Byzantine **Repair** Ops action (a Supplies-type action, §2.3) is no
+longer a guaranteed flat restore; like the Great-Cannon shot (§2.1), the
+Sortie (§4.0.6) and the Sap (§4.0.7), it now resolves on a die, so the
+round-to-round Bombard-vs-Repair race carries real variance instead of a
+fixed outcome. (Decision 2026-07-15, per user steer to move Repair off a
+"free"/automatic restore.)
+
+- **Repair (2 Ops):** choose one land sector below the top of its current
+  status band (§3.1) and roll **1d10**:
+  - **1 → the work is undone** — 0 Wall HP restored (masons scattered, a
+    fresh section slumps back).
+  - **2–7 → 1 Wall HP restored.**
+  - **8–10 → 2 Wall HP restored** — a good night's work.
+  - Restoration is **capped at the top of the sector's current band**
+    (§3.1); overflow is wasted, and a Breached sector already at band-top
+    gains nothing (only *The Stockade at the Breach* adds defense there).
+- **Expected ≈ 1.2 HP per Repair** — deliberately just above a single
+  Bombard shot's flat 1 HP, so a committed defender can *occasionally*
+  out-repair one shot (the 8–10 double) at the cost of a 10% whiff, rather
+  than losing the race by a fixed margin every round. It still can't keep
+  pace with a full 3–4-shot barrage plus the great cannon — the wall is
+  still meant to grind down.
+- **Modifiers:** cards reading "+N extra Integrity on Repair" (Night
+  Repairs, Orban's Offer / Byzantine branch) add **+N to the HP restored**
+  after the roll (still band-capped unless stated); **The Walls Endure**
+  lets one Repair's result bypass the band ceiling once; **Under Siege of
+  Sound** (Ott 16) **blocks Repair entirely** that round (no roll at all).
+- **Concentration (§2.3):** N Supplies cards spent on Repair roll it **N
+  times** (sum the HP, still band-capped) — the die-roll form of the "N×
+  Integrity" entry in the §2.3 table.
+- **Stockade — converting a band-topped Repair into standing defense (added
+  2026-07-16):** when the chosen sector is already at the **top of its
+  current status band** (HP maxed for its current state, so a normal Repair
+  would restore nothing, §3.1), the Repair action may instead **erect a
+  Stockade** there — a **+1 Wall Defense** modifier (§3.1/§6.4), the
+  improvised timber-and-rubble breastwork of the kind Giustiniani threw up
+  at the Mesoteichion breach. This is the defender's relief valve for a
+  band-topped wall Repair can no longer help:
+  - **One Stockade per sector** at a time — a second may not be stacked
+    while one stands. It does **not** stack with the card *The Stockade at
+    the Breach* (EVENT_DECK.md), which grants a stronger **+2** modifier
+    directly; when both would apply, use the higher (+2), not the sum.
+  - **Removal — normal:** a Stockade is removed the moment the sector
+    **drops into the next lower band** (Intact→Battered or
+    Battered→Breached) — the degrading wall overruns the breastwork. So a
+    Stockade erected while Intact or Battered is fragile; it is worth the
+    most at the breach.
+  - **Removal — Breached exception:** a Stockade on a **Breached** sector
+    (no lower band beneath it) instead stands until the sector's **HP is
+    ground to 0.**
+- **Repairs per round scale with the Reserve Pool (added 2026-07-16).** Wall
+  repair needs hands, and those hands are the same militia well the Reserve
+  Pool (§4.1) tracks — so the number of **Repair actions the Byzantine may
+  take per round is capped by the Reserve Pool level**, each still resolved
+  on its own 1d10 (above):
+  - **Reserve Pool above half → up to 3 Repairs per round.**
+  - **Reserve Pool at or below half → up to 2 Repairs per round.**
+  This cap sits **on top of** the normal 2-Ops Supplies cost per Repair
+  (§2.2) — low reserves throttle repair *capacity*, not just reinforcement.
+  The threshold is marked on the Byzantine player board by the
+  'Free repair −1' box at the last slot of the full-strength 1/1 militia
+  block (the 15th reserve slot). (*Design flag:* the
+  original note gave overlapping "≤ half → 3" and "< half → 2" thresholds;
+  I've read that as a single half-threshold two-tier cap — **3 above, 2
+  at/below**. Say if you wanted a third, lower band, e.g. dropping to 1
+  Repair/round when the pool nears empty.)
+
+*Placeholder numbers* (the 1 / 2–7 / 8–10 bands) pending playtest, tuned to
+sit just above Bombard's flat 1 HP.
+
+#### 4.0.1 Deployment from the Ottoman pool (replaces Mustering, §6.1)
+
+**Overhauled 2026-07-15 — the Ottoman no longer *musters* (creates) units
+from the card economy. Instead the army's manpower already exists as a
+pool of *uncommitted* units off-board; the Ottoman player *deploys* them
+onto the map.** This models the historically huge besieging host that was
+already gathered — the constraint is getting the right troops into the
+right sector at the right time, not raising them.
+
+- **The pool — elites only (clarified 2026-07-15):** the finite pool of
+  uncommitted units covers **Janissaries and Solaks only**. (Exact pool
+  composition is a setup number, pending the §6.1 order-of-battle pass;
+  Solak's 2 tokens live here from the start, resolving the old "Solak has
+  no muster path" flag below.) Elite units removed in combat are gone; the
+  pool only ever shrinks. **Bashi-bazouk, Azap, and New Levy are *not*
+  pool-limited** — they come from open supply (effectively unlimited
+  counters), modelling the host's bottomless irregular manpower; what
+  gates them is the Deploy allowance below, not a finite stock. (This is
+  why e.g. Fresh Reserves from Anatolia freely fielding 4 Azap + 4
+  Bashi-bazouk doesn't contradict the shrinking-pool rule — those types
+  were never pool-counted.)
+- **Deploy action (a Supplies-type card / Ops action, §2.3):** one
+  Deployment brings units from the pool onto the map at a legal staging
+  sector. Per Deployment card, you may field **either**:
+  - a **minimum of 2 units** (any units, regardless of their Attack), **or**
+  - any number of units whose **combined Attack ≤ 5**,
+  whichever lets you deploy more. So a single card always lets you land at
+  least 2 units — even 2 elite Solaks — *or* flood a batch of cheap
+  irregulars (e.g. up to 5 Bashi-bazouk at Attack 1) when you want mass
+  over quality. This replaces the old per-unit tiered card cost entirely.
+
+**Deploy also handles upgrades and elite recovery (resolved 2026-07-17):**
+- **Upgrades (New Levy → Janissary)** are folded into the Deploy action:
+  in place of fielding fresh units, a Deploy may **upgrade fielded New
+  Levies where they stand**, each upgrade counting as a **3-Attack** deploy
+  against the allowance above — so one Deploy upgrades **up to 2** New
+  Levies (via the ≥2-units branch). No separate upgrade action.
+- **Elite recovery** is likewise a **Deploy** action now (replacing the old
+  *Replenish* standing action and the earlier Weight-of-Numbers-only
+  routing): a Deploy may instead **return up to 2 destroyed
+  Janissary/Solak units** to the board, same ≤2-per-card cap. A
+  Deploy-recovery does **not** touch the Elite Casualty pool counter — the
+  units simply reappear, and the next kill resumes the ratchet as normal.
+  Drawing the counter *down* (buffering Morale) stays unique to **Weight of
+  Numbers** (§4.0.4), which is what that card's 3-Ops cost now buys
+  (resolved 2026-07-17).
+- **Replenish as a standing action has been dropped (2026-07-15).**
+- **Solak** is pre-seeded in the pool (see above), so it needs no special
+  muster path.
+
+**Design history (superseded by the pool model above, 2026-07-15):** the
+prior model was a tiered *mustering* economy — pay N discarded cards to
+raise units, with per-tier ratios (Bashi-bazouk 3/card, Azap and New Levy
+1/card), Janissaries fielded *only* by upgrading a New Levy (no fresh
+muster), Solak unmusterable, and a **Replenish** action (1 card to restore
+a flipped Janissary/Solak to full step count). The pool-and-deploy model
+folds all of that away: units aren't *raised* anymore, they're *deployed*
+from a pre-existing pool under the ≥2-units-or-≤5-combined-Attack allowance.
+Upgrades are now folded into the Deploy action (resolved 2026-07-17, above);
+**Replenish as an action is dropped**, its elite-recovery role likewise
+folded into Deploy (return up to 2 destroyed elites per card). The New-Levy-first training bottleneck and
+Solak-from-start intent both carry over — Solak now simply starts in the
+pool.
 
 #### 4.0.2 Mehmed's Combined Arms
 
@@ -478,21 +1009,46 @@ hand each time, not a free passive.
 
 #### 4.0.3 Second Barrage
 
-A Phase A option (§2.1): once per round, the Ottoman player may **discard
-2 cards** (placeholder) for **one additional Bombard action** beyond the
-normal 3-4 slots. This extra shot deals the same Wall HP damage as a
-normal Bombard (§3.1: **1 Bombard action removes 1 Wall HP**), but **does
-not count toward the Concentration Bonus** (§2.1) — it can't be the shot
-that unlocks a same-round Assault. That's the "half effectiveness": not
-half damage (fractional HP is awkward), but half the strategic value.
-One extra shot per round max.
+**Redefined 2026-07-16 — Second Barrage *is* the Attack-card Bombard, not a
+combat buff.** In play, "Second Barrage" is simply the general name for an
+**Attack-type card funding an extra Bombard action against a wall sector**
+in the Card Phase (§2.3) — the besiegers laying a fresh supporting barrage
+to grind masonry. It is **purely structural**:
+- Targets **wall strength only** — no combat effect, no Attack bonus to any
+  Assault, no effect on wall *status* beyond the HP it removes.
+- Resolved on a **1d10: 1–3 nothing, 4–10 = 1 Wall HP — capped at 1 HP.**
+  Unlike Orban's great cannon (§2.1) it gets **no 9–10 breaching bonus
+  (never 2 HP) and no burst check**: a generic supporting barrage can wear
+  a wall down but **cannot land the single 2-HP breaching shot that only
+  the great bombard is capable of.** (1-HP cap added 2026-07-16 — the 2-HP
+  result is now exclusive to Orban's Great Cannon.)
+- Under Concentration (§2.3), N Attack cards fire **N separate 1d10 rolls**,
+  each still capped at 1 HP — but subject to the per-sector cap next.
+- **One Second Barrage per sector per round (added 2026-07-16).** Second
+  Barrage may be played **any number of times a round** (each its own Attack
+  card), but **each wall sector may be targeted by at most one Second
+  Barrage per round.** A sector already takes its Phase-A bombard(s) and, if
+  applicable, the great-cannon shot; the Card Phase may add **one** further
+  supporting barrage to it, no more. Multiple Second Barrages in a round
+  must therefore be **spread across different sectors** — and a Concentrated
+  stack of N Attack cards fires its N rolls at **N different sectors**, not
+  N times at one wall.
+
+**Not to be confused with Combined Arms (§4.0.2)** — that is Mehmed's
+*combat* ability: when Mehmed leads an Assault at a cannon-sited sector, the
+Ottoman may discard 1 card for **+2 Attack to that Assault**. Combined Arms
+= combat; Second Barrage = wall damage. Two unrelated levers that each
+happen to cost a card.
 
 #### 4.0.4 Morale (revised this session — track size and gain/loss sources)
 
 - **Morale** (janissary/army will to fight + Sultan's political capital to
-  keep the siege going against court opposition) — **track runs 0-7,
-  starting at 7 (full strength), hard-capped at 7 (overflow from gain
-  cards is wasted).**
+  keep the siege going against court opposition) — **track runs 0-8,
+  starting at 7 (full strength), hard-capped at 8.** The one point of
+  headroom above the 7 start means the single Morale-gain card (Hadith of
+  Conquest, below) is **never wasted** — it always lands as a real 7→8
+  step rather than overflowing a full track, which is the point of the
+  cap sitting at 8 rather than at the starting value.
 - **Morale gain now comes from a single named card in the whole deck**
   (EVENT_DECK.md, revised this session): **The Hadith of Conquest (+1,
   round 1-2)** — max **+1** across a full game. No other source of Morale
@@ -527,9 +1083,30 @@ One extra shot per round max.
     routinely shielded behind cheap troops. Threshold lowered from an
     earlier draft of 10 once that fix made the pool fill up under
     realistic play — see the estimate below.
+    - **The Morale drops ratchet; the counter itself can move down (added
+      2026-07-15 for Weight of Numbers).** Track two things: the **running
+      counter `P`** (elite Attack value lost) and the **Morale-lost level
+      `L`** already inflicted. `L` only ever *rises* — Morale lost to this
+      pool is never refunded. Normally `L` climbs to `floor(P / 5)` as `P`
+      grows. The **one** effect that reduces `P` is **Weight of Numbers**
+      (EVENT_DECK Ott #22, now 3 Ops): returning destroyed elites to the
+      board subtracts their Attack value from `P` **but leaves `L`
+      unchanged**. (A *plain* Deploy-recovery, §4.0.1, also returns up to 2
+      destroyed elites, but does **not** touch `P` — the units come back
+      while the counter keeps climbing on the next kill. Buying `P` down is
+      what separates Weight of Numbers from routine recovery and justifies
+      its higher cost.)
+      After such a reduction the next Morale drop fires only when `P` climbs
+      back up to `5 × (L + 1)` — the recovered points are a *buffer before
+      the next drop*, not a Morale refund. *Worked example:* `P = 16` →
+      `L = 3` (Morale −3, since 16 has crossed 15). Weight of Numbers takes
+      8 points back → `P = 8`, but `L` **stays 3** (Morale still −3, not
+      −1). The **−4** drop now waits until `P` reaches 20 again — another
+      **12** points of destroyed elites — so the Byzantine must re-kill
+      roughly those two formations before Morale resumes falling.
 - **Morale hitting 0 → the Ottoman army lifts the siege → immediate
   Byzantine win.** This is the sole hard-loss track for the Ottoman side.
-  Note this isn't the *only* way Byzantine wins — reaching round 9/10
+  Note this isn't the *only* way Byzantine wins — reaching round 9
   with no sector lost is an automatic Byzantine win regardless of Morale
   (§5) — so Morale running out under sustained pressure late in the game
   is a legitimate, expected outcome, not a sign the track is broken.
@@ -566,7 +1143,7 @@ after round 2.
 **Design rationale, decided this session (2026-07-10):** the Elite
 Casualty pool is now Morale's primary drain, in place of the flat
 time-decay idea considered earlier (Morale -1 every 2 rounds,
-unconditional). Reasoning: the round-limit auto-win at round 9/10 above
+unconditional). Reasoning: the round-limit auto-win at round 9 above
 already supplies the "hurry up, clock's ticking" pressure on the Ottoman
 player, so a second, unconditional Morale timer stacked on top would
 have been redundant. The casualty pool does different, more specific
@@ -580,13 +1157,14 @@ narrower, more particular role for Morale than pure time-decay would
 have given it: not a doom clock in its own right, but a real, felt cost
 for leaning on Janissaries and Solaks to press the attack.
 
-**Track size confirmed this session: 0-7, starting at 7.** Against the
-+1 max from a named card (Hadith of Conquest) and the
+**Track size confirmed this session: 0-8, starting at 7.** Against the
++1 max from a named card (Hadith of Conquest — now genuine headroom to
+8, never a wasted overflow) and the
 drains above (Four Ships -2, Halil Pasha's Doubt -1 plus its structural
 squeeze, the Elite Casualty pool's -1-per-5 ticks, and occasional
-Pressure to Attack penalties), a full 7-point swing is crossable but not
-trivial over 9-10 rounds — still first-draft pending playtesting, but no
-longer an open question.
+Pressure to Attack penalties), a full 7-point swing down to a Byzantine
+win is crossable but not trivial over 9 rounds — still first-draft
+pending playtesting, but no longer an open question.
 
 **Elite Casualty pool sizing estimate (this session):** with §6.3.1's
 defender-assigns-losses fix in place, elites can no longer be reliably
@@ -615,13 +1193,14 @@ a flat 20 — see the survivability check below for why).
   Byzantine player Reinforces a sector or fields new units (via Ops or
   event), a token comes off the Reserve Pool — mirroring Ottoman
   Resources as the "can we even afford this action" constraint.
-- The pool has **no graduated depletion penalties** — considered and set
-  aside for now (2026-07-13). Running low simply means fewer tokens on
-  hand to spend; there are no debuff bands layered on top of that. The
-  only hard threshold is empty (below). (The Ottoman Morale track, by
-  contrast, *does* keep its graduated bands, §4.0.4 — that track is a hard
-  loss condition, so texturing its decline earns its keep; the Reserve
-  Pool isn't a loss track, so plain depletion is pressure enough.)
+- The pool has **one graduated depletion penalty** (added 2026-07-16):
+  when it falls **to half or below, Byzantine Repair capacity drops from 3
+  to 2 actions per round** (§4.0.8) — fewer hands in the city means fewer
+  wall sections worked each week. That single step aside, there are no other
+  debuff bands: running low otherwise just means fewer tokens on hand to
+  spend, and the only hard threshold is empty (below). (The Ottoman Morale
+  track, by contrast, keeps a fuller set of graduated bands, §4.0.4 — that
+  track is a hard loss condition, so texturing its decline earns its keep.)
 - At **zero**, the Byzantine player can no longer Reinforce or field new
   units at all — existing garrisons keep fighting where they stand, but
   there's no way to backfill losses. Like the Ottoman Draw Track
@@ -633,7 +1212,7 @@ a flat 20 — see the survivability check below for why).
   against the Ottomans.)
 - 20-30 tokens is still a placeholder scale — needs playtesting against
   how many tokens a typical Reinforce action costs and how many rounds
-  the siege runs (9–10).
+  the siege runs (9).
 
 **Survivability check, new session (2026-07-10):** the target driving
 both this Reserve Pool range and the CRT rescale in §6.5 is explicit
@@ -679,7 +1258,7 @@ target above actually holds up in play.
   Horn matters even though it can never be bombarded: an under-garrisoned
   Golden Horn is a live, low-odds-but-real path to an Ottoman win, not
   just a nuisance sector.
-- **Byzantine wins:** Survive to the end of round 9/10 without losing an
+- **Byzantine wins:** Survive to the end of round 9 without losing an
   Assault in any sector, OR drive Ottoman **Morale** to 0 earlier. (The
   Ottoman Draw Track, §4.0, is not a loss condition — grinding it down
   only strangles the Ottoman player toward one of those two outcomes.)
@@ -862,17 +1441,22 @@ flat points rather than column shifts):
 - **Zaganos Pasha**: **+1 Attack.** Historically oversaw the Golden Horn
   ship portage and directed the Serbian sapper corps (notably countered
   on the Byzantine side by a Scottish/German engineer, John Grant — good
-  flavor for a future defensive counter-sapper card). **Engineering:**
-  when present, the Sap/Mine Ops action costs 1 less Ops (one fewer card
-  to fund it); he is also the natural leader for Assaults on the Golden
-  Horn sector, reflecting his actual area of command.
+  flavor for a future defensive counter-sapper card). He is the natural
+  leader for Assaults on the Golden Horn sector, reflecting his actual
+  area of command. *(The old "Engineering" ability — Sap/Mine costs 1 less
+  Ops when he is present — was removed 2026-07-17.)*
 - **Karaca Pasha**: **+1 Attack.** Beylerbey of Rumelia, commanded the
   European/Balkan troops, historically positioned toward the **northern**
   end of the line. **Northern Command:** +1 further Attack when leading
-  an Assault on Blachernae or Charisius. He was killed during the siege
-  by defensive fire from the walls — a strong candidate for a mid-game
-  "Karaca Pasha Killed" event (a Morale hit, mirroring Giustiniani's
-  wounding as a symmetric narrative beat on the Ottoman side).
+  an Assault on Blachernae or Charisius. He **survived** the 1453 siege
+  and was killed three years later at the **Siege of Belgrade (1456)** —
+  *corrected 2026-07-17, fact-checked against Wikipedia.* The earlier
+  note here (“killed by fire from the walls,” proposed as a mid-game
+  “Karaca Pasha Killed” Morale event) was based on a mistaken death date
+  and has been dropped. No major statted Ottoman commander actually died
+  during the siege of Constantinople, so there is no clean historical
+  mirror to Giustiniani’s wounding on the Ottoman side — the nearest
+  honest alternative is the Baltaoğlu naval-disgrace beat noted below.
 - **Ishak Pasha**: **+1 Attack.** Beylerbey of Anatolia, commanded the
   Anatolian troops, historically positioned toward the **southern** end
   of the line. **Southern Command:** +1 further Attack when leading an
@@ -917,8 +1501,10 @@ defense:
   leader present in that sector** to be committed at all — no leader
   present, no access to that contingent's troops there.
 - **A single Defense may combine militia with *one* foreign contingent**
-  (whichever single foreign leader is present) without any special
-  requirement.
+  (whichever single foreign leader is present) — no coordination gate, but
+  this mix now incurs **Faction Discontent** (below) unless a coordinator
+  (Constantine anywhere, or Notaras at the Golden Horn) is present to
+  unify it.
 - **Combining two or more different foreign contingents in the same
   Defense requires Constantine XI present in that sector.** Only the
   Emperor has the standing to coordinate rival factions together — no
@@ -927,6 +1513,24 @@ defense:
   any mix of units present at that specific sector without needing
   Constantine — the one deliberate crack in an otherwise strict rule,
   reflecting his real naval authority there (§6.2).
+- **Faction Discontent — mixed defenses fight at odds (added 2026-07-17).**
+  Whenever a single Defense contains units *or* leaders of **more than one
+  faction** — e.g. Roman militia standing under a Venetian leader, or
+  Genoese and Venetian troops side by side — the rival contingents bicker
+  over precedence. The defender must **pick one faction to favour:** that
+  faction's units (and its matching leader's Defense bonus) fight at
+  **full** Defense, while **every other faction's Defense contribution is
+  halved, rounded up.** A **coordinator cancels it entirely:** with
+  **Constantine XI** present (any sector) or **Notaras at the Golden
+  Horn**, there is *no* discontent and the whole mixed stack fights at full
+  strength. This is what makes those two special — not merely *permission*
+  to combine contingents, but the only way to combine them *without* the
+  half-strength tax. *Worked example:* a Venetian leader (+1 Def) with 2
+  Roman militia — side with the Romans and the militia defend in full while
+  the leader's bonus halves (⌈1/2⌉ = 1, so no change at +1); side with the
+  Venetian and his +1 stands while the militia's Defense halves, rounded
+  up. *(Rounding and whether a favoured leader's bonus is itself subject to
+  the tax are tunable — flagged for playtest.)*
 - Cretan Sailors, having no leader of their own, can *only* ever be
   fielded as part of a Constantine-coordinated Defense.
 
@@ -949,8 +1553,9 @@ below), not in the cap itself.
   shipborne escalade has far less usable frontage to land and press troops
   across than an open land breach does. **The War Council (EVENT_DECK.md
   card 25, R7+, Forced) permanently raises this cap by +1 — to 6 (5 at the
-  Golden Horn) — for the rest of the game once played**, as the Sultan
-  commits to the final all-out push.
+  Golden Horn) — for the rest of the game, taking effect from the round
+  *after* it is played (§4.0 effect-timing) rather than the current round**,
+  as the Sultan commits to the final all-out push.
 - **Defender cap: 4 garrison units committed per Assault.** Wall Defense
   and Naval Defense (§3.1/§3.2) aren't "units" and don't count against
   this — they're the fortification's own contribution, stacked on top of
@@ -1041,10 +1646,23 @@ asymmetry is the point:
   the sharper tactical control on both sides of the ledger is consistent
   with the "razor-thin garrison, no reserves" framing in §1's
   High-Concept.
-- **Mandatory Kill Priority (added this session, clarified — applies to
-  only the first point of damage):** whichever player is assigning steps
-  lost (Byzantine, per both bullets above) must spend the **first point**
-  of any roll's damage completing a **confirmed kill**, if one is
+- **Two phases — where Mandatory Kill applies (framing clarified
+  2026-07-15):** an Assault (and a Sortie, §4.0.6) resolves in a **Volley
+  phase** (Approach / Defenders' Fire, §6.5.3 — the pre-contact ranged
+  fire) followed by the **Combat phase** (the main mutual clash, §6.5.2).
+  **The Mandatory Kill Priority below applies *only* in the Volley phase.**
+  In the **Combat phase there is no forced kill at all** — the assigning
+  player distributes every step of that phase's damage however they like
+  (the defender freely distributes their own garrison losses; the Byzantine
+  still assigns the Ottoman's Combat losses per the first bullet above, but
+  now with no mandatory-kill constraint on any of it). Who *allocates* is
+  unchanged; only the forced-kill constraint is now phase-scoped.
+- **Mandatory Kill Priority (Volley phase only — applies to
+  only the first point of damage):** whichever player is assigning the
+  Volley's steps lost (in an Assault: the Byzantine, firing on the
+  approaching Ottoman; in a Sortie: the **Ottoman**, returning fire on the
+  raiders — §4.0.6) must spend the **first point** of any roll's damage
+  completing a **confirmed kill**, if one is
   available — a 1-step unit outright, or a multi-step unit already
   flipped and one hit from destruction. Every point *after* that first
   one is freely assignable, however the assigning player likes —
@@ -1065,6 +1683,41 @@ asymmetry is the point:
   portion of every roll — without fully reopening the shielding exploit
   §6.3.1 closed above, since any damage beyond the first point still
   reaches past the sacrificial unit.
+
+### 6.3.2 Post-Assault Recovery (added 2026-07-15)
+
+**Any unit or leader that takes part in an Assault is *Recovering* for the
+following round.** When an Assault resolves, mark every piece that fought it
+— **both** the attacking units/leaders **and** the defending garrison
+units/leaders committed to that sector. During the **next round**, a
+Recovering piece:
+
+- **may not be committed to an Assault**, and
+- **may not be Moved** (the Move action, §2.3) — it is regrouping, tending
+  wounded, redistributing shot and ladders.
+
+The marker clears at the end of that next round, so the piece is free again
+the round after. **A Recovering defender that is itself assaulted again
+still defends its own sector normally** (it cannot refuse a defense, and its
+Wall/Naval Defense and garrison count as usual) — Recovery only bars
+*initiating* movement, a Sortie, or joining a *new* Assault elsewhere; it
+never pulls a unit off the wall it is standing on.
+
+**Why:** this stops either side from hurling the exact same stack at the
+wall every single round. It turns the Ottoman's numerical mass into a real
+rotation problem — you need fresh troops (Deploy, §4.0.1) to keep pressure
+up round after round, the historical pattern of committing wave after wave
+of *different* formations — and it gives the Byzantine a reason to husband
+and rotate a thin garrison rather than fight the same companies to
+exhaustion. It also pairs with the deferred Force Commitment Cap / forced-
+assault changes (§4.0): tempo is now something you plan a round ahead.
+
+*(Design flags: (a) applied to **both** sides' committed forces — say if
+you meant only the attacker. (b) A Recovering defender keeps full Defense if
+re-assaulted; only its own movement/sortie/other-sector commitment is
+suspended. (c) Leaders recover too, per "armies + generals." (d) Placeholder
+duration of exactly one round — flag if a heavy Assault should recover
+longer.)*
 
 ### 6.4 Combat Calculation
 
@@ -1328,7 +1981,12 @@ there often buys nothing. The difference index breaks that band up, so
 concentration is visibly rewarded exactly where the game is actually
 played. **The bands below are therefore deliberately fine through +1 to +8
 and coarse in the tails**, which competent play rarely touches (no wise
-Ottoman assaults at a negative margin).
+Ottoman assaults at a negative margin). **The far-left `< -3` column (added
+2026-07-15) splits the old "≤ 0" band in two** — a genuinely hopeless
+assault (attacker outmatched by 4+) now bleeds even harder (avg Atk 2.5,
+Def ~0.1) than a merely bad one, deterring desperate throws at a fully
+intact, well-garrisoned wall while keeping the "a better result is never
+worse" monotonicity intact.
 
 This is a **mutual-damage** table — every cell is **Atk-x / Def-y**: the
 Attacker loses *x* committed steps and the Defender loses *y* Garrison
@@ -1337,25 +1995,29 @@ additional* step that resolves **first** and only ever hurts the attacker
 (extra casualties + force reduction); this table is the main clash where
 both sides bleed.
 
-**Procedure:** resolve Defenders' Fire (§6.5.3) first and remove its
-casualties; then compute **Margin = surviving Attacker Strength − Defender
-Strength**, find its band, roll **1d10** (same flat single die as
+**Procedure:** resolve Defenders' Fire (§6.5.3 — the Volley phase) first and
+remove its casualties; then compute **Margin = surviving Attacker Strength −
+Defender Strength**, find its band, roll **1d10** (same flat single die as
 §6.4/§6.5), and read **Atk-x / Def-y**. Attacker steps lost → Draw Track
 step-down + Elite Casualty pool; Defender steps lost → Garrison damage,
-Sector-Falls check, Commander Casualty (§6.5.1).
+Sector-Falls check, Commander Casualty (§6.5.1). **This is the Combat
+phase, so both sides' step losses are distributed freely by their owners —
+no Mandatory Kill Priority here** (that binds only in the Volley phase,
+§6.3.1); the Byzantine still assigns the Ottoman's Combat losses per §6.3.1,
+now without the forced-kill constraint.
 
-| Roll | ≤ 0 | +1 to +2 | +3 to +4 | +5 to +6 | +7 to +8 | +9 to +11 | +12 or more |
-|---|---|---|---|---|---|---|---|
-| 1 | Atk-3/Def-0 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 |
-| 2 | Atk-3/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 |
-| 3 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 4 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 5 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 6 | Atk-2/Def-0 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 7 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
-| 8 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 |
-| 9 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 |
-| 10 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 | Atk-1/Def-4 |
+| Roll | < -3 | -3 to 0 | +1 to +2 | +3 to +4 | +5 to +6 | +7 to +8 | +9 to +11 | +12 or more |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Atk-3/Def-0 | Atk-3/Def-0 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 |
+| 2 | Atk-3/Def-0 | Atk-3/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 |
+| 3 | Atk-3/Def-0 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
+| 4 | Atk-3/Def-0 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-2/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
+| 5 | Atk-3/Def-0 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
+| 6 | Atk-2/Def-0 | Atk-2/Def-0 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
+| 7 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 |
+| 8 | Atk-2/Def-0 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 |
+| 9 | Atk-2/Def-0 | Atk-1/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 |
+| 10 | Atk-2/Def-1 | Atk-1/Def-1 | Atk-1/Def-2 | Atk-1/Def-2 | Atk-1/Def-3 | Atk-1/Def-3 | Atk-1/Def-4 | Atk-1/Def-4 |
 
 Average steps lost per roll (Atk +0.2 / Def −0.2 tweak applied to the +3-4
 through +7-8 combat bands this session — Ottoman bleeds slightly more, the
@@ -1363,7 +2025,8 @@ Byzantine slightly less, where play concentrates):
 
 | Band | Avg Atk | Avg Def | Net (2·Def − Atk) |
 |---|---|---|---|
-| ≤ 0 | 2.0 | 0.4 | −1.2 |
+| < -3 | 2.5 | 0.1 | −2.3 |
+| -3 to 0 | 2.0 | 0.4 | −1.2 |
 | +1 to +2 | 1.5 | 1.0 | +0.5 |
 | +3 to +4 | 1.4 | 1.3 | +1.2 |
 | +5 to +6 | 1.3 | 1.8 | +2.3 |
@@ -1376,10 +2039,10 @@ Byzantine slightly less, where play concentrates):
 - **Monotone in value — a better result is never worse.** Score each cell
   as **2·Def − Atk** (Byzantine step = 2, Ottoman step = 1). Down every
   column (rising roll) *and* across every row (rising margin) that score is
-  non-decreasing — the net ladder climbs **−1.2 → +0.5 → +1.2 → +2.3 →
-  +3.4 → +4.8 → +5.6** — so a higher roll or a bigger margin can only ever
-  improve the Ottoman's weighted outcome. Conventional shape: attacker loss
-  highest at the worst results, tapering to 1; defender loss rising to a
+  non-decreasing — the net ladder climbs **−2.3 → −1.2 → +0.5 → +1.2 →
+  +2.3 → +3.4 → +4.8 → +5.6** — so a higher roll or a bigger margin can only
+  ever improve the Ottoman's weighted outcome. Conventional shape: attacker
+  loss highest at the worst results, tapering to 1; defender loss rising to a
   capped 3.3.
 - **Reward rises with the push.** Def climbs across the realistic +2 → +8
   band, so concentrating more attack always grinds more (vs the ratio
@@ -1406,21 +2069,36 @@ the **+5-6 / +7-8** values if playtest holds too few / too many.
 
 ### 6.5.3 Approach — Defenders' Fire (decided this session, 2026-07-12)
 
-**An Assault resolves in two steps:**
+**An Assault resolves in two phases** (the same two-phase structure a
+Sortie uses, §4.0.6):
 
-1. **Approach (this stage, Byzantine rolls):** as the attackers cross the
-   ditch under fire, the defenders shoot them up — **extra attacker
-   casualties**, removed *before* the clash (which also drops the survivors
-   onto a lower §6.5.2 margin). This stage **only ever hurts the attacker** —
-   a defender-favouring bonus layer, not the main combat.
-2. **Assault (§6.5.2, mutual):** the main clash on the Atk/Def margin CRT,
-   where **both** sides take steps.
+1. **Approach — the Volley phase (this stage, Byzantine rolls):** as the
+   attackers cross the ditch under fire, the defenders shoot them up —
+   **extra attacker casualties**, removed *before* the clash (which also
+   drops the survivors onto a lower §6.5.2 margin). This stage **only ever
+   hurts the attacker** — a defender-favouring bonus layer, not the main
+   combat. **This is the one phase where the Mandatory Kill Priority
+   (§6.3.1) applies.**
+2. **Assault — the Combat phase (§6.5.2, mutual):** the main clash on the
+   Atk/Def margin CRT, where **both** sides take steps. **No mandatory kill
+   here** — each side's losses are distributed freely (§6.3.1).
 
 **Procedure:** the Byzantine rolls **one d8 per garrison unit committed to
 the defence** (x dice, x = 1–4, the §6.3 defender cap). Each die showing its
 **top two faces (7–8)** inflicts **one attacker step loss**, assigned per
 §6.3.1 (mandatory kill priority, focus-fire). Wall/Naval Defense are *not*
 dice — they stay flat modifiers to the §6.5.2 margin.
+
+**Sea sectors have no Approach phase (decided 2026-07-14).** The Golden
+Horn (§3.2) skips this stage entirely — a shipborne escalade crosses no
+fosse into a prepared killing ground, and the sea wall has no HP band to
+key the die count off anyway. Its flat Naval Defense 3 *is* the sea's
+whole "hard to storm" tax, folded into the §6.5.2 margin; there is no
+separate defenders'-fire roll at the Golden Horn. (Planned hook: a future
+Byzantine card — working title *Ready the Sea Walls* — will grant the
+Golden Horn a *reduced* Approach roll of **⌈n∕2⌉ d8** for that assault,
+where n = garrison units committed there, i.e. half the land rate rounded
+up. Not yet written; the user will design it.)
 
 Expected attacker casualties = x × 2⁄8 = **x ÷ 4**:
 
@@ -1517,7 +2195,7 @@ This **replaces** the earlier flat "commitment casualty table" idea entirely.
    top of an already-tuned table and could shift the odds more than
    intended.
 4. **Sue for Aid redesigned 2026-07-13 — now fully specified in §4.0.5**
-   (Powers Stirring track: 2 Ops, roll 1d10, 6+ advances a 0→4 marker,
+   (Powers Stirring track: 2 Ops, roll 1d10, 6+ advances a 0→5 marker,
    filling it = permanent Draw Track −1 + Pressure to Attack requirement
    +1). This replaced the old proposal (2 Ops, 8+ → Reserve Pool +1),
    which was strictly dominated by Reinforce and paid in scarce Guile

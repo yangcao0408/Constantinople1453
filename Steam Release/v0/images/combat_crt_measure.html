@@ -78,6 +78,11 @@
   /* margin band tint — good for attacker rises left→right */
   col.band-neg{ background:rgba(138,44,34,.05); }
   col.band-hot{ background:rgba(61,107,69,.06); }
+  /* compact main CRT — shrink to content, tighter cells */
+  table.crt{ width:auto; font-size:12px; }
+  table.crt th, table.crt td{ padding:5px 6px; }
+  table.crt tbody th{ width:auto; }
+  table.crt thead th{ font-size:11px; }
 
   .legend{ display:flex; flex-wrap:wrap; gap:16px 26px; font-size:12px; color:var(--ink-soft); margin-top:12px; }
   .legend span{ display:inline-flex; align-items:center; gap:6px; }
@@ -139,207 +144,170 @@
     <div class="arrow">&rarr;</div>
     <div class="step-card">
       <h3>2 · Assault — Margin CRT</h3>
-      <p>Compute Margin = surviving Attacker Strength &minus; Defender Strength. Roll 1d10, read Atk&#8209;x / Def&#8209;y.
+      <p>Compute Margin = surviving Attacker Strength &minus; Defender Strength. Roll 1d10, read A&#8209;x / D&#8209;y.
       Both sides lose steps.</p>
     </div>
   </div>
 
   <!-- ===================== PRE-ATTACK PHASE ===================== -->
-  <section class="board">
+  <section class="board" style="max-width:560px;">
     <div class="phase-tag">Phase 1</div>
     <div class="board-heading">Pre-Attack — Approach &amp; Defenders' Fire</div>
     <p class="board-sub">
-      As the attackers cross the ditch under massed arrow, crossbow, gun and Greek-fire, the defenders shoot
-      them up. This stage <b>only ever hurts the attacker</b>. The Byzantine rolls <b>one d8 per garrison unit
-      committed</b> (1&ndash;4, the defender cap). Each die showing its <b>top two faces (7&ndash;8)</b> inflicts
-      <b>one attacker step loss</b>, assigned by mandatory kill priority (§6.3.1). Casualties are removed
-      <b>before</b> the margin is computed, so a good volley both kills attackers and weakens the assault.
+      As the attackers cross the ditch, the defenders shoot them up &mdash; this stage <b>only ever hurts the
+      attacker</b>. The Byzantine rolls <b>one d8 per committed garrison unit</b> (max 4); each <b>7&ndash;8</b>
+      removes <b>one attacker step</b> (kill priority §6.3.1), <b>before</b> the margin is computed.
     </p>
 
-    <div class="split">
-      <div>
-        <div class="crt-wrap">
-          <table class="mini">
-            <caption>Expected attacker steps lost = x &divide; 4</caption>
-            <thead>
-              <tr><th>Garrison committed (x)</th><th>Avg attacker steps lost</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>1</th><td>0.25</td></tr>
-              <tr><th>2</th><td>0.50</td></tr>
-              <tr><th>3</th><td>0.75</td></tr>
-              <tr><th>4</th><td>1.00</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="avg-note">
-          Wall &amp; Naval Defense are <b>not</b> dice &mdash; they stay flat modifiers to the Phase 2 margin.
-          A fully-manned wall inflicts ~1 attacker casualty per assault; with a bashi absorber soaking the
-          first hit, an elite dies only on a 2+ hit roll &mdash; occasional, not routine.
-        </p>
-      </div>
-      <div>
-        <div class="board-sub" style="margin-bottom:8px;"><b>Wall firing positions</b> &mdash; dice added or removed for the volley:</div>
-        <div class="wall-mods">
-          <div class="wm intact"><span class="wm-state">Intact</span><span class="wm-val">+1 die</span>parapet fully manned</div>
-          <div class="wm battered"><span class="wm-state">Battered</span><span class="wm-val">&plusmn;0</span>no change</div>
-          <div class="wm breached"><span class="wm-state">Breached</span><span class="wm-val">&minus;1 die</span>min 0 &mdash; barely fires</div>
-        </div>
-        <p class="avg-note">
-          Firing positions degrade as the wall is battered &mdash; an intact wall shreds the approach, a
-          breached one barely fires. Because the Ottoman only assaults Battered/Breached sectors, the fire
-          they actually face is lighter, keeping elite loss rare.
-        </p>
-      </div>
+    <div class="board-sub" style="margin-bottom:6px;"><b>Wall firing positions</b> &mdash; dice added or removed for the volley:</div>
+    <div class="wall-mods">
+      <div class="wm intact"><span class="wm-state">Intact</span><span class="wm-val">+1 die</span>parapet fully manned</div>
+      <div class="wm battered"><span class="wm-state">Battered</span><span class="wm-val">&plusmn;0</span>no change</div>
+      <div class="wm breached"><span class="wm-state">Breached</span><span class="wm-val">&minus;1 die</span>min 0 &mdash; barely fires</div>
     </div>
+    <p class="avg-note">
+      Firing positions degrade as the wall is battered &mdash; an intact wall shreds the approach, a breached
+      one barely fires. Because the Ottoman only assaults Battered/Breached sectors, the fire they actually
+      face is lighter, keeping elite loss rare.
+    </p>
+    <p class="avg-note">
+      Wall &amp; Naval Defense are <b>not</b> dice &mdash; they stay flat modifiers to the Phase 2 margin.
+    </p>
   </section>
 
   <!-- ===================== ASSAULT PHASE ===================== -->
-  <section class="board">
+  <section class="board" style="max-width:588px;">
     <div class="phase-tag">Phase 2</div>
     <div class="board-heading">Assault — Combat Results Table (Strength Margin)</div>
     <p class="board-sub">
-      The main clash. Column index is <b>Margin = surviving Attacker Strength &minus; Defender Strength</b>
-      (Wall/Naval Defense apply as a flat &minus;6 / &minus;3 / &minus;1). Roll <b>1d10</b> and read
-      <span class="cell"><span class="a">Atk&#8209;x</span> <span class="sep">/</span> <span class="d">Def&#8209;y</span></span>:
-      the Attacker loses <b>x</b> committed steps, the Defender loses <b>y</b> Garrison steps. A war of
-      attrition &mdash; no one-roll breakthrough; concentrating more Attack simply grinds the garrison down faster.
+      The main clash. Column = <b>Margin = surviving Attacker Strength &minus; Defender Strength</b>
+      (Wall/Naval Defense apply as flat &minus;6 / &minus;3 / &minus;1). Roll <b>1d10</b> and read
+      <span class="cell"><span class="a">A&#8209;x</span> <span class="sep">/</span> <span class="d">D&#8209;y</span></span>:
+      Attacker loses <b>x</b> steps, Defender loses <b>y</b>.
     </p>
 
     <div class="crt-wrap">
-      <table>
+      <table class="crt">
         <colgroup>
-          <col><col class="band-neg"><col><col><col class="band-hot"><col class="band-hot"><col class="band-hot"><col class="band-hot">
+          <col><col class="band-neg"><col class="band-neg"><col><col><col class="band-hot"><col class="band-hot"><col class="band-hot"><col class="band-hot">
         </colgroup>
         <thead>
           <tr>
             <th class="roll-h">Roll<br>1d10</th>
-            <th>&le; 0</th><th>+1 to +2</th><th>+3 to +4</th><th>+5 to +6</th>
-            <th>+7 to +8</th><th>+9 to +11</th><th>+12 or more</th>
+            <th>&lt; -3</th><th>-3 to 0</th><th>+1 to +2</th><th>+3</th><th>+4</th>
+            <th>+5</th><th>+6</th><th>+7+</th>
           </tr>
         </thead>
         <tbody>
           <tr><th>1</th>
-            <td class="cell zero"><span class="a">Atk-3</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell zero"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>2</th>
-            <td class="cell zero"><span class="a">Atk-3</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>3</th>
-            <td class="cell zero"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>4</th>
-            <td class="cell zero"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>5</th>
-            <td class="cell zero"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-3</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>6</th>
-            <td class="cell zero"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-0</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>7</th>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
           </tr>
           <tr><th>8</th>
-            <td class="cell"><span class="a">Atk-2</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-4</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
           </tr>
           <tr><th>9</th>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-4</span></td>
+            <td class="cell zero"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-0</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
           </tr>
           <tr><th>10</th>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-1</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-2</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-3</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-4</span></td>
-            <td class="cell"><span class="a">Atk-1</span><span class="sep">/</span><span class="d">Def-4</span></td>
+            <td class="cell"><span class="a">A-2</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-1</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-2</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-3</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
+            <td class="cell"><span class="a">A-1</span><span class="sep">/</span><span class="d">D-4</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="legend">
-      <span><span class="swatch atk"></span><b>Atk&#8209;x</b> &mdash; Attacker committed steps lost &rarr; Draw Track step-down + Elite Casualty pool</span>
-      <span><span class="swatch def"></span><b>Def&#8209;y</b> &mdash; Defender Garrison steps lost &rarr; Sector-Falls &amp; Commander-Casualty checks</span>
+      <span><span class="swatch atk"></span><b>A&#8209;x</b> (Attacker) &mdash; Attacker committed steps lost &rarr; Draw Track step-down + Elite Casualty pool</span>
+      <span><span class="swatch def"></span><b>D&#8209;y</b> (Defender) &mdash; Defender Garrison steps lost &rarr; Sector-Falls &amp; Commander-Casualty checks</span>
     </div>
 
-    <div class="crt-wrap">
-      <table class="mini" style="max-width:620px; margin-top:18px;">
-        <caption>Average steps lost per roll, and net value (2&middot;Def &minus; Atk)</caption>
-        <thead>
-          <tr><th>Band</th><th>Avg Atk</th><th>Avg Def</th><th>Net</th></tr>
-        </thead>
-        <tbody>
-          <tr><th>&le; 0</th><td>2.0</td><td>0.4</td><td>&minus;1.2</td></tr>
-          <tr><th>+1 to +2</th><td>1.5</td><td>1.0</td><td>+0.5</td></tr>
-          <tr><th>+3 to +4</th><td>1.4</td><td>1.3</td><td>+1.2</td></tr>
-          <tr><th>+5 to +6</th><td>1.3</td><td>1.8</td><td>+2.3</td></tr>
-          <tr><th>+7 to +8</th><td>1.2</td><td>2.3</td><td>+3.4</td></tr>
-          <tr><th>+9 to +11</th><td>1.0</td><td>2.9</td><td>+4.8</td></tr>
-          <tr><th>+12 or more</th><td>1.0</td><td>3.3</td><td>+5.6</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="avg-note">
-      <b>Monotone by design:</b> a higher roll or bigger margin never worsens the Ottoman's weighted outcome.
-      Defender loss climbs across the realistic +2 &rarr; +8 band (concentration is rewarded), but is capped
-      at 4 &mdash; a Breached sector bleeds steadily, never stormed to nothing in one roll.
-    </p>
   </section>
 
   <div class="foot">Constantinople 1453 &mdash; Assault Resolution player aid. Values first-draft, pending playtest (§6.5.2 / §6.5.3).</div>

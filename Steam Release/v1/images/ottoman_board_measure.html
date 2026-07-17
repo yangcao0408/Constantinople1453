@@ -1,0 +1,273 @@
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><style>html,body{margin:0!important;padding:0!important;background:transparent!important;}header,.notes,.flow,.foot{display:none!important;}</style></head><body><title>Ottoman Player Board</title>
+<style>
+  :root{
+    --table-light:#d9cfb4; --table-light-2:#c7bb9c;
+    --parchment:#e6d9ae; --ink:#2a2015; --ink-soft:#4a3d28;
+    --ottoman:#2f5233; --ottoman-deep:#1c3320; --ottoman-light:#3c6a41;
+    --porphyry-deep:#2c1339;
+    --gold:#a9843c; --gold-bright:#d8b465; --cream:#f1e6c8;
+    --rule:rgba(42,32,21,.35);
+  }
+  :root[data-theme="dark"]{ --table-light:#1a140d; --table-light-2:#241b12; }
+  @media (prefers-color-scheme: dark){ :root{ --table-light:#1a140d; --table-light-2:#241b12; } }
+  :root[data-theme="light"]{ --table-light:#d9cfb4; --table-light-2:#c7bb9c; }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100vh;
+    font-family:Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+    color:var(--ink);
+    background:radial-gradient(ellipse at 50% -10%, var(--table-light-2), var(--table-light) 60%);
+    padding:36px 24px 70px;
+  }
+  .wrap{ max-width:1200px; margin:0 auto; }
+  .eyebrow{
+    font-family:Georgia,'Big Caslon','Copperplate',serif;
+    font-variant-caps:small-caps; letter-spacing:.18em; font-size:13px; color:var(--ottoman);
+  }
+  :root[data-theme="dark"] .eyebrow{ color:var(--gold-bright); }
+  h1{
+    font-family:Georgia,'Trajan Pro','Big Caslon','Copperplate',serif;
+    font-weight:700; font-variant-caps:small-caps; letter-spacing:.03em;
+    font-size:clamp(26px,3.6vw,38px); margin:.15em 0 .3em; color:var(--ink);
+  }
+  :root[data-theme="dark"] h1{ color:#e9dfc4; }
+  header p{ max-width:82ch; font-size:14.5px; line-height:1.6; color:var(--ink-soft); }
+  :root[data-theme="dark"] header p{ color:#c9bb98; }
+
+  .board{
+    background:var(--parchment); border:2px solid var(--ottoman);
+    border-radius:14px; box-shadow:0 18px 34px -18px rgba(0,0,0,.55);
+    padding:24px; margin-top:24px;
+    display:flex; flex-direction:row; align-items:stretch; gap:14px;
+    width:max-content;
+  }
+  .board-section{
+    flex-shrink:0; display:flex; flex-direction:column;
+    border-right:1px solid var(--rule); padding-right:14px;
+  }
+  .board-section:last-child{ border-right:none; padding-right:0; }
+  .board-heading{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif;
+    font-variant-caps:small-caps; letter-spacing:.04em;
+    color:var(--ottoman); margin:0 0 8px; border-bottom:1px solid var(--rule); padding-bottom:8px;
+    white-space:nowrap; font-size:48px;
+  }
+  .board-sub{ font-size:34px; color:var(--ink-soft); margin-bottom:14px; max-width:460px; line-height:1.45; }
+
+  /* ---- Morale / Draw tracks (vertical column of numbered squares, no colour) ---- */
+  .track-col{ width:auto; }
+  .num-track{ display:flex; flex-direction:column; gap:4px; margin-bottom:8px; align-items:center; }
+  .num-cell{
+    width:187px; height:187px; display:flex; align-items:center; justify-content:center;
+    font-size:72px; font-variant-numeric:tabular-nums; color:var(--ink);
+    background:rgba(74,32,20,.05); border:1px solid var(--rule); border-radius:3px;
+  }
+  .num-cell.marker{ outline:2px solid var(--gold-bright); outline-offset:-2px; }
+  .num-cell.c-green{ background:#3d6b45; color:var(--cream); border-color:rgba(0,0,0,.3); }
+  .num-cell.c-yellow{ background:#b8842f; color:var(--cream); border-color:rgba(0,0,0,.3); }
+  .num-cell.c-red{ background:#8a2c22; color:var(--cream); border-color:rgba(0,0,0,.3); }
+  .num-cell.c-black{ background:#1c1c1c; color:var(--cream); border-color:rgba(0,0,0,.4); }
+  .num-cols{ display:flex; gap:6px; margin-bottom:8px; justify-content:center; }
+  .num-cols .num-track{ margin-bottom:0; }
+  .track-note{ font-size:26px; color:var(--ink-soft); line-height:1.45; margin-top:2px; }
+  .track-note b{ color:var(--ink); }
+  .band-legend{ width:400px; margin-top:8px; font-size:26px; color:var(--ink-soft); line-height:1.45; }
+  .band-legend .cap{ font-variant-caps:small-caps; letter-spacing:.04em; font-weight:700;
+    color:var(--ink); margin-bottom:4px; }
+  .band-row{ display:flex; align-items:flex-start; gap:6px; margin-bottom:3px; }
+  .band-swatch{ width:12px; height:12px; border-radius:2px; flex-shrink:0; margin-top:1px;
+    border:1px solid rgba(0,0,0,.3); }
+  .band-swatch.c-green{ background:#3d6b45; }
+  .band-swatch.c-yellow{ background:#b8842f; }
+  .band-swatch.c-red{ background:#8a2c22; }
+  .band-swatch.c-black{ background:#1c1c1c; }
+  .band-row b{ color:var(--ink); }
+
+  /* ---- Elite Casualty pool ---- */
+  .pool-box{
+    width:auto; background:rgba(58,101,145,.08); border:1px solid rgba(58,101,145,.35);
+    border-radius:10px; padding:12px; font-size:34px; color:var(--ink-soft); line-height:1.45;
+  }
+  .pool-grid{ display:grid; grid-template-columns:repeat(4,187px); gap:4px; margin:8px 0; }
+  .pool-cell{
+    width:187px; height:187px; display:flex; align-items:center; justify-content:center;
+    font-size:72px; font-variant-numeric:tabular-nums; color:var(--ink);
+    background:rgba(74,32,20,.05); border:1px solid var(--rule); border-radius:3px;
+  }
+  .pool-cell.tick{ outline:2px solid var(--gold-bright); outline-offset:-2px; }
+  .pool-legend{ font-size:26px; }
+  .destroy-zone{
+    width:auto; margin-top:10px; min-height:420px;
+    border:2px dashed var(--rule); border-radius:10px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:12px; background:rgba(74,32,20,.03);
+  }
+  .destroy-zone span{ font-size:34px; font-style:italic; color:var(--ink-soft); line-height:1.4; }
+
+  /* ---- Force Commitment Cap ---- */
+  .cap-box{
+    width:280px; height:280px; text-align:center; background:rgba(74,32,20,.05); border:1px solid var(--rule);
+    border-radius:10px; padding:14px 10px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  }
+  .cap-number{
+    font-family:Georgia,'Copperplate',serif; font-weight:700; font-size:120px; color:var(--ottoman);
+    line-height:1;
+  }
+  .cap-label{ font-size:34px; color:var(--ink-soft); margin-top:4px; }
+
+  /* ---- Mustering cost table ---- */
+  .muster-table{ width:480px; font-size:26px; border-collapse:collapse; }
+  .muster-table tr{ border-bottom:1px solid var(--rule); }
+  .muster-table tr:last-child{ border-bottom:none; }
+  .muster-table td{ padding:5px 4px; vertical-align:top; color:var(--ink-soft); }
+  .muster-table td:first-child{ color:var(--ink); }
+  .muster-table td:last-child{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+
+  .misc-note{
+    width:400px; font-size:26px; color:var(--ink-soft); line-height:1.45;
+    background:rgba(74,32,20,.05); border:1px solid var(--rule); border-radius:10px; padding:10px 12px;
+    margin-top:8px;
+  }
+  .misc-note b{ color:var(--ink); }
+
+  /* ---- Ops reference ---- */
+  .ops-strip{ display:flex; flex-direction:column; gap:16px; width:520px; }
+  .ops-card{ background:rgba(74,32,20,.05); border:1px solid var(--rule); border-radius:14px; padding:14px 18px; }
+  .ops-card-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  .ops-name{
+    font-family:Georgia,'Trajan Pro','Copperplate',serif; font-variant-caps:small-caps;
+    font-size:40px; color:var(--ink);
+  }
+  .ops-cost{
+    width:64px; height:64px; border-radius:50%; flex-shrink:0;
+    background:radial-gradient(circle at 32% 28%, var(--gold-bright), var(--gold) 70%);
+    border:2px solid var(--porphyry-deep); display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:36px; color:var(--porphyry-deep);
+  }
+  .ops-desc{ font-size:34px; line-height:1.4; color:var(--ink-soft); }
+
+  /* ---- Wall Defense reminder ---- */
+  .walldef-legend{ display:flex; flex-direction:column; gap:10px; width:480px; }
+  .wd-row{ display:flex; align-items:center; gap:14px; background:rgba(74,32,20,.05);
+    border:1px solid var(--rule); border-radius:10px; padding:10px 14px; }
+  .wd-swatch{ width:34px; height:34px; border-radius:6px; flex-shrink:0;
+    box-shadow:0 0 0 1px rgba(0,0,0,.25) inset; }
+  .wd-name{ font-family:Georgia,'Trajan Pro','Copperplate',serif; font-variant-caps:small-caps;
+    font-size:36px; color:var(--ink); flex:1; }
+  .wd-hp{ font-variant-caps:normal; font-style:italic; font-size:26px; color:var(--ink-soft); }
+  .wd-val{ font-family:Georgia,'Copperplate',serif; font-weight:700; font-size:46px;
+    color:var(--ottoman); font-variant-numeric:tabular-nums; }
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Constantinople 1453 &mdash; Player Aid</div>
+    <h1>Ottoman Player Board</h1>
+    <p>Morale, Draw Track, Elite Casualty pool, Force Commitment, Deployment, and the
+    four Ops actions (DESIGN.md &sect;4.0&ndash;4.0.4, &sect;6.3, &sect;2.2).</p>
+  </header>
+
+  <div class="board">
+    <div class="board-section">
+      <div class="board-heading">Morale</div>
+      <div class="track-col">
+        <div class="num-cols">
+          <div class="num-track"><div class="num-cell c-black">0</div><div class="num-cell c-red">1</div><div class="num-cell c-red">2</div></div>
+          <div class="num-track"><div class="num-cell c-yellow">3</div><div class="num-cell c-yellow">4</div><div class="num-cell c-green">5</div></div>
+          <div class="num-track"><div class="num-cell c-green">6</div><div class="num-cell c-green marker">7</div><div class="num-cell c-green">8</div></div>
+        </div>
+        <div class="track-note">Marker at start: <b>7</b></div>
+        <div class="band-legend">
+          <div class="cap">Band debuffs</div>
+          <div class="band-row"><span class="band-swatch c-green"></span><span><b>5&ndash;7</b> &mdash; none</span></div>
+          <div class="band-row"><span class="band-swatch c-yellow"></span><span><b>3&ndash;4</b> &mdash; draw <b>&minus;1</b>/round</span></div>
+          <div class="band-row"><span class="band-swatch c-red"></span><span><b>1&ndash;2</b> &mdash; draw <b>&minus;2</b>/round</span></div>
+          <div class="band-row"><span class="band-swatch c-black"></span><span><b>0</b> &mdash; Byzantine win</span></div>
+        </div>
+        <div class="track-note">Applies while in-band; lifts if Morale recovers.</div>
+      </div>
+    </div>
+
+    <div class="board-section">
+      <div class="board-heading">Draw Track</div>
+      <div class="track-col">
+        <div class="num-cols">
+          <div class="num-track"><div class="num-cell c-red">3</div><div class="num-cell c-red">4</div><div class="num-cell c-yellow">5</div><div class="num-cell c-yellow">6</div></div>
+          <div class="num-track"><div class="num-cell c-green marker">7</div><div class="num-cell c-green">8</div><div class="num-cell c-green">9</div><div class="num-cell c-green">10</div></div>
+        </div>
+        <div class="track-note">Marker at start: <b>7</b> (range 3-10)</div>
+      </div>
+    </div>
+
+    <div class="board-section">
+      <div class="board-heading">Elite Casualty Pool</div>
+      <div class="pool-box">
+        <b>New Levy +2, Janissary +3, Solak +4</b>
+        <div class="pool-grid">
+          <div class="pool-cell tick">0</div><div class="pool-cell">1</div><div class="pool-cell">2</div><div class="pool-cell">3</div>
+          <div class="pool-cell">4</div><div class="pool-cell">5</div><div class="pool-cell">6</div><div class="pool-cell">7</div>
+        </div>
+        <div class="pool-legend">Morale &minus;1 at each multiple of <b>5</b>.</div>
+      </div>
+      <div class="destroy-zone"><span>Destroyed Janissaries &amp; Solaks</span></div>
+    </div>
+
+    <div class="board-section">
+      <div class="board-heading">Force Commitment</div>
+      <div class="cap-box">
+        <div class="cap-number">5</div>
+        <div class="cap-label">units / Assault<br>(any mix)</div>
+      </div>
+      <div class="board-heading" style="margin-top:28px;">Deployment</div>
+      <div class="board-sub">Per Deploy (Supplies action): field <b>&ge;2 units</b>, or units of <b>combined Attack &le;5</b> &mdash; whichever fields more. A Deploy may instead <b>upgrade</b> New Levies or <b>recover</b> destroyed elites (below).</div>
+      <table class="muster-table"><tr><td>Bashi-bazouk / Azap / New Levy</td><td>open supply</td></tr><tr><td>Janissary / Solak</td><td>finite pool</td></tr><tr><td>New Levy → Janissary</td><td>upgrade via Deploy (counts as 3 Attack; &le;2 per card)</td></tr><tr><td>Elite recovery</td><td>via Deploy &mdash; &le;2 per card</td></tr></table>
+    </div>
+
+    <div class="board-section">
+      <div class="board-heading">Ops Actions (2 Ops each)</div>
+      <div class="board-sub">Bombard (Phase A) is separate.</div>
+      <div class="ops-strip">
+    <div class="ops-card">
+      <div class="ops-card-top">
+        <div class="ops-name">Assault</div>
+        <div class="ops-cost">2</div>
+      </div>
+      <div class="ops-desc">Attack a sector's Garrison directly.</div>
+    </div>
+    <div class="ops-card">
+      <div class="ops-card-top">
+        <div class="ops-name">Sap/Mine</div>
+        <div class="ops-cost">2</div>
+      </div>
+      <div class="ops-desc">Undermine a sector.</div>
+    </div>
+    <div class="ops-card">
+      <div class="ops-card-top">
+        <div class="ops-name">Deploy</div>
+        <div class="ops-cost">2</div>
+      </div>
+      <div class="ops-desc">From the pool: &ge;2 units, or combined Attack &le;5.</div>
+    </div>
+    <div class="ops-card">
+      <div class="ops-card-top">
+        <div class="ops-name">Blockade</div>
+        <div class="ops-cost">2</div>
+      </div>
+      <div class="ops-desc">Knock Powers Stirring back 1 step.</div>
+    </div>
+      </div>
+    </div>
+
+    <div class="board-section" style="border-right:none; padding-right:0;">
+      <div class="board-heading">Wall Defense</div>
+      <div class="board-sub">Bonus to the defender's Assault, by HP band.</div>
+      <div class="walldef-legend">
+        <div class="wd-row"><span class="wd-swatch" style="background:#3d6b45"></span><span class="wd-name">Intact <span class="wd-hp">(HP &gt; &frac12; max)</span></span><span class="wd-val">6</span></div>
+        <div class="wd-row"><span class="wd-swatch" style="background:#b8842f"></span><span class="wd-name">Battered <span class="wd-hp">(HP &le; &frac12; max)</span></span><span class="wd-val">3</span></div>
+        <div class="wd-row"><span class="wd-swatch" style="background:#8a2c22"></span><span class="wd-name">Breached <span class="wd-hp">(HP &le; &frac13; max)</span></span><span class="wd-val">1</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>window.addEventListener("load",function(){var b=document.querySelector(".board");document.documentElement.setAttribute("data-bw",b?Math.ceil(b.scrollWidth):0);});</script></body></html>

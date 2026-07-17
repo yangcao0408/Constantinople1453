@@ -282,6 +282,11 @@
       var(--porphyry-light) 0%, var(--porphyry-deep) 50%,
       var(--venetian-teal) 50%, var(--venetian-teal-deep) 100%);
   }
+  .leader.orhan{
+    background:linear-gradient(to bottom right,
+      var(--porphyry-light) 0%, var(--porphyry-deep) 50%,
+      #3c6a41 50%, var(--ottoman-deep) 100%);
+  }
   .leader.two-tone .bust svg{
     filter:
       drop-shadow(1px 0 0 rgba(0,0,0,.55)) drop-shadow(-1px 0 0 rgba(0,0,0,.55))
@@ -309,7 +314,8 @@
   .leader.ott .l-rating{ background:#7a2420; }
   .leader.byz .l-rating,
   .leader.genoese .l-rating,
-  .leader.venetian .l-rating{ background:#233a5c; }
+  .leader.venetian .l-rating,
+  .leader.orhan .l-rating{ background:#233a5c; }
 
   /* ===================== NOTES ===================== */
   .notes{
@@ -464,6 +470,20 @@
         <div class="u-name">Byzantine Militia</div>
         <div class="stats">
           <div class="stat atk">1</div>
+          <div class="stat def">1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="token-group">
+      <div class="tg-label">Byzantine Militia (1-step, late levy)</div>
+      <div class="counter byz">
+        <div class="icon-wrap">
+          <div class="icon-raster militia-spearman"></div>
+        </div>
+        <div class="u-name">Byzantine Militia</div>
+        <div class="stats">
+          <div class="stat atk">0</div>
           <div class="stat def">1</div>
         </div>
       </div>
@@ -729,6 +749,17 @@
           <svg viewBox="0 0 40 40"><circle cx="20" cy="13" r="8"/><path d="M6 36 C6 24 12 19 20 19 C28 19 34 24 34 36 Z"/></svg>
         </div>
         <div class="l-name">Girolamo&nbsp;Minotto</div>
+        <div class="l-rating">+1</div>
+      </div>
+    </div>
+
+    <div class="token-group">
+      <div class="tg-label">Leader (§6.2) — Byzantine-allied, Orhan's Turks</div>
+      <div class="leader byz orhan two-tone">
+        <div class="bust">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="13" r="8"/><path d="M6 36 C6 24 12 19 20 19 C28 19 34 24 34 36 Z"/></svg>
+        </div>
+        <div class="l-name">Orhan&nbsp;&Ccedil;elebi</div>
         <div class="l-rating">+1</div>
       </div>
     </div>

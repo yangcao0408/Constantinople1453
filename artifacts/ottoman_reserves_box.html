@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ottoman Reserves</title>
+<style>
+  :root{
+    --ottoman:#2f5233;
+    --ottoman-deep:#1c3320;
+    --ottoman-bright:#4d7d52;
+  }
+  html,body{ margin:0; padding:0; background:transparent; }
+  .stage{
+    display:inline-block;
+    padding:28px;
+  }
+  .reserves{
+    box-sizing:border-box;
+    width:420px;
+    height:240px;
+    border:4px dashed var(--ottoman);
+    border-radius:16px;
+    position:relative;
+    background:rgba(47,82,51,0.05);
+  }
+  .reserves .title{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translate(-50%,-52%);
+    padding:2px 16px;
+    background:#f1e6c8;
+    color:var(--ottoman);
+    font-family:"Trajan Pro","Cinzel","Times New Roman",Georgia,serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="reserves">
+      <div class="title">Ottoman Reserves</div>
+    </div>
+  </div>
+</body>
+</html>
